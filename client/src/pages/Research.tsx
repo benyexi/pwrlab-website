@@ -28,12 +28,12 @@ const researchAreas = [
   {
     key: "climate",
     icon: CloudSun,
-    image: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=600&h=400&fit=crop",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/climate-research-RynYAcwfo7jN43kVpdMfVi.webp",
   },
   {
     key: "ai",
     icon: Brain,
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/ai-forestry-PCEiXKuV4f5cMAjRapmXsQ.webp",
   },
 ];
 

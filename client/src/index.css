@@ -40,9 +40,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Source Sans 3', system-ui, sans-serif;
+  /* --- Typography: Apple-style academic --- */
+  --font-display: 'Playfair Display', Georgia, 'Noto Serif SC', serif;
+  --font-display-zh: 'Noto Serif SC', 'Playfair Display', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Noto Sans SC', sans-serif;
+  --font-sans-zh: 'Noto Sans SC', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  /* --- Color tokens --- */
   --color-forest: oklch(0.32 0.08 155);
   --color-forest-light: oklch(0.58 0.1 148);
   --color-sage: oklch(0.62 0.06 140);
@@ -127,11 +131,88 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4 {
+
+  /* --- English headings: Playfair Display --- */
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
   }
+
+  /* --- Chinese language overrides --- */
+  [lang="zh"] body,
+  .lang-zh body,
+  .lang-zh {
+    font-family: var(--font-sans-zh);
+    letter-spacing: 0.02em;
+    line-height: 1.8;
+  }
+  [lang="zh"] h1, [lang="zh"] h2, [lang="zh"] h3, [lang="zh"] h4,
+  .lang-zh h1, .lang-zh h2, .lang-zh h3, .lang-zh h4 {
+    font-family: var(--font-display-zh);
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  /* --- Apple-style type scale --- */
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: clamp(1.2rem, 2vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+  h4 {
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.35;
+  }
+
+  p {
+    line-height: 1.7;
+    letter-spacing: -0.011em;
+  }
+
+  /* Refined small text */
+  small, .text-sm {
+    letter-spacing: -0.006em;
+    line-height: 1.5;
+  }
+  .text-xs {
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+
+  /* Uppercase labels — Apple style tracking */
+  .uppercase {
+    letter-spacing: 0.08em !important;
+    font-weight: 500;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -178,7 +259,7 @@
   .section-title {
     font-family: var(--font-display);
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   /* Fade in up animation */

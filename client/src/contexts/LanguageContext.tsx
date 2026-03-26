@@ -251,13 +251,26 @@ const translations: Record<Language, Record<string, string>> = {
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Language>(() => {
     const stored = localStorage.getItem("pwrlab-lang");
-    return (stored as Language) || "en";
+    const initial = (stored as Language) || "en";
+    // Set initial lang class on document
+    document.documentElement.lang = initial === "zh" ? "zh-CN" : "en";
+    if (initial === "zh") {
+      document.documentElement.classList.add("lang-zh");
+    } else {
+      document.documentElement.classList.remove("lang-zh");
+    }
+    return initial;
   });
 
   const setLang = useCallback((newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem("pwrlab-lang", newLang);
     document.documentElement.lang = newLang === "zh" ? "zh-CN" : "en";
+    if (newLang === "zh") {
+      document.documentElement.classList.add("lang-zh");
+    } else {
+      document.documentElement.classList.remove("lang-zh");
+    }
   }, []);
 
   const t = useCallback(
