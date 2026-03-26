@@ -174,7 +174,7 @@ export const teamMembers: TeamMember[] = [
     id: "brent-clothier",
     name: { en: "Dr. Brent Clothier", zh: "Brent Clothier 博士" },
     role: "collaborator",
-    photo: "/images/members/brent_clothier.png",
+    photo: "/pwrlab-website/images/members/brent_clothier.png",
     interests: { en: "Soil physics, root water uptake, plant-soil interactions", zh: "土壤物理学、根系吸水、植物-土壤相互作用" },
     bio: { en: "Dr. Clothier is a distinguished scientist at Plant and Food Research, New Zealand.", zh: "Clothier博士是新西兰Plant and Food Research杰出科学家。" },
     website: "https://www.plantandfood.com",
