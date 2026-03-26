@@ -107,26 +107,15 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* ClustrMaps 3D Globe Widget */}
             <div className="bg-card rounded-xl border border-border p-6 flex flex-col items-center">
-              <div className="w-full flex justify-center">
-                <a href="https://clustrmaps.com/site/1c7xz" title="Visit tracker">
-                  <img
-                    src="//www.clustrmaps.com/map_v2.png?d=YourClusterMapID&cl=ffffff&w=300"
-                    alt="ClustrMaps"
-                    className="rounded-lg"
-                    onError={(e) => {
-                      // Fallback: load the 3D globe widget via script
-                      const target = e.currentTarget.parentElement;
-                      if (target) {
-                        target.innerHTML = '<div id="clustrmaps-widget"></div>';
-                        const script = document.createElement('script');
-                        script.type = 'text/javascript';
-                        script.id = 'clstr_globe';
-                        script.src = '//clustrmaps.com/globe.js?d=YourClusterMapID';
-                        target.appendChild(script);
-                      }
-                    }}
-                  />
-                </a>
+              <div className="w-full flex justify-center" ref={(el) => {
+                if (el && !el.querySelector('#clstr_globe')) {
+                  const script = document.createElement('script');
+                  script.type = 'text/javascript';
+                  script.id = 'clstr_globe';
+                  script.src = '//clustrmaps.com/globe.js?d=eqEp0shaXfCRmJu8qZzAmcqzGTm2eQWfpQ25qgHKkTI';
+                  el.appendChild(script);
+                }
+              }}>
               </div>
               <p className="text-xs text-muted-foreground mt-4 text-center">
                 {lang === "en"
@@ -153,12 +142,12 @@ export default function Contact() {
               </div>
               <div className="bg-card rounded-xl border border-border p-6">
                 <p className="text-sm text-muted-foreground mb-2">
-                  {lang === "en" ? "Note" : "说明"}
+                  {lang === "en" ? "Joint Columns" : "联合专栏"}
                 </p>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {lang === "en"
-                    ? "To activate the ClustrMaps globe, register at clustrmaps.com with the site URL and replace the widget ID in the source code."
-                    : "要激活 ClustrMaps 地球仪，请在 clustrmaps.com 注册并用网站 URL 获取 widget ID，替换源代码中的 ID。"}
+                    ? "Agricultural Water Management & Journal of Hydrology"
+                    : "Agricultural Water Management 和 Journal of Hydrology"}
                 </p>
               </div>
             </div>
