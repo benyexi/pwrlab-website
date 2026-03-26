@@ -174,7 +174,7 @@ export const teamMembers: TeamMember[] = [
     id: "brent-clothier",
     name: { en: "Dr. Brent Clothier", zh: "Brent Clothier 博士" },
     role: "collaborator",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    photo: "https://github.com/user-attachments/assets/2d854bb1-8ae8-4e76-a790-30d4b807cc6f",
     interests: { en: "Soil physics, root water uptake, plant-soil interactions", zh: "土壤物理学、根系吸水、植物-土壤相互作用" },
     bio: { en: "Dr. Clothier is a distinguished scientist at Plant and Food Research, New Zealand.", zh: "Clothier博士是新西兰Plant and Food Research杰出科学家。" },
     website: "https://www.plantandfood.com",
