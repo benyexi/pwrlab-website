@@ -95,6 +95,8 @@ function FacilityCard({ facility, lang, index }: { facility: Facility; lang: "en
           <img
             src={facility.image}
             alt={facility.name[lang]}
+            loading="lazy"
+            decoding="async"
             className="w-full h-48 lg:h-full object-cover"
           />
         </div>
