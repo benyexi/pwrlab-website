@@ -96,7 +96,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
               )}
               {member.scholar && (
                 <a href={member.scholar} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
-                  Google Scholar <ExternalLink className="w-3 h-3" />
+                  {t("team.googleScholar")} <ExternalLink className="w-3 h-3" />
                 </a>
               )}
               {member.orcid && (
@@ -113,7 +113,6 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
 }
 
 function TeamSection({ title, members, lang }: { title: string; members: TeamMember[]; lang: "en" | "zh" }) {
-  const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -122,7 +121,7 @@ function TeamSection({ title, members, lang }: { title: string; members: TeamMem
         <div className="h-px w-6 bg-forest/30 dark:bg-forest-light/30" />
         {title}
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {members.map((member) => (
           <MemberCard key={member.id} member={member} lang={lang} />
         ))}
@@ -132,6 +131,8 @@ function TeamSection({ title, members, lang }: { title: string; members: TeamMem
 }
 
 function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-card rounded-lg border border-border p-5 hover:shadow-md transition-shadow duration-300 text-center">
       <img
@@ -144,7 +145,9 @@ function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" })
       </h4>
       {member.year && (
         <p className="text-xs text-muted-foreground mb-2">
-          {member.role === "alumni" ? `Class of ${member.year}` : `Since ${member.year}`}
+          {member.role === "alumni"
+            ? `${t("team.classOf")} ${member.year}`
+            : `${t("team.since")} ${member.year}`}
         </p>
       )}
       <p className="text-xs text-muted-foreground leading-relaxed">

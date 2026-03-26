@@ -81,7 +81,7 @@ export default function Publications() {
 
         {/* Publication Count */}
         <p className="text-center text-sm text-muted-foreground mb-8">
-          {filtered.length} publication{filtered.length !== 1 ? "s" : ""}
+          {t("publications.count").replace("{n}", String(filtered.length))}
         </p>
 
         {/* Grouped by Year */}
@@ -94,7 +94,7 @@ export default function Publications() {
         {filtered.length === 0 && (
           <div className="text-center py-16">
             <FileText className="w-12 h-12 text-muted-foreground/30 mx-auto mb-4" />
-            <p className="text-muted-foreground">No publications found.</p>
+            <p className="text-muted-foreground">{t("publications.empty")}</p>
           </div>
         )}
       </div>
@@ -103,6 +103,7 @@ export default function Publications() {
 }
 
 function YearGroup({ year, publications }: { year: number; publications: Publication[] }) {
+  const { t } = useLanguage();
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -110,7 +111,9 @@ function YearGroup({ year, publications }: { year: number; publications: Publica
       <div className="flex items-center gap-4 mb-4">
         <h3 className="font-display text-2xl font-bold text-foreground">{year}</h3>
         <div className="h-px flex-1 bg-border" />
-        <span className="text-sm text-muted-foreground">{publications.length} paper{publications.length !== 1 ? "s" : ""}</span>
+        <span className="text-sm text-muted-foreground">
+          {t("publications.paperCount").replace("{n}", String(publications.length))}
+        </span>
       </div>
       <div className="space-y-4">
         {publications.map((pub) => (

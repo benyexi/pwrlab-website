@@ -2,11 +2,12 @@
  * PWRlab Footer — Botanical Modernism
  * Deep forest green background, academic styling
  */
+import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, MapPin, ExternalLink } from "lucide-react";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -29,7 +30,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
-              Quick Links
+              {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-2">
               {[
@@ -39,12 +40,12 @@ export default function Footer() {
                 { label: t("nav.news"), href: "/news" },
               ].map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/60 hover:text-white transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -58,7 +59,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-2 text-sm text-white/60">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>Beijing Forestry University, Haidian, Beijing 100083</span>
+                <span>{t("footer.address")}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-white/60">
                 <Mail className="w-4 h-4 shrink-0" />
@@ -72,12 +73,12 @@ export default function Footer() {
           {/* External Links */}
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
-              Links
+              {t("footer.links")}
             </h4>
             <ul className="space-y-2">
               {[
-                { label: "Beijing Forestry University", href: "https://www.bjfu.edu.cn" },
-                { label: "University of Idaho", href: "https://www.uidaho.edu" },
+                { label: t("footer.bjfu"), href: "https://www.bjfu.edu.cn" },
+                { label: t("footer.uidaho"), href: "https://www.uidaho.edu" },
                 { label: "Google Scholar", href: "https://scholar.google.com" },
                 { label: "ResearchGate", href: "https://www.researchgate.net" },
               ].map((link) => (
@@ -97,18 +98,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* WeChat & Bottom */}
+        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
             &copy; {year} {t("footer.copyright")}
           </p>
-          <div className="flex items-center gap-6">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-white/10 rounded-lg flex items-center justify-center text-xs text-white/40 border border-white/10">
-                {t("footer.wechat")}
-              </div>
-            </div>
-          </div>
+          <p className="text-xs text-white/40">
+            {t("footer.affiliation")}
+          </p>
         </div>
       </div>
     </footer>

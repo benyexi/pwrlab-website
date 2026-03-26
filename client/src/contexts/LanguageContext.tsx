@@ -66,6 +66,9 @@ const translations: Record<Language, Record<string, string>> = {
     "publications.filterYear": "Filter by year",
     "publications.allYears": "All Years",
     "publications.bibtex": "Import BibTeX",
+    "publications.count": "{n} publication(s)",
+    "publications.paperCount": "{n} paper(s)",
+    "publications.empty": "No publications found.",
 
     // Team
     "team.title": "Our Team",
@@ -76,6 +79,9 @@ const translations: Record<Language, Record<string, string>> = {
     "team.alumni": "Alumni",
     "team.collaborators": "Collaborators",
     "team.interests": "Research Interests",
+    "team.googleScholar": "Google Scholar",
+    "team.classOf": "Class of",
+    "team.since": "Since",
 
     // Facilities
     "facilities.title": "Facilities & Equipment",
@@ -105,16 +111,23 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.subtitle": "Get in touch or visit our lab",
     "contact.address.title": "Address",
     "contact.address.text": "School of Soil and Water Conservation, Beijing Forestry University, No. 35 Tsinghua East Road, Haidian District, Beijing 100083, China",
+    "contact.address.short": "Beijing Forestry University, No. 35 Tsinghua East Road, Haidian District, Beijing",
     "contact.email.title": "Email",
     "contact.join.title": "Join Us",
     "contact.join.text": "We welcome motivated students and postdocs interested in forest ecohydrology. If you are passionate about understanding tree-water relationships and have a background in forestry, ecology, hydrology, or related fields, please send your CV and a brief statement of research interests to Prof. Xi.",
+    "contact.cta": "Contact Prof. Xi",
     "contact.map.title": "Location",
+    "contact.map.viewLarger": "View larger map",
 
     // Footer
     "footer.affiliation": "Beijing Forestry University",
     "footer.lab": "Plantation Water Relation Lab",
     "footer.copyright": "PWRlab. All rights reserved.",
-    "footer.wechat": "WeChat Official Account",
+    "footer.quickLinks": "Quick Links",
+    "footer.links": "Links",
+    "footer.address": "Beijing Forestry University, Haidian, Beijing 100083",
+    "footer.bjfu": "Beijing Forestry University",
+    "footer.uidaho": "University of Idaho",
   },
   zh: {
     // Nav
@@ -170,6 +183,9 @@ const translations: Record<Language, Record<string, string>> = {
     "publications.filterYear": "按年份筛选",
     "publications.allYears": "全部年份",
     "publications.bibtex": "导入BibTeX",
+    "publications.count": "共 {n} 篇论文",
+    "publications.paperCount": "{n} 篇",
+    "publications.empty": "未找到相关论文。",
 
     // Team
     "team.title": "团队成员",
@@ -180,6 +196,9 @@ const translations: Record<Language, Record<string, string>> = {
     "team.alumni": "毕业生",
     "team.collaborators": "合作者",
     "team.interests": "研究兴趣",
+    "team.googleScholar": "谷歌学术",
+    "team.classOf": "届",
+    "team.since": "入学于",
 
     // Facilities
     "facilities.title": "仪器设备",
@@ -209,16 +228,23 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.subtitle": "欢迎联系或来访",
     "contact.address.title": "地址",
     "contact.address.text": "北京市海淀区清华东路35号 北京林业大学水土保持学院 100083",
+    "contact.address.short": "北京市海淀区清华东路35号 北京林业大学",
     "contact.email.title": "邮箱",
     "contact.join.title": "加入我们",
     "contact.join.text": "我们欢迎对森林生态水文感兴趣的优秀学生和博士后加入团队。如果您热衷于理解林木-水分关系，并具有林学、生态学、水文学或相关领域背景，请将简历和研究兴趣简述发送至席老师邮箱。",
+    "contact.cta": "联系席老师",
     "contact.map.title": "位置",
+    "contact.map.viewLarger": "查看大地图",
 
     // Footer
     "footer.affiliation": "北京林业大学",
     "footer.lab": "人工林水分关系实验室",
     "footer.copyright": "PWRlab 版权所有",
-    "footer.wechat": "微信公众号",
+    "footer.quickLinks": "快速链接",
+    "footer.links": "友情链接",
+    "footer.address": "北京市海淀区 北京林业大学 100083",
+    "footer.bjfu": "北京林业大学",
+    "footer.uidaho": "爱达荷大学",
   },
 };
 
