@@ -149,10 +149,10 @@ export const teamMembers: TeamMember[] = [
     honors: [
       { en: "National 'Ten Thousand Talents Plan' Young Top Talent", zh: "国家「万人计划」青年拔尖人才" },
       { en: "National Forestry Bureau Young S&T Innovation Talent", zh: "国家林业局青年科技创新人才" },
+      { en: "BJFU Distinguished Young Talent", zh: "\"北林学者\"杰出青年人才" },
     ],
     positions: [
       { en: "PI, National Key Lab of Efficient Forest Production", zh: "林木高效培育全国重点实验室PI" },
-      { en: "Director, Key Lab of Forest Cultivation & Ecosystem in Arid/Semi-arid Areas", zh: "干旱半干旱地区森林培育及生态系统研究重点实验室主任" },
       { en: "Core Member (#2), National Poplar Plantation Innovation Team", zh: "国家杨树人工林创新团队核心成员（排名第2）" },
     ],
     email: "xibenye@bjfu.edu.cn",
