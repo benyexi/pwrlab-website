@@ -5,7 +5,7 @@
 export interface TeamMember {
   id: string;
   name: { en: string; zh: string };
-  role: "pi" | "collaborator" | "phd" | "msc" | "alumni";
+  role: "pi" | "collaborator" | "phd" | "msc" | "alumni_phd" | "alumni_msc";
   photo: string;
   interests: { en: string; zh: string };
   bio?: { en: string; zh: string };
@@ -19,6 +19,7 @@ export interface TeamMember {
   orcid?: string;
   website?: string;
   year?: string; // graduation year for alumni, enrollment year for students
+  currentPosition?: { en: string; zh: string }; // for alumni: current employer/position
 }
 
 export interface Award {
@@ -232,6 +233,28 @@ export const teamMembers: TeamMember[] = [
   { id: "wu-junrong", name: { en: "Junrong Wu (吴俊蓉)", zh: "吴俊蓉" }, role: "msc", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Tree hydraulic architecture", zh: "树木水力结构" }, year: "2025" },
   { id: "an-shan", name: { en: "Shan An (安珊)", zh: "安珊" }, role: "msc", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest ecosystem water balance", zh: "森林生态系统水量平衡" }, year: "2025" },
   { id: "fu-guobin", name: { en: "Guobin Fu (符国斌)", zh: "符国斌" }, role: "msc", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Sensor development and calibration", zh: "传感器研发与标定" }, year: "2025" },
+  // ---- Graduated PhD Students ----
+  { id: "di-nan", name: { en: "Nan Di", zh: "邸楠" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2019", currentPosition: { en: "Inner Mongolia University", zh: "内蒙古大学生态与环境学院" } },
+  { id: "li-doudou", name: { en: "Doudou Li", zh: "李豆豆" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2021", currentPosition: { en: "Institute of Medicinal Plant Development, CAMS", zh: "中国医学科学研究院药用植物研究所" } },
+  { id: "liu-yang-phd", name: { en: "Yang Liu", zh: "刘洋" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025", currentPosition: { en: "National Open University of China", zh: "国家开放大学农林医药部" } },
+  // ---- Graduated MSc Students ----
+  { id: "zhang-ruina", name: { en: "Ruina Zhang", zh: "张瑞娜" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2019", currentPosition: { en: "Beijing Greenorno Technology", zh: "北京绿奥诺技术服务有限公司" } },
+  { id: "ma-xu", name: { en: "Xu Ma", zh: "马煕" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2020", currentPosition: { en: "Chinese Society of Forestry", zh: "中国林学会咨询部" } },
+  { id: "liu-jinqiang", name: { en: "Jinqiang Liu", zh: "刘金强" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2020", currentPosition: { en: "MDPI Forests Editorial Office", zh: "MDPI出版社 Forests 编辑部" } },
+  { id: "zou-songyan", name: { en: "Songyan Zou", zh: "邹松言" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2022", currentPosition: { en: "Chongqing Forestry Investment Co.", zh: "重庆市林业投资开发有限责任公司" } },
+  { id: "ji-zhelin", name: { en: "Zhelin Ji", zh: "吉哲琳" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2022" },
+  { id: "guo-youzheng", name: { en: "Youzheng Guo", zh: "郭有正" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2023", currentPosition: { en: "Yantai Municipal Garden Management", zh: "烟台市城市管理局园林管理处" } },
+  { id: "fan-yunxiang", name: { en: "Yunxiang Fan", zh: "范云翔" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2023", currentPosition: { en: "Liaoning Forestry Development Center", zh: "辽宁省林业发展服务中心" } },
+  { id: "tan-jianbiao", name: { en: "Jianbiao Tan", zh: "谭键彪" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2023", currentPosition: { en: "Jiangxi Forestry Ecological Engineering Center", zh: "江西省林业生态工程建设中心" } },
+  { id: "chen-cheng", name: { en: "Cheng Chen", zh: "陈澄" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2023", currentPosition: { en: "Guangdong Linda Forestry Design Co.", zh: "广东霖达林业设计有限公司" } },
+  { id: "yang-shangjin", name: { en: "Shangjin Yang", zh: "杨尚锦" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2023", currentPosition: { en: "Inspur Database Technology Co.", zh: "山东浪潮数据库技术有限公司" } },
+  { id: "tian-xiaonan", name: { en: "Xiaonan Tian", zh: "田晓楠" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2024", currentPosition: { en: "Beijing Yugen Technology Co.", zh: "北京雨根科技有限公司" } },
+  { id: "zhang-shusen", name: { en: "Shusen Zhang", zh: "张树森" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2024", currentPosition: { en: "Dongying Natural Resources Bureau, Shandong", zh: "山东省东营市自然资源局" } },
+  { id: "yu-weichen", name: { en: "Weichen Yu", zh: "余伟晨" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025" },
+  { id: "wang-yunhui", name: { en: "Yunhui Wang", zh: "王云慧" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025", currentPosition: { en: "National Forestry & Grassland Administration", zh: "国家林草局林产规划院" } },
+  { id: "wang-yujing", name: { en: "Yujing Wang", zh: "王雨静" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025" },
+  { id: "miao-huayang", name: { en: "Huayang Miao", zh: "苗华阳" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025", currentPosition: { en: "Hebei Provincial Forestry Department", zh: "河北省林业厅" } },
+  { id: "liu-yuan-msc", name: { en: "Yuan Liu", zh: "刘媛" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025", currentPosition: { en: "Inner Mongolia Forestry Department", zh: "内蒙古林业厅" } },
 ];
 
 // ---- Projects ----

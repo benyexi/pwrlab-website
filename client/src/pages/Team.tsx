@@ -16,7 +16,8 @@ export default function Team() {
   const collaborators = teamMembers.filter((m) => m.role === "collaborator");
   const phd = teamMembers.filter((m) => m.role === "phd");
   const msc = teamMembers.filter((m) => m.role === "msc");
-  const alumni = teamMembers.filter((m) => m.role === "alumni");
+  const alumniPhd = teamMembers.filter((m) => m.role === "alumni_phd");
+  const alumniMsc = teamMembers.filter((m) => m.role === "alumni_msc");
 
   return (
     <div className="pt-24 pb-20">
@@ -59,9 +60,14 @@ export default function Team() {
           <TeamSection title={t("team.msc")} members={msc} lang={lang} />
         )}
 
-        {/* Alumni */}
-        {alumni.length > 0 && (
-          <TeamSection title={t("team.alumni")} members={alumni} lang={lang} />
+        {/* Alumni PhD */}
+        {alumniPhd.length > 0 && (
+          <TeamSection title={lang === "en" ? "Graduated PhD Students" : "已毕业博士研究生"} members={alumniPhd} lang={lang} />
+        )}
+
+        {/* Alumni MSc */}
+        {alumniMsc.length > 0 && (
+          <TeamSection title={lang === "en" ? "Graduated MSc Students" : "已毕业硕士研究生"} members={alumniMsc} lang={lang} />
         )}
       </div>
     </div>
@@ -395,14 +401,20 @@ function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" })
       </h4>
       {member.year && (
         <p className="text-xs text-muted-foreground mb-2">
-          {member.role === "alumni"
+          {member.role === "alumni_phd" || member.role === "alumni_msc"
             ? `${t("team.classOf")} ${member.year}`
             : `${t("team.since")} ${member.year}`}
         </p>
       )}
-      <p className="text-xs text-muted-foreground leading-relaxed">
-        {member.interests[lang]}
-      </p>
+      {member.currentPosition && member.currentPosition[lang] ? (
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {member.currentPosition[lang]}
+        </p>
+      ) : (
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {member.interests[lang]}
+        </p>
+      )}
       <div className="flex justify-center gap-2 mt-3">
         {member.email && (
           <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
