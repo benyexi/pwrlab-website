@@ -256,6 +256,8 @@ export const teamMembers: TeamMember[] = [
   // ---- Graduated PhD Students ----
 
   { id: "li-doudou", name: { en: "Doudou Li", zh: "李豆豆" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2021", currentPosition: { en: "Institute of Medicinal Plant Development, CAMS", zh: "中国医学科学研究院药用植物研究所" } },
+  { id: "di-nan-alumni", name: { en: "Nan Di", zh: "邸楠" }, role: "alumni_phd", photo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/di_nan_eb36dd15.png", interests: { en: "Plantation ecohydrology, sap flow measurement, water use efficiency", zh: "人工林生态水文、液流测量、水分利用效率" }, currentPosition: { en: "Associate Professor, School of Ecology and Environment, Inner Mongolia University", zh: "内蒙古大学生态与环境学院 副教授" } },
+  { id: "liu-yang-alumni", name: { en: "Yang Liu", zh: "刘洋" }, role: "alumni_phd", photo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/liu_yang_ba2bdb40.png", interests: { en: "Forest cultivation, plantation water relations", zh: "森林培育、人工林水分关系" }, currentPosition: { en: "Lecturer, School of Agriculture, Forestry, Medicine and Pharmacy, National Open University of China", zh: "国家开放大学农林医药教学部 讲师" } },
 
   // ---- Graduated MSc Students ----
   { id: "zhang-ruina", name: { en: "Ruina Zhang", zh: "张瑞娜" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2019", currentPosition: { en: "Beijing Greenorno Technology", zh: "北京绿奥诺技术服务有限公司" } },
