@@ -10,6 +10,8 @@ import SectionHeader from "@/components/SectionHeader";
 import { teamMembers, awards, editorialRoles, courses, IMAGES, type TeamMember } from "@/lib/data";
 import PageHero from "@/components/PageHero";
 import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users, PenTool, BookMarked } from "lucide-react";
+import ContentSection from "@/components/ContentSection";
+import WaveDivider from "@/components/WaveDivider";
 
 export default function Team() {
   const { lang, t } = useLanguage();
@@ -23,66 +25,74 @@ export default function Team() {
   const alumniMsc = teamMembers.filter((m) => m.role === "alumni_msc");
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroTeam}
         title={t("team.title")}
         subtitle={t("team.subtitle")}
       />
-      <div className="container pt-12">
 
-        {/* PI Section */}
+      {/* PI Section */}
+      <ContentSection bg="white">
         {pi.map((member) => (
           <PICard key={member.id} member={member} lang={lang} />
         ))}
+      </ContentSection>
 
-        {/* Awards Section */}
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Awards & Editorial */}
+      <ContentSection bg="warm">
         <AwardsSection lang={lang} />
-
-        {/* Editorial Roles */}
         <EditorialSection lang={lang} />
+      </ContentSection>
 
-        {/* Teaching */}
+      <WaveDivider fill="#ffffff" />
+
+      {/* Teaching & Stats */}
+      <ContentSection bg="white">
         <TeachingSection lang={lang} />
-
-        {/* Team Stats */}
         <TeamStats lang={lang} phd={phd.length} msc={msc.length} collaborators={collaborators.length} />
+      </ContentSection>
 
-        {/* Faculty Members */}
+      <WaveDivider fill="#f5f7f3" />
+
+      {/* Team Members Grid */}
+      <ContentSection bg="sage">
         {faculty.length > 0 && (
           <TeamSection title={lang === "en" ? "Faculty Members" : "团队教师"} members={faculty} lang={lang} />
         )}
-
-        {/* Engineer */}
         {engineers.length > 0 && (
           <TeamSection title={lang === "en" ? "Engineers" : "工程师"} members={engineers} lang={lang} />
         )}
-
-        {/* Collaborators */}
         {collaborators.length > 0 && (
           <TeamSection title={t("team.collaborators")} members={collaborators} lang={lang} />
         )}
+      </ContentSection>
 
-        {/* PhD Students */}
+      <WaveDivider fill="#ffffff" />
+
+      {/* Students */}
+      <ContentSection bg="white">
         {phd.length > 0 && (
           <TeamSection title={t("team.phd")} members={phd} lang={lang} />
         )}
-
-        {/* MSc Students */}
         {msc.length > 0 && (
           <TeamSection title={t("team.msc")} members={msc} lang={lang} />
         )}
+      </ContentSection>
 
-        {/* Alumni PhD */}
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Alumni */}
+      <ContentSection bg="warm">
         {alumniPhd.length > 0 && (
           <TeamSection title={lang === "en" ? "Graduated PhD Students" : "已毕业博士研究生"} members={alumniPhd} lang={lang} />
         )}
-
-        {/* Alumni MSc */}
         {alumniMsc.length > 0 && (
           <TeamSection title={lang === "en" ? "Graduated MSc Students" : "已毕业硕士研究生"} members={alumniMsc} lang={lang} />
         )}
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -97,7 +107,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
         <GraduationCap className="w-5 h-5 text-gold dark:text-gold-light" />
         {t("team.pi")}
       </h3>
-      <div className="bg-card rounded-xl border border-border overflow-hidden">
+      <div className="pi-card-gradient border border-border overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-4 p-6 lg:p-8 flex flex-col items-center lg:items-start">
             <img
@@ -216,7 +226,7 @@ function AwardsSection({ lang }: { lang: "en" | "zh" }) {
       <div className="bg-card rounded-xl border border-border overflow-hidden max-h-[500px] overflow-y-auto">
         <div className="divide-y divide-border">
           {awards.map((award) => (
-            <div key={award.id} className="flex items-start gap-4 p-4 lg:p-5 hover:bg-muted/30 transition-colors">
+            <div key={award.id} className="awards-row-alt flex items-start gap-4 p-4 lg:p-5 hover:bg-muted/30 transition-colors">
               <div className="font-mono text-sm font-semibold text-forest dark:text-forest-light shrink-0 w-12 text-center pt-0.5">
                 {award.year}
               </div>
@@ -403,7 +413,7 @@ function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" })
   const { t } = useLanguage();
 
   return (
-    <div className="bg-card rounded-lg border border-border p-5 hover:shadow-md transition-shadow duration-300 text-center">
+    <div className="team-card bg-card border border-border p-5 text-center">
       <img
         src={member.photo}
         alt={member.name[lang]}

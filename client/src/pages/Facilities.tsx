@@ -1,28 +1,29 @@
 /*
- * PWRlab Facilities Page — Botanical Modernism
+ * PWRlab Facilities Page — Premium magazine style
  * Self-developed instruments highlight + equipment showcase
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SectionHeader from "@/components/SectionHeader";
 import { facilities, selfDevelopedInstruments, IMAGES, type Facility } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
+import WaveDivider from "@/components/WaveDivider";
 import { CheckCircle, Award, Cpu, TrendingDown } from "lucide-react";
 
 export default function Facilities() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroFacilities}
         title={t("facilities.title")}
         subtitle={t("facilities.subtitle")}
       />
-      <div className="container pt-12">
 
-        {/* Self-developed Instruments Highlight */}
-        <div className="mb-16 bg-gradient-to-br from-forest/5 to-forest/10 dark:from-forest/10 dark:to-forest/20 rounded-2xl border border-forest/20 p-8 lg:p-12">
+      {/* Self-developed Instruments Highlight */}
+      <ContentSection bg="white">
+        <div className="bg-gradient-to-br from-forest/5 to-forest/10 dark:from-forest/10 dark:to-forest/20 rounded-2xl border border-forest/20 p-8 lg:p-12">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-forest/20 dark:bg-forest-light/20 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-forest dark:text-forest-light" />
@@ -64,14 +65,18 @@ export default function Facilities() {
             </div>
           </div>
         </div>
+      </ContentSection>
 
-        {/* Equipment List */}
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Equipment List */}
+      <ContentSection bg="warm">
         <div className="space-y-8">
           {facilities.map((facility, i) => (
             <FacilityCard key={facility.id} facility={facility} lang={lang} index={i} />
           ))}
         </div>
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -83,7 +88,7 @@ function FacilityCard({ facility, lang, index }: { facility: Facility; lang: "en
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} mag-card bg-card border border-border`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className={`lg:col-span-5 ${isReversed ? "lg:order-2" : ""}`}>

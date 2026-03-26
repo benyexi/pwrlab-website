@@ -1,14 +1,14 @@
 /*
- * PWRlab Publications Page — Botanical Modernism
- * Year-sorted list with search, year filter, DOI links
- * BibTeX import support
+ * PWRlab Publications Page — Premium magazine style
+ * Parchment search area, decorative year headers, left-border accent on hover
  */
 import { useState, useMemo } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SectionHeader from "@/components/SectionHeader";
 import { publications, IMAGES, type Publication } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
+import WaveDivider from "@/components/WaveDivider";
 import { Search, ExternalLink, Star, FileText } from "lucide-react";
 
 export default function Publications() {
@@ -52,56 +52,60 @@ export default function Publications() {
   }, [filtered]);
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroPublications}
         title={t("publications.title")}
         subtitle={t("publications.subtitle")}
       />
-      <div className="container pt-12">
 
-        {/* Search & Filter Bar */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-10 max-w-2xl mx-auto">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder={t("publications.search")}
-              className="w-full pl-10 pr-4 py-2.5 text-sm bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground placeholder:text-muted-foreground"
-            />
+      {/* Search & Filter — parchment texture */}
+      <ContentSection bg="warm" noAnimation>
+        <div className="pub-search-area max-w-3xl mx-auto">
+          <div className="relative flex flex-col sm:flex-row gap-3">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder={t("publications.search")}
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-white/80 dark:bg-black/20 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground placeholder:text-muted-foreground"
+              />
+            </div>
+            <select
+              value={tagFilter}
+              onChange={(e) => setTagFilter(e.target.value)}
+              className="px-4 py-2.5 text-sm bg-white/80 dark:bg-black/20 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground"
+            >
+              <option value="all">{lang === "en" ? "All Types" : "全部类型"}</option>
+              <option value="SCI">SCI</option>
+              <option value="EI">EI</option>
+              <option value="CSCD">CSCD</option>
+              <option value="Under Review">{lang === "en" ? "Under Review" : "在审"}</option>
+            </select>
+            <select
+              value={yearFilter}
+              onChange={(e) => setYearFilter(e.target.value)}
+              className="px-4 py-2.5 text-sm bg-white/80 dark:bg-black/20 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground"
+            >
+              <option value="all">{t("publications.allYears")}</option>
+              {years.map((y) => (
+                <option key={y} value={y}>{y}</option>
+              ))}
+            </select>
           </div>
-          <select
-            value={tagFilter}
-            onChange={(e) => setTagFilter(e.target.value)}
-            className="px-4 py-2.5 text-sm bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground"
-          >
-            <option value="all">{lang === "en" ? "All Types" : "全部类型"}</option>
-            <option value="SCI">SCI</option>
-            <option value="EI">EI</option>
-            <option value="CSCD">CSCD</option>
-            <option value="Under Review">{lang === "en" ? "Under Review" : "在审"}</option>
-          </select>
-          <select
-            value={yearFilter}
-            onChange={(e) => setYearFilter(e.target.value)}
-            className="px-4 py-2.5 text-sm bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-forest/30 dark:focus:ring-forest-light/30 text-foreground"
-          >
-            <option value="all">{t("publications.allYears")}</option>
-            {years.map((y) => (
-              <option key={y} value={y}>{y}</option>
-            ))}
-          </select>
+          <p className="text-center text-sm text-muted-foreground mt-4">
+            {t("publications.count").replace("{n}", String(filtered.length))}
+          </p>
         </div>
+      </ContentSection>
 
-        {/* Publication Count */}
-        <p className="text-center text-sm text-muted-foreground mb-8">
-          {t("publications.count").replace("{n}", String(filtered.length))}
-        </p>
+      <WaveDivider fill="#ffffff" />
 
-        {/* Grouped by Year */}
-        <div className="max-w-4xl mx-auto space-y-10">
+      {/* Publication List */}
+      <ContentSection bg="white">
+        <div className="max-w-4xl mx-auto space-y-12">
           {grouped.map(([year, pubs]) => (
             <YearGroup key={year} year={year} publications={pubs} />
           ))}
@@ -113,7 +117,7 @@ export default function Publications() {
             <p className="text-muted-foreground">{t("publications.empty")}</p>
           </div>
         )}
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -124,14 +128,10 @@ function YearGroup({ year, publications }: { year: number; publications: Publica
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""}`}>
-      <div className="flex items-center gap-4 mb-4">
-        <h3 className="font-display text-2xl font-normal text-foreground">{year}</h3>
-        <div className="h-px flex-1 bg-border" />
-        <span className="text-sm text-muted-foreground">
-          {t("publications.paperCount").replace("{n}", String(publications.length))}
-        </span>
+      <div className="pub-year-header mb-6">
+        <span>{year}</span>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {publications.map((pub) => (
           <PubItem key={pub.id} pub={pub} />
         ))}
@@ -142,7 +142,7 @@ function YearGroup({ year, publications }: { year: number; publications: Publica
 
 function PubItem({ pub }: { pub: Publication }) {
   return (
-    <div className="group pl-4 border-l-2 border-border hover:border-forest dark:hover:border-forest-light transition-colors duration-200 py-2">
+    <div className="pub-entry group py-3 rounded-r-lg">
       <div className="flex items-start gap-2">
         {pub.highlight && (
           <Star className="w-4 h-4 text-gold dark:text-gold-light mt-1 shrink-0 fill-current" />

@@ -1,13 +1,13 @@
 /*
- * PWRlab Projects Page — Botanical Modernism
+ * PWRlab Projects Page — Premium magazine style
  * Current / Completed tabs, project cards with funding & period
  */
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SectionHeader from "@/components/SectionHeader";
 import { projects, IMAGES, type Project } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
 import { Calendar, Banknote } from "lucide-react";
 
 export default function Projects() {
@@ -16,16 +16,16 @@ export default function Projects() {
   const filtered = projects.filter((p) => p.status === tab);
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroProjects}
         title={t("projects.title")}
         subtitle={t("projects.subtitle")}
       />
-      <div className="container pt-12">
 
-        {/* Tabs */}
-        <div className="flex justify-center gap-2 mb-12">
+      {/* Tabs */}
+      <ContentSection bg="warm" noAnimation>
+        <div className="flex justify-center gap-2">
           {(["current", "completed"] as const).map((status) => (
             <button
               key={status}
@@ -33,21 +33,23 @@ export default function Projects() {
               className={`px-5 py-2.5 text-sm font-medium rounded-md transition-colors duration-200
                 ${tab === status
                   ? "bg-forest text-white dark:bg-forest-light dark:text-[oklch(0.16_0.015_260)]"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  : "bg-white/80 dark:bg-black/20 text-muted-foreground hover:bg-white dark:hover:bg-black/30"
                 }`}
             >
               {t(`projects.${status}`)}
             </button>
           ))}
         </div>
+      </ContentSection>
 
-        {/* Project Cards */}
+      {/* Project Cards */}
+      <ContentSection bg="white">
         <div className="space-y-6">
           {filtered.map((project, i) => (
             <ProjectCard key={project.id} project={project} lang={lang} index={i} />
           ))}
         </div>
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -59,7 +61,7 @@ function ProjectCard({ project, lang, index }: { project: Project; lang: "en" | 
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden card-hover duration-300`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} mag-card bg-card border border-border`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12">
         {project.image && (

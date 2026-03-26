@@ -1,12 +1,12 @@
 /*
- * PWRlab Gallery Page — Botanical Modernism
+ * PWRlab Gallery Page — Premium magazine style
  * Photo grid with category filter and lightbox
  */
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import SectionHeader from "@/components/SectionHeader";
 import { galleryImages, IMAGES, type GalleryImage } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
 import { X } from "lucide-react";
 
 type Category = "all" | "fieldwork" | "lab" | "team";
@@ -28,16 +28,16 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroGallery}
         title={t("gallery.title")}
         subtitle={t("gallery.subtitle")}
       />
-      <div className="container pt-12">
 
-        {/* Category Filter */}
-        <div className="flex justify-center gap-2 mb-10">
+      {/* Category Filter */}
+      <ContentSection bg="warm" noAnimation>
+        <div className="flex justify-center gap-2">
           {categories.map((cat) => (
             <button
               key={cat.key}
@@ -45,21 +45,23 @@ export default function Gallery() {
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200
                 ${category === cat.key
                   ? "bg-forest text-white dark:bg-forest-light dark:text-[oklch(0.16_0.015_260)]"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  : "bg-white/80 dark:bg-black/20 text-muted-foreground hover:bg-white dark:hover:bg-black/30"
                 }`}
             >
               {cat.label}
             </button>
           ))}
         </div>
+      </ContentSection>
 
-        {/* Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-3 gap-4">
+      {/* Photo Grid */}
+      <ContentSection bg="white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((img) => (
             <button
               key={img.id}
               onClick={() => setLightbox(img)}
-              className="group relative overflow-hidden rounded-lg aspect-[4/3]"
+              className="group relative overflow-hidden rounded-xl aspect-[4/3] mag-card"
             >
               <img
                 src={img.src}
@@ -73,7 +75,7 @@ export default function Gallery() {
             </button>
           ))}
         </div>
-      </div>
+      </ContentSection>
 
       {/* Lightbox */}
       {lightbox && (

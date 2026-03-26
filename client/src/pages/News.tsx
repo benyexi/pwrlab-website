@@ -1,32 +1,32 @@
 /*
- * PWRlab News Page — Botanical Modernism
+ * PWRlab News Page — Premium magazine style
  * Blog-style news list with date tags
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SectionHeader from "@/components/SectionHeader";
 import { newsItems, IMAGES } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
 import { Calendar } from "lucide-react";
 
 export default function News() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroNews}
         title={t("news.title")}
         subtitle={t("news.subtitle")}
       />
-      <div className="container pt-12">
 
+      <ContentSection bg="white">
         <div className="max-w-3xl mx-auto space-y-6">
           {newsItems.map((item, i) => (
             <NewsItem key={item.id} item={item} lang={lang} index={i} />
           ))}
         </div>
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -49,7 +49,7 @@ function NewsItem({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
       ref={ref}
       className={`fade-in-up ${isVisible ? "visible" : ""}`}
     >
-      <div className="bg-card rounded-xl border border-border overflow-hidden card-hover duration-300">
+      <div className="mag-card bg-card border border-border">
         <div className={`${item.image ? "grid grid-cols-1 md:grid-cols-12" : ""}`}>
           {item.image && (
             <div className="md:col-span-4">

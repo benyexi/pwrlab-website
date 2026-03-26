@@ -1,31 +1,20 @@
 /*
- * PWRlab Research Page — Botanical Modernism
- * Research direction cards with images and descriptions
+ * PWRlab Research Page — Premium magazine style
+ * Research direction cards with alternating section backgrounds
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import SectionHeader from "@/components/SectionHeader";
 import { IMAGES } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
+import WaveDivider from "@/components/WaveDivider";
 import { Droplets, TreePine, Sprout, CloudSun, Brain } from "lucide-react";
 import CollaborationMap from "@/components/CollaborationMap";
 
 const researchAreas = [
-  {
-    key: "ecohydrology",
-    icon: Droplets,
-    image: IMAGES.ecohydrology,
-  },
-  {
-    key: "sapflow",
-    icon: TreePine,
-    image: IMAGES.ecohydrology,
-  },
-  {
-    key: "roots",
-    icon: Sprout,
-    image: IMAGES.roots,
-  },
+  { key: "ecohydrology", icon: Droplets, image: IMAGES.ecohydrology },
+  { key: "sapflow", icon: TreePine, image: IMAGES.ecohydrology },
+  { key: "roots", icon: Sprout, image: IMAGES.roots },
   {
     key: "climate",
     icon: CloudSun,
@@ -42,23 +31,28 @@ export default function Research() {
   const { t } = useLanguage();
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroResearch}
         title={t("research.title")}
         subtitle={t("research.subtitle")}
       />
-      <div className="container pt-12">
 
-        <div className="space-y-8 mb-16">
+      {/* Research Directions */}
+      <ContentSection bg="white">
+        <div className="space-y-8">
           {researchAreas.map((area, i) => (
             <ResearchCard key={area.key} area={area} index={i} />
           ))}
         </div>
+      </ContentSection>
 
-        {/* Global Collaboration Network Map */}
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Collaboration Map */}
+      <ContentSection bg="warm">
         <CollaborationMap />
-      </div>
+      </ContentSection>
     </div>
   );
 }
@@ -71,9 +65,9 @@ function ResearchCard({ area, index }: { area: typeof researchAreas[0]; index: n
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden card-hover`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} mag-card bg-card border border-border`}
     >
-      <div className={`grid grid-cols-1 lg:grid-cols-12 ${isReversed ? "" : ""}`}>
+      <div className={`grid grid-cols-1 lg:grid-cols-12`}>
         <div className={`lg:col-span-5 ${isReversed ? "lg:order-2" : ""}`}>
           <img
             src={area.image}

@@ -1,26 +1,28 @@
 /*
- * PWRlab Contact Page — Botanical Modernism
+ * PWRlab Contact Page — Premium magazine style
  * Address, email, map, and "Join Us" section
  */
 import { useLanguage } from "@/contexts/LanguageContext";
-import SectionHeader from "@/components/SectionHeader";
 import { IMAGES } from "@/lib/data";
 import PageHero from "@/components/PageHero";
+import ContentSection from "@/components/ContentSection";
+import WaveDivider from "@/components/WaveDivider";
 import { MapPin, Mail, Users, ExternalLink, Globe } from "lucide-react";
 
 export default function Contact() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pb-20">
+    <div>
       <PageHero
         image={IMAGES.heroContact}
         title={t("contact.title")}
         subtitle={t("contact.subtitle")}
       />
-      <div className="container pt-12">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto mb-16">
+      {/* Contact Info + Map */}
+      <ContentSection bg="white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {/* Left: Contact Info */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
@@ -100,7 +102,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        {/* Visitor Analytics */}
+      </ContentSection>
+
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Visitor Analytics */}
+      <ContentSection bg="warm">
         <div className="max-w-5xl mx-auto">
           <h3 className="font-display text-lg font-medium text-foreground mb-6 flex items-center gap-2">
             <Globe className="w-5 h-5 text-forest dark:text-forest-light" />
@@ -108,7 +115,7 @@ export default function Contact() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* ClustrMaps 3D Globe Widget */}
-            <div className="bg-card rounded-xl border border-border p-6 flex flex-col items-center">
+            <div className="mag-card bg-card border border-border p-6 flex flex-col items-center">
               <div className="w-full flex justify-center" ref={(el) => {
                 if (el && !el.querySelector('#clstr_globe')) {
                   const script = document.createElement('script');
@@ -127,13 +134,13 @@ export default function Contact() {
             </div>
             {/* Visitor Stats */}
             <div className="space-y-4">
-              <div className="bg-card rounded-xl border border-border p-6">
+              <div className="mag-card bg-card border border-border p-6">
                 <p className="text-sm text-muted-foreground mb-2">
                   {lang === "en" ? "Website launched" : "网站上线时间"}
                 </p>
                 <p className="font-display text-2xl font-bold text-forest dark:text-forest-light">2026</p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-6">
+              <div className="mag-card bg-card border border-border p-6">
                 <p className="text-sm text-muted-foreground mb-2">
                   {lang === "en" ? "WeChat Public Account" : "微信公众号"}
                 </p>
@@ -142,7 +149,7 @@ export default function Contact() {
                   {lang === "en" ? "8,389 followers · 440,000+ reads" : "8,389 关注 · 44万+ 阅读"}
                 </p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-6">
+              <div className="mag-card bg-card border border-border p-6">
                 <p className="text-sm text-muted-foreground mb-2">
                   {lang === "en" ? "Joint Columns" : "联合专栏"}
                 </p>
@@ -155,7 +162,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </ContentSection>
     </div>
   );
 }
