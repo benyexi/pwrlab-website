@@ -32,9 +32,34 @@ export default function Team() {
         subtitle={t("team.subtitle")}
       />
 
-      {/* Academic Advisor Section */}
+      {/* PI Section */}
       <ContentSection bg="white">
-        <div className="container max-w-5xl mx-auto">
+        {pi.map((member) => (
+          <PICard key={member.id} member={member} lang={lang} />
+        ))}
+      </ContentSection>
+
+      <WaveDivider fill="#f9f7f4" />
+
+      {/* Awards & Editorial */}
+      <ContentSection bg="warm">
+        <AwardsSection lang={lang} />
+        <EditorialSection lang={lang} />
+      </ContentSection>
+
+      <WaveDivider fill="#ffffff" />
+
+      {/* Teaching & Stats */}
+      <ContentSection bg="white">
+        <TeachingSection lang={lang} />
+        <TeamStats lang={lang} phd={phd.length} msc={msc.length} collaborators={collaborators.length} />
+      </ContentSection>
+
+      <WaveDivider fill="#f5f7f3" />
+
+      {/* Academic Advisor Section */}
+      <ContentSection bg="sage">
+        <div className="container max-w-5xl mx-auto mb-16">
           <h2 className="text-2xl md:text-3xl font-normal tracking-wide text-center mb-10" style={{ color: '#2d3436' }}>
             {lang === "en" ? "Academic Advisor" : "学术顾问"}
           </h2>
@@ -61,37 +86,8 @@ export default function Team() {
             </div>
           </div>
         </div>
-      </ContentSection>
 
-      <WaveDivider fill="#ffffff" />
-
-      {/* PI Section */}
-      <ContentSection bg="white">
-        {pi.map((member) => (
-          <PICard key={member.id} member={member} lang={lang} />
-        ))}
-      </ContentSection>
-
-      <WaveDivider fill="#f9f7f4" />
-
-      {/* Awards & Editorial */}
-      <ContentSection bg="warm">
-        <AwardsSection lang={lang} />
-        <EditorialSection lang={lang} />
-      </ContentSection>
-
-      <WaveDivider fill="#ffffff" />
-
-      {/* Teaching & Stats */}
-      <ContentSection bg="white">
-        <TeachingSection lang={lang} />
-        <TeamStats lang={lang} phd={phd.length} msc={msc.length} collaborators={collaborators.length} />
-      </ContentSection>
-
-      <WaveDivider fill="#f5f7f3" />
-
-      {/* Team Members Grid */}
-      <ContentSection bg="sage">
+        {/* Faculty Members Grid */}
         {faculty.length > 0 && (
           <TeamSection title={lang === "en" ? "Faculty Members" : "团队教师"} members={faculty} lang={lang} />
         )}
@@ -138,7 +134,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
       <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <GraduationCap className="w-5 h-5 text-gold dark:text-gold-light" />
-        {t("team.pi")}
+        {lang === "en" ? "Team Leader" : "团队负责人"}
       </h3>
       <div className="pi-card-gradient border border-border overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12">
