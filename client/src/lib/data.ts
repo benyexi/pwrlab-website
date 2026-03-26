@@ -118,7 +118,7 @@ export const teamMembers: TeamMember[] = [
     id: "xi-benye",
     name: { en: "Prof. Benye Xi", zh: "席本野 教授" },
     role: "pi",
-    photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+    photo: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/xi-benye-photo_fdf7c3c5.png",
     title: {
       en: "Professor & PhD Supervisor (Exceptionally Promoted), College of Forestry, Beijing Forestry University",
       zh: "教授、博士生导师（破格晋升），北京林业大学林学院",
