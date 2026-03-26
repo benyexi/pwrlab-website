@@ -84,7 +84,7 @@ export default function Home() {
 function StatsBar() {
   const { t } = useLanguage();
   const stats = [
-    { icon: BookOpen, value: "40+", label: t("home.stats.publications") },
+    { icon: BookOpen, value: "60+", label: t("home.stats.publications") },
     { icon: FlaskConical, value: "4", label: t("home.stats.projects") },
     { icon: Users, value: "12", label: t("home.stats.members") },
     { icon: Globe, value: "5+", label: t("home.stats.collaborators") },
