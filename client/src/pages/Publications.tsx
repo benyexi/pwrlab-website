@@ -124,7 +124,7 @@ function YearGroup({ year, publications }: { year: number; publications: Publica
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""}`}>
       <div className="flex items-center gap-4 mb-4">
-        <h3 className="font-display text-2xl font-bold text-foreground">{year}</h3>
+        <h3 className="font-display text-2xl font-normal text-foreground">{year}</h3>
         <div className="h-px flex-1 bg-border" />
         <span className="text-sm text-muted-foreground">
           {t("publications.paperCount").replace("{n}", String(publications.length))}

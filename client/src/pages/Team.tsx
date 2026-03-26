@@ -92,7 +92,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <GraduationCap className="w-5 h-5 text-gold dark:text-gold-light" />
         {t("team.pi")}
       </h3>
@@ -132,7 +132,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
             </div>
           </div>
           <div className="lg:col-span-8 p-6 lg:p-8 flex flex-col justify-center">
-            <h4 className="font-display text-2xl font-bold text-foreground mb-1">
+            <h4 className="font-display text-2xl font-normal text-foreground mb-1">
               {member.name[lang]}
             </h4>
             {member.title && (
@@ -149,7 +149,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
             {/* Honors */}
             {member.honors && member.honors.length > 0 && (
               <div className="mb-4">
-                <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2">
+                <h5 className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                   <Award className="w-4 h-4 text-gold dark:text-gold-light" />
                   {lang === "en" ? "Honors" : "荣誉称号"}
                 </h5>
@@ -166,7 +166,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
             {/* Positions */}
             {member.positions && member.positions.length > 0 && (
               <div className="mb-4">
-                <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2">
+                <h5 className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                   <Briefcase className="w-4 h-4 text-forest dark:text-forest-light" />
                   {lang === "en" ? "Current Positions" : "现任职务"}
                 </h5>
@@ -183,7 +183,7 @@ function PICard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
             {/* Education */}
             {member.education && member.education.length > 0 && (
               <div>
-                <h5 className="flex items-center gap-2 text-sm font-semibold text-foreground mb-2">
+                <h5 className="flex items-center gap-2 text-sm font-medium text-foreground mb-2">
                   <BookOpen className="w-4 h-4 text-forest dark:text-forest-light" />
                   {lang === "en" ? "Education" : "教育经历"}
                 </h5>
@@ -208,7 +208,7 @@ function AwardsSection({ lang }: { lang: "en" | "zh" }) {
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <Trophy className="w-5 h-5 text-gold dark:text-gold-light" />
         {lang === "en" ? "Awards & Honors" : "获奖情况"}
       </h3>
@@ -244,14 +244,14 @@ function EditorialSection({ lang }: { lang: "en" | "zh" }) {
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <PenTool className="w-5 h-5 text-forest dark:text-forest-light" />
         {lang === "en" ? "Editorial Service" : "学术兼职"}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Editorial Board */}
         <div className="bg-card rounded-xl border border-border p-6">
-          <h4 className="text-sm font-semibold text-foreground mb-4">
+          <h4 className="text-sm font-medium text-foreground mb-4">
             {lang === "en" ? "Editorial Board" : "编委"}
           </h4>
           <ul className="space-y-3">
@@ -266,7 +266,7 @@ function EditorialSection({ lang }: { lang: "en" | "zh" }) {
         </div>
         {/* Guest Editor */}
         <div className="bg-card rounded-xl border border-border p-6">
-          <h4 className="text-sm font-semibold text-foreground mb-4">
+          <h4 className="text-sm font-medium text-foreground mb-4">
             {lang === "en" ? "Guest Editor" : "客座编辑"}
           </h4>
           <ul className="space-y-3">
@@ -292,7 +292,7 @@ function TeachingSection({ lang }: { lang: "en" | "zh" }) {
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <BookMarked className="w-5 h-5 text-forest dark:text-forest-light" />
         {lang === "en" ? "Teaching" : "教学"}
       </h3>
@@ -300,7 +300,7 @@ function TeachingSection({ lang }: { lang: "en" | "zh" }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Undergraduate */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h4 className="text-sm font-medium text-foreground mb-3">
               {lang === "en" ? "Undergraduate" : "本科课程"}
             </h4>
             <ul className="space-y-2">
@@ -318,7 +318,7 @@ function TeachingSection({ lang }: { lang: "en" | "zh" }) {
           </div>
           {/* Graduate */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h4 className="text-sm font-medium text-foreground mb-3">
               {lang === "en" ? "Graduate" : "研究生课程"}
             </h4>
             <ul className="space-y-2">
@@ -331,7 +331,7 @@ function TeachingSection({ lang }: { lang: "en" | "zh" }) {
           </div>
           {/* International */}
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-3">
+            <h4 className="text-sm font-medium text-foreground mb-3">
               {lang === "en" ? "International Programs" : "留学生课程"}
             </h4>
             <ul className="space-y-2">
@@ -363,7 +363,7 @@ function TeamStats({ lang, phd, msc, collaborators }: { lang: "en" | "zh"; phd: 
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-2">
         <Users className="w-5 h-5 text-forest dark:text-forest-light" />
         {lang === "en" ? "Team Overview" : "团队概况"}
       </h3>
@@ -385,7 +385,7 @@ function TeamSection({ title, members, lang }: { title: string; members: TeamMem
 
   return (
     <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
-      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-3">
+      <h3 className="font-display text-xl font-medium text-foreground mb-6 flex items-center gap-3">
         <div className="h-px w-6 bg-forest/30 dark:bg-forest-light/30" />
         {title}
       </h3>
@@ -408,7 +408,7 @@ function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" })
         alt={member.name[lang]}
         className="w-24 h-24 rounded-full object-cover mx-auto mb-3 border-2 border-forest/10 dark:border-forest-light/10"
       />
-      <h4 className="font-display text-base font-semibold text-foreground mb-1">
+      <h4 className="font-display text-base font-medium text-foreground mb-1">
         {member.name[lang]}
       </h4>
       {member.title && (member.role === "faculty" || member.role === "engineer") && (

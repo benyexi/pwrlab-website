@@ -26,7 +26,7 @@ export default function Contact() {
                 <MapPin className="w-5 h-5 text-forest dark:text-forest-light" />
               </div>
               <div>
-                <h3 className="font-display text-base font-semibold text-foreground mb-1">{t("contact.address.title")}</h3>
+                <h3 className="font-display text-base font-medium text-foreground mb-1">{t("contact.address.title")}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{t("contact.address.text")}</p>
               </div>
             </div>
@@ -36,7 +36,7 @@ export default function Contact() {
                 <Mail className="w-5 h-5 text-forest dark:text-forest-light" />
               </div>
               <div>
-                <h3 className="font-display text-base font-semibold text-foreground mb-1">{t("contact.email.title")}</h3>
+                <h3 className="font-display text-base font-medium text-foreground mb-1">{t("contact.email.title")}</h3>
                 <a
                   href="mailto:xibenye@bjfu.edu.cn"
                   className="text-sm text-forest dark:text-forest-light hover:underline"
@@ -50,7 +50,7 @@ export default function Contact() {
             <div className="bg-forest/5 dark:bg-forest-light/5 rounded-xl p-6 border border-forest/10 dark:border-forest-light/10">
               <div className="flex items-center gap-3 mb-3">
                 <Users className="w-5 h-5 text-forest dark:text-forest-light" />
-                <h3 className="font-display text-lg font-semibold text-foreground">
+                <h3 className="font-display text-lg font-medium text-foreground">
                   {t("contact.join.title")}
                 </h3>
               </div>
@@ -69,7 +69,7 @@ export default function Contact() {
 
           {/* Right: Map */}
           <div>
-            <h3 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+            <h3 className="font-display text-lg font-medium text-foreground mb-4 flex items-center gap-2">
               <MapPin className="w-5 h-5 text-forest dark:text-forest-light" />
               {t("contact.map.title")}
             </h3>
@@ -100,7 +100,7 @@ export default function Contact() {
         </div>
         {/* Visitor Analytics */}
         <div className="max-w-5xl mx-auto">
-          <h3 className="font-display text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
+          <h3 className="font-display text-lg font-medium text-foreground mb-6 flex items-center gap-2">
             <Globe className="w-5 h-5 text-forest dark:text-forest-light" />
             {lang === "en" ? "Visitor Map" : "访客地图"}
           </h3>

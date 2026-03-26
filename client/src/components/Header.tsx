@@ -53,7 +53,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 no-underline">
-            <div className={`font-display font-bold text-lg tracking-tight ${textColor} transition-colors duration-300`}>
+            <div className={`font-display font-normal text-lg tracking-wide ${textColor} transition-colors duration-300`}>
               <span className="text-forest dark:text-forest-light">PWR</span>
               <span className={scrolled || !isHome ? "text-foreground" : "text-white/90"}>lab</span>
             </div>
@@ -67,7 +67,7 @@ export default function Header() {
                 <Link
                   key={key}
                   href={path}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 no-underline
+                  className={`px-3 py-2 text-sm font-normal tracking-wider rounded-md transition-colors duration-200 no-underline
                     ${active
                       ? "text-forest dark:text-forest-light bg-forest/10 dark:bg-forest-light/10"
                       : `${textColor} hover:text-forest dark:hover:text-forest-light hover:bg-forest/5`
@@ -136,7 +136,7 @@ export default function Header() {
                 <Link
                   key={key}
                   href={path}
-                  className={`px-4 py-2.5 text-sm font-medium rounded-md transition-colors no-underline
+                  className={`px-4 py-2.5 text-sm font-normal tracking-wider rounded-md transition-colors no-underline
                     ${active
                       ? "text-forest dark:text-forest-light bg-forest/10"
                       : "text-foreground hover:text-forest hover:bg-forest/5"

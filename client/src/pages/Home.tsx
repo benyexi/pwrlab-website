@@ -31,7 +31,7 @@ export default function Home() {
                 Beijing Forestry University
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="hero-title text-white mb-6">
               {t("home.hero.title")}
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-xl">
@@ -175,7 +175,7 @@ function NewsCard({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
         </span>
         <span className="text-xs text-muted-foreground">{item.date}</span>
       </div>
-      <h3 className="font-display text-lg font-semibold text-foreground mb-2 line-clamp-2">
+      <h3 className="font-display text-lg font-medium text-foreground mb-2 line-clamp-2">
         {item.title[lang]}
       </h3>
       <p className="text-sm text-muted-foreground line-clamp-3">

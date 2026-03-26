@@ -26,7 +26,7 @@ export default function Facilities() {
             <div className="w-10 h-10 rounded-full bg-forest/20 dark:bg-forest-light/20 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-forest dark:text-forest-light" />
             </div>
-            <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
+            <h2 className="font-display text-2xl lg:text-3xl font-normal text-foreground">
               {lang === "en" ? "Self-developed Instruments" : "自主研发仪器"}
             </h2>
           </div>
@@ -96,7 +96,7 @@ function FacilityCard({ facility, lang, index }: { facility: Facility; lang: "en
           <span className="font-mono text-xs text-muted-foreground tracking-wider mb-2">
             {String(index + 1).padStart(2, "0")}
           </span>
-          <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground mb-3">
+          <h3 className="font-display text-xl lg:text-2xl font-medium text-foreground mb-3">
             {facility.name[lang]}
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-4">

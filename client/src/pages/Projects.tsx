@@ -71,7 +71,7 @@ function ProjectCard({ project, lang, index }: { project: Project; lang: "en" | 
           </div>
         )}
         <div className={`${project.image ? "lg:col-span-8" : "lg:col-span-12"} p-6 lg:p-8`}>
-          <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+          <h3 className="font-display text-xl font-medium text-foreground mb-3">
             {project.title[lang]}
           </h3>
           <p className="text-muted-foreground leading-relaxed mb-4">

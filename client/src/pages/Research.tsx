@@ -89,7 +89,7 @@ function ResearchCard({ area, index }: { area: typeof researchAreas[0]; index: n
               {String(index + 1).padStart(2, "0")}
             </span>
           </div>
-          <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground mb-3">
+          <h3 className="font-display text-xl lg:text-2xl font-medium text-foreground mb-3">
             {t(`research.${area.key}.title`)}
           </h3>
           <p className="text-muted-foreground leading-relaxed">
