@@ -368,3 +368,52 @@
 .dark ::-webkit-scrollbar-thumb {
   background: oklch(0.35 0.015 260);
 }
+
+/* ===== VISUAL ENHANCEMENTS ===== */
+
+/* Alternating section backgrounds */
+.section-alt {
+  background-color: #faf8f5;
+}
+.dark .section-alt {
+  background-color: oklch(0.18 0.01 260);
+}
+
+/* Section divider — subtle gradient line */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    oklch(0.85 0.02 90) 20%,
+    oklch(0.85 0.02 90) 80%,
+    transparent
+  );
+  margin: 0 auto;
+  max-width: 600px;
+}
+.dark .section-divider {
+  background: linear-gradient(
+    to right,
+    transparent,
+    oklch(0.3 0.015 260) 20%,
+    oklch(0.3 0.015 260) 80%,
+    transparent
+  );
+}
+
+/* Card hover — lift + shadow */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 24px -8px rgba(0, 0, 0, 0.08),
+    0 4px 8px -4px rgba(0, 0, 0, 0.04);
+}
+.dark .card-hover:hover {
+  box-shadow:
+    0 12px 24px -8px rgba(0, 0, 0, 0.3),
+    0 4px 8px -4px rgba(0, 0, 0, 0.2);
+}

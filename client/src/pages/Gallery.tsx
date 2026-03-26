@@ -5,7 +5,8 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
-import { galleryImages, type GalleryImage } from "@/lib/data";
+import { galleryImages, IMAGES, type GalleryImage } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { X } from "lucide-react";
 
 type Category = "all" | "fieldwork" | "lab" | "team";
@@ -27,13 +28,13 @@ export default function Gallery() {
   ];
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="07"
-          title={t("gallery.title")}
-          subtitle={t("gallery.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroGallery}
+        title={t("gallery.title")}
+        subtitle={t("gallery.subtitle")}
+      />
+      <div className="container pt-12">
 
         {/* Category Filter */}
         <div className="flex justify-center gap-2 mb-10">

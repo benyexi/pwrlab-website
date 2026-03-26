@@ -6,7 +6,8 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { projects, type Project } from "@/lib/data";
+import { projects, IMAGES, type Project } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { Calendar, Banknote } from "lucide-react";
 
 export default function Projects() {
@@ -15,13 +16,13 @@ export default function Projects() {
   const filtered = projects.filter((p) => p.status === tab);
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="02"
-          title={t("projects.title")}
-          subtitle={t("projects.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroProjects}
+        title={t("projects.title")}
+        subtitle={t("projects.subtitle")}
+      />
+      <div className="container pt-12">
 
         {/* Tabs */}
         <div className="flex justify-center gap-2 mb-12">
@@ -58,7 +59,7 @@ function ProjectCard({ project, lang, index }: { project: Project; lang: "en" | 
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden hover:shadow-md transition-shadow duration-300`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden card-hover duration-300`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12">
         {project.image && (

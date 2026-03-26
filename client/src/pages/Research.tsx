@@ -6,6 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
 import { IMAGES } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { Droplets, TreePine, Sprout, CloudSun, Brain } from "lucide-react";
 import CollaborationMap from "@/components/CollaborationMap";
 
@@ -41,13 +42,13 @@ export default function Research() {
   const { t } = useLanguage();
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="01"
-          title={t("research.title")}
-          subtitle={t("research.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroResearch}
+        title={t("research.title")}
+        subtitle={t("research.subtitle")}
+      />
+      <div className="container pt-12">
 
         <div className="space-y-8 mb-16">
           {researchAreas.map((area, i) => (
@@ -70,7 +71,7 @@ function ResearchCard({ area, index }: { area: typeof researchAreas[0]; index: n
   return (
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow duration-300`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-xl border border-border overflow-hidden card-hover`}
     >
       <div className={`grid grid-cols-1 lg:grid-cols-12 ${isReversed ? "" : ""}`}>
         <div className={`lg:col-span-5 ${isReversed ? "lg:order-2" : ""}`}>

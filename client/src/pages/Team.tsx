@@ -7,7 +7,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { teamMembers, awards, editorialRoles, courses, type TeamMember } from "@/lib/data";
+import { teamMembers, awards, editorialRoles, courses, IMAGES, type TeamMember } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users, PenTool, BookMarked } from "lucide-react";
 
 export default function Team() {
@@ -22,13 +23,13 @@ export default function Team() {
   const alumniMsc = teamMembers.filter((m) => m.role === "alumni_msc");
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="04"
-          title={t("team.title")}
-          subtitle={t("team.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroTeam}
+        title={t("team.title")}
+        subtitle={t("team.subtitle")}
+      />
+      <div className="container pt-12">
 
         {/* PI Section */}
         {pi.map((member) => (

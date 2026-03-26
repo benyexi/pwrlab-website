@@ -4,19 +4,21 @@
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
+import { IMAGES } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { MapPin, Mail, Users, ExternalLink, Globe } from "lucide-react";
 
 export default function Contact() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="08"
-          title={t("contact.title")}
-          subtitle={t("contact.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroContact}
+        title={t("contact.title")}
+        subtitle={t("contact.subtitle")}
+      />
+      <div className="container pt-12">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto mb-16">
           {/* Left: Contact Info */}

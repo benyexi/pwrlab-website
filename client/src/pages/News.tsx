@@ -5,20 +5,21 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { newsItems } from "@/lib/data";
+import { newsItems, IMAGES } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { Calendar } from "lucide-react";
 
 export default function News() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="06"
-          title={t("news.title")}
-          subtitle={t("news.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroNews}
+        title={t("news.title")}
+        subtitle={t("news.subtitle")}
+      />
+      <div className="container pt-12">
 
         <div className="max-w-3xl mx-auto space-y-6">
           {newsItems.map((item, i) => (
@@ -48,7 +49,7 @@ function NewsItem({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
       ref={ref}
       className={`fade-in-up ${isVisible ? "visible" : ""}`}
     >
-      <div className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-md transition-shadow duration-300">
+      <div className="bg-card rounded-xl border border-border overflow-hidden card-hover duration-300">
         <div className={`${item.image ? "grid grid-cols-1 md:grid-cols-12" : ""}`}>
           {item.image && (
             <div className="md:col-span-4">

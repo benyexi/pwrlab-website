@@ -85,6 +85,15 @@ const IMAGES = {
   roots: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/research-roots-NEvJ8CWtdh6mpadopTyfhL.webp",
   fieldwork: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/fieldwork-gallery-DsZofphhPD4phhhzS82WPP.webp",
   facilities: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/facilities-station-3Az9RbCHQWVU9fF94Zx7R6.webp",
+  // Page hero banners
+  heroResearch: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-research-SB9nAvpUeA2ddp4S9x5btV.webp",
+  heroProjects: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-projects-XUZqf5Lv5V9yYPn5SsM9sd.webp",
+  heroPublications: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-publications-AongEWd4wuSziF4gKsmQeQ.webp",
+  heroTeam: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-team-NUcYCtXtaQsqubas3ADgan.webp",
+  heroFacilities: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-facilities-H5mpsb9GVPPoB8jcpnxqMz.webp",
+  heroNews: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-news-hpBt7BPKQYiWsSVpQvuYb7.webp",
+  heroGallery: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-gallery-BCVLFMowpvnSJdBgr9Eqmx.webp",
+  heroContact: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-contact-QXvhUDApc5HyCw2uYwSqZe.webp",
 };
 
 // ---- Awards ----

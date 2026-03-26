@@ -7,7 +7,8 @@ import { useState, useMemo } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { publications, type Publication } from "@/lib/data";
+import { publications, IMAGES, type Publication } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { Search, ExternalLink, Star, FileText } from "lucide-react";
 
 export default function Publications() {
@@ -51,13 +52,13 @@ export default function Publications() {
   }, [filtered]);
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="03"
-          title={t("publications.title")}
-          subtitle={t("publications.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroPublications}
+        title={t("publications.title")}
+        subtitle={t("publications.subtitle")}
+      />
+      <div className="container pt-12">
 
         {/* Search & Filter Bar */}
         <div className="flex flex-col sm:flex-row gap-3 mb-10 max-w-2xl mx-auto">

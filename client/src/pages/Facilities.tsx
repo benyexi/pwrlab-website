@@ -5,20 +5,21 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { facilities, selfDevelopedInstruments, type Facility } from "@/lib/data";
+import { facilities, selfDevelopedInstruments, IMAGES, type Facility } from "@/lib/data";
+import PageHero from "@/components/PageHero";
 import { CheckCircle, Award, Cpu, TrendingDown } from "lucide-react";
 
 export default function Facilities() {
   const { lang, t } = useLanguage();
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="container">
-        <SectionHeader
-          number="05"
-          title={t("facilities.title")}
-          subtitle={t("facilities.subtitle")}
-        />
+    <div className="pb-20">
+      <PageHero
+        image={IMAGES.heroFacilities}
+        title={t("facilities.title")}
+        subtitle={t("facilities.subtitle")}
+      />
+      <div className="container pt-12">
 
         {/* Self-developed Instruments Highlight */}
         <div className="mb-16 bg-gradient-to-br from-forest/5 to-forest/10 dark:from-forest/10 dark:to-forest/20 rounded-2xl border border-forest/20 p-8 lg:p-12">
