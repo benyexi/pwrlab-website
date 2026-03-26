@@ -14,6 +14,8 @@ export default function Team() {
   const { lang, t } = useLanguage();
   const pi = teamMembers.filter((m) => m.role === "pi");
   const collaborators = teamMembers.filter((m) => m.role === "collaborator");
+  const faculty = teamMembers.filter((m) => m.role === "faculty");
+  const engineers = teamMembers.filter((m) => m.role === "engineer");
   const phd = teamMembers.filter((m) => m.role === "phd");
   const msc = teamMembers.filter((m) => m.role === "msc");
   const alumniPhd = teamMembers.filter((m) => m.role === "alumni_phd");
@@ -44,6 +46,16 @@ export default function Team() {
 
         {/* Team Stats */}
         <TeamStats lang={lang} phd={phd.length} msc={msc.length} collaborators={collaborators.length} />
+
+        {/* Faculty Members */}
+        {faculty.length > 0 && (
+          <TeamSection title={lang === "en" ? "Faculty Members" : "团队教师"} members={faculty} lang={lang} />
+        )}
+
+        {/* Engineer */}
+        {engineers.length > 0 && (
+          <TeamSection title={lang === "en" ? "Engineers" : "工程师"} members={engineers} lang={lang} />
+        )}
 
         {/* Collaborators */}
         {collaborators.length > 0 && (
@@ -399,16 +411,30 @@ function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" })
       <h4 className="font-display text-base font-semibold text-foreground mb-1">
         {member.name[lang]}
       </h4>
+      {member.title && (member.role === "faculty" || member.role === "engineer") && (
+        <p className="text-xs font-medium text-forest dark:text-forest-light mb-1">
+          {member.title[lang]}
+        </p>
+      )}
+      {member.currentPosition && (member.role === "faculty" || member.role === "engineer") && (
+        <p className="text-xs text-muted-foreground mb-2">
+          {member.currentPosition[lang]}
+        </p>
+      )}
       {member.year && (
         <p className="text-xs text-muted-foreground mb-2">
           {member.role === "alumni_phd" || member.role === "alumni_msc"
             ? `${t("team.classOf")} ${member.year}`
-            : `${t("team.since")} ${member.year}`}
+            : member.role === "faculty" || member.role === "engineer" ? "" : `${t("team.since")} ${member.year}`}
         </p>
       )}
-      {member.currentPosition && member.currentPosition[lang] ? (
+      {!(member.role === "faculty" || member.role === "engineer") && member.currentPosition && member.currentPosition[lang] ? (
         <p className="text-xs text-muted-foreground leading-relaxed">
           {member.currentPosition[lang]}
+        </p>
+      ) : !(member.role === "faculty" || member.role === "engineer") ? (
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {member.interests[lang]}
         </p>
       ) : (
         <p className="text-xs text-muted-foreground leading-relaxed">

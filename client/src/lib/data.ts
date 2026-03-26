@@ -5,7 +5,7 @@
 export interface TeamMember {
   id: string;
   name: { en: string; zh: string };
-  role: "pi" | "collaborator" | "phd" | "msc" | "alumni_phd" | "alumni_msc";
+  role: "pi" | "collaborator" | "faculty" | "engineer" | "phd" | "msc" | "alumni_phd" | "alumni_msc";
   photo: string;
   interests: { en: string; zh: string };
   bio?: { en: string; zh: string };
@@ -210,6 +210,17 @@ export const teamMembers: TeamMember[] = [
     interests: { en: "Soil physics, vadose zone hydrology, water resource management", zh: "土壤物理学、包气带水文学、水资源管理" },
     bio: { en: "Dr. Hu is a soil physicist at Plant and Food Research, New Zealand.", zh: "胡伟博士是新西兰Plant and Food Research土壤物理学家。" },
   },
+  // ---- Faculty Members ----
+  { id: "duan-jie", name: { en: "Jie Duan", zh: "段劼" }, role: "faculty", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face", interests: { en: "Sustainable forest management, xylem hydraulic traits, plantation irrigation", zh: "森林培育与可持续经营、木质部水力特性、人工林灌溉管理" }, title: { en: "Professor, PhD Supervisor", zh: "教授、博士生导师" }, currentPosition: { en: "College of Forestry, Beijing Forestry University", zh: "北京林业大学林学院" } },
+  { id: "huang-qingqing", name: { en: "Qingqing Huang", zh: "黄青青" }, role: "faculty", photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face", interests: { en: "Smart forestry monitoring, UAV remote sensing, forestry equipment & informatics", zh: "智慧林业监测、无人机遥感、林业装备与信息化" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "College of Engineering, Beijing Forestry University", zh: "北京林业大学工学院" } },
+  { id: "wang-xin", name: { en: "Xin Wang", zh: "王鑫" }, role: "faculty", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation, plantation carbon storage, soil respiration", zh: "森林培育、人工林碳储量、土壤呼吸" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "College of Forestry, Beijing Forestry University", zh: "北京林业大学林学院" } },
+  { id: "han-qiaoling", name: { en: "Qiaoling Han", zh: "韩巧玲" }, role: "faculty", photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face", interests: { en: "AI-based soil CT image processing, multimodal data analysis, deep learning", zh: "人工智能、土壤CT图像处理、多模态数据分析" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "College of Engineering, Beijing Forestry University", zh: "北京林业大学工学院" } },
+  { id: "yang-meng", name: { en: "Meng Yang", zh: "杨猛" }, role: "faculty", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Computer graphics, VR/AR, forest health immersive experience, AI", zh: "计算机图形学、虚拟/增强现实、森林康养沉浸式体验、人工智能" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "School of Information Science and Technology, Beijing Forestry University", zh: "北京林业大学信息学院" } },
+  { id: "di-nan-faculty", name: { en: "Nan Di", zh: "邸楠" }, role: "faculty", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Plantation ecohydrology, sap flow measurement, water use efficiency", zh: "人工林生态水文、液流测量、水分利用效率" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "School of Ecology and Environment, Inner Mongolia University", zh: "内蒙古大学生态与环境学院" } },
+  { id: "li-ximeng", name: { en: "Ximeng Li", zh: "李熙萌" }, role: "faculty", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face", interests: { en: "Carbon metabolism regulation, vascular plant drought strategies, crop water use efficiency", zh: "碳代谢调控、维管植物抗旱策略、作物水分利用效率" }, title: { en: "Associate Professor", zh: "副教授" }, currentPosition: { en: "College of Life and Environmental Sciences, Minzu University of China", zh: "中央民族大学生命与环境科学学院" } },
+  { id: "liu-yang-faculty", name: { en: "Yang Liu", zh: "刘洋" }, role: "faculty", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation, plantation water relations", zh: "森林培育、人工林水分关系" }, title: { en: "Lecturer", zh: "讲师" }, currentPosition: { en: "School of Agriculture, Forestry, Medicine and Pharmacy, National Open University of China", zh: "国家开放大学农林医药教学部" } },
+  // ---- Engineer ----
+  { id: "li-xin", name: { en: "Xin Li", zh: "李新" }, role: "engineer", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face", interests: { en: "Sap flow probe R&D, forestry instrument manufacturing", zh: "液流探针研发、林业仪器制造" }, title: { en: "Engineer", zh: "工程师" }, currentPosition: { en: "Beijing Shiyutong Technology Co., Ltd.", zh: "北京时域通科技有限公司" } },
   // ---- PhD Students (12) ----
   { id: "sajid-hussain", name: { en: "Sajid Hussain", zh: "Sajid Hussain" }, role: "phd", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face", interests: { en: "Plantation water management, tree physiology", zh: "人工林水分管理、树木生理" }, year: "2021" },
   { id: "kong-xin", name: { en: "Xin Kong (孔鑫)", zh: "孔鑫" }, role: "phd", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face", interests: { en: "Heatwave impacts on poplar plantations", zh: "热浪对杨树人工林的影响" }, year: "2022" },
@@ -234,9 +245,9 @@ export const teamMembers: TeamMember[] = [
   { id: "an-shan", name: { en: "Shan An (安珊)", zh: "安珊" }, role: "msc", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest ecosystem water balance", zh: "森林生态系统水量平衡" }, year: "2025" },
   { id: "fu-guobin", name: { en: "Guobin Fu (符国斌)", zh: "符国斌" }, role: "msc", photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face", interests: { en: "Sensor development and calibration", zh: "传感器研发与标定" }, year: "2025" },
   // ---- Graduated PhD Students ----
-  { id: "di-nan", name: { en: "Nan Di", zh: "邸楠" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2019", currentPosition: { en: "Inner Mongolia University", zh: "内蒙古大学生态与环境学院" } },
+
   { id: "li-doudou", name: { en: "Doudou Li", zh: "李豆豆" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2021", currentPosition: { en: "Institute of Medicinal Plant Development, CAMS", zh: "中国医学科学研究院药用植物研究所" } },
-  { id: "liu-yang-phd", name: { en: "Yang Liu", zh: "刘洋" }, role: "alumni_phd", photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2025", currentPosition: { en: "National Open University of China", zh: "国家开放大学农林医药部" } },
+
   // ---- Graduated MSc Students ----
   { id: "zhang-ruina", name: { en: "Ruina Zhang", zh: "张瑞娜" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2019", currentPosition: { en: "Beijing Greenorno Technology", zh: "北京绿奥诺技术服务有限公司" } },
   { id: "ma-xu", name: { en: "Xu Ma", zh: "马煕" }, role: "alumni_msc", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face", interests: { en: "Forest cultivation", zh: "森林培育" }, year: "2020", currentPosition: { en: "Chinese Society of Forestry", zh: "中国林学会咨询部" } },
