@@ -4,7 +4,7 @@
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import SectionHeader from "@/components/SectionHeader";
-import { MapPin, Mail, Users, ExternalLink } from "lucide-react";
+import { MapPin, Mail, Users, ExternalLink, Globe } from "lucide-react";
 
 export default function Contact() {
   const { lang, t } = useLanguage();
@@ -18,7 +18,7 @@ export default function Contact() {
           subtitle={t("contact.subtitle")}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto mb-16">
           {/* Left: Contact Info */}
           <div className="space-y-8">
             <div className="flex items-start gap-4">
@@ -95,6 +95,72 @@ export default function Contact() {
               >
                 {t("contact.map.viewLarger")} <ExternalLink className="w-3 h-3" />
               </a>
+            </div>
+          </div>
+        </div>
+        {/* Visitor Analytics */}
+        <div className="max-w-5xl mx-auto">
+          <h3 className="font-display text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
+            <Globe className="w-5 h-5 text-forest dark:text-forest-light" />
+            {lang === "en" ? "Visitor Map" : "访客地图"}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* ClustrMaps 3D Globe Widget */}
+            <div className="bg-card rounded-xl border border-border p-6 flex flex-col items-center">
+              <div className="w-full flex justify-center">
+                <a href="https://clustrmaps.com/site/1c7xz" title="Visit tracker">
+                  <img
+                    src="//www.clustrmaps.com/map_v2.png?d=YourClusterMapID&cl=ffffff&w=300"
+                    alt="ClustrMaps"
+                    className="rounded-lg"
+                    onError={(e) => {
+                      // Fallback: load the 3D globe widget via script
+                      const target = e.currentTarget.parentElement;
+                      if (target) {
+                        target.innerHTML = '<div id="clustrmaps-widget"></div>';
+                        const script = document.createElement('script');
+                        script.type = 'text/javascript';
+                        script.id = 'clstr_globe';
+                        script.src = '//clustrmaps.com/globe.js?d=YourClusterMapID';
+                        target.appendChild(script);
+                      }
+                    }}
+                  />
+                </a>
+              </div>
+              <p className="text-xs text-muted-foreground mt-4 text-center">
+                {lang === "en"
+                  ? "Real-time visitor locations from around the world"
+                  : "来自世界各地的实时访客位置"}
+              </p>
+            </div>
+            {/* Visitor Stats */}
+            <div className="space-y-4">
+              <div className="bg-card rounded-xl border border-border p-6">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {lang === "en" ? "Website launched" : "网站上线时间"}
+                </p>
+                <p className="font-display text-2xl font-bold text-forest dark:text-forest-light">2026</p>
+              </div>
+              <div className="bg-card rounded-xl border border-border p-6">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {lang === "en" ? "WeChat Public Account" : "微信公众号"}
+                </p>
+                <p className="font-display text-2xl font-bold text-forest dark:text-forest-light">PWRlab</p>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {lang === "en" ? "8,389 followers · 440,000+ reads" : "8,389 关注 · 44万+ 阅读"}
+                </p>
+              </div>
+              <div className="bg-card rounded-xl border border-border p-6">
+                <p className="text-sm text-muted-foreground mb-2">
+                  {lang === "en" ? "Note" : "说明"}
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {lang === "en"
+                    ? "To activate the ClustrMaps globe, register at clustrmaps.com with the site URL and replace the widget ID in the source code."
+                    : "要激活 ClustrMaps 地球仪，请在 clustrmaps.com 注册并用网站 URL 获取 widget ID，替换源代码中的 ID。"}
+                </p>
+              </div>
             </div>
           </div>
         </div>

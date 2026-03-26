@@ -7,6 +7,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
 import { IMAGES } from "@/lib/data";
 import { Droplets, TreePine, Sprout, CloudSun, Brain } from "lucide-react";
+import CollaborationMap from "@/components/CollaborationMap";
 
 const researchAreas = [
   {
@@ -48,11 +49,14 @@ export default function Research() {
           subtitle={t("research.subtitle")}
         />
 
-        <div className="space-y-8">
+        <div className="space-y-8 mb-16">
           {researchAreas.map((area, i) => (
             <ResearchCard key={area.key} area={area} index={i} />
           ))}
         </div>
+
+        {/* Global Collaboration Network Map */}
+        <CollaborationMap />
       </div>
     </div>
   );
