@@ -1,13 +1,14 @@
 /*
  * PWRlab Team Page — Botanical Modernism
  * Enhanced PI card with education, honors, positions, awards
+ * Editorial roles, teaching, team stats
  * Then grid of collaborators, students, alumni
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { teamMembers, awards, type TeamMember } from "@/lib/data";
-import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users } from "lucide-react";
+import { teamMembers, awards, editorialRoles, courses, type TeamMember } from "@/lib/data";
+import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users, PenTool, BookMarked } from "lucide-react";
 
 export default function Team() {
   const { lang, t } = useLanguage();
@@ -33,6 +34,12 @@ export default function Team() {
 
         {/* Awards Section */}
         <AwardsSection lang={lang} />
+
+        {/* Editorial Roles */}
+        <EditorialSection lang={lang} />
+
+        {/* Teaching */}
+        <TeachingSection lang={lang} />
 
         {/* Team Stats */}
         <TeamStats lang={lang} phd={phd.length} msc={msc.length} collaborators={collaborators.length} />
@@ -187,7 +194,7 @@ function AwardsSection({ lang }: { lang: "en" | "zh" }) {
         <Trophy className="w-5 h-5 text-gold dark:text-gold-light" />
         {lang === "en" ? "Awards & Honors" : "获奖情况"}
       </h3>
-      <div className="bg-card rounded-xl border border-border overflow-hidden">
+      <div className="bg-card rounded-xl border border-border overflow-hidden max-h-[500px] overflow-y-auto">
         <div className="divide-y divide-border">
           {awards.map((award) => (
             <div key={award.id} className="flex items-start gap-4 p-4 lg:p-5 hover:bg-muted/30 transition-colors">
@@ -212,13 +219,128 @@ function AwardsSection({ lang }: { lang: "en" | "zh" }) {
   );
 }
 
+function EditorialSection({ lang }: { lang: "en" | "zh" }) {
+  const { ref, isVisible } = useScrollAnimation();
+  const editors = editorialRoles.filter((r) => r.type === "editor");
+  const guestEditors = editorialRoles.filter((r) => r.type === "guest_editor");
+
+  return (
+    <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
+      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+        <PenTool className="w-5 h-5 text-forest dark:text-forest-light" />
+        {lang === "en" ? "Editorial Service" : "学术兼职"}
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Editorial Board */}
+        <div className="bg-card rounded-xl border border-border p-6">
+          <h4 className="text-sm font-semibold text-foreground mb-4">
+            {lang === "en" ? "Editorial Board" : "编委"}
+          </h4>
+          <ul className="space-y-3">
+            {editors.map((r) => (
+              <li key={r.id} className="text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">{r.role[lang]}</span>
+                <br />
+                <span className="text-xs">{r.journal}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Guest Editor */}
+        <div className="bg-card rounded-xl border border-border p-6">
+          <h4 className="text-sm font-semibold text-foreground mb-4">
+            {lang === "en" ? "Guest Editor" : "客座编辑"}
+          </h4>
+          <ul className="space-y-3">
+            {guestEditors.map((r) => (
+              <li key={r.id} className="text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">{r.role[lang]}</span>
+                <br />
+                <span className="text-xs italic">{r.journal}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TeachingSection({ lang }: { lang: "en" | "zh" }) {
+  const { ref, isVisible } = useScrollAnimation();
+  const undergrad = courses.filter((c) => c.level === "undergraduate");
+  const grad = courses.filter((c) => c.level === "graduate");
+  const intl = courses.filter((c) => c.level === "international");
+
+  return (
+    <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""} mb-12`}>
+      <h3 className="font-display text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
+        <BookMarked className="w-5 h-5 text-forest dark:text-forest-light" />
+        {lang === "en" ? "Teaching" : "教学"}
+      </h3>
+      <div className="bg-card rounded-xl border border-border p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Undergraduate */}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3">
+              {lang === "en" ? "Undergraduate" : "本科课程"}
+            </h4>
+            <ul className="space-y-2">
+              {undergrad.map((c) => (
+                <li key={c.id} className="text-sm text-muted-foreground">
+                  {c.name[lang]}
+                  {c.distinction && (
+                    <span className="block text-xs text-gold dark:text-gold-light mt-0.5">
+                      {c.distinction[lang]}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Graduate */}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3">
+              {lang === "en" ? "Graduate" : "研究生课程"}
+            </h4>
+            <ul className="space-y-2">
+              {grad.map((c) => (
+                <li key={c.id} className="text-sm text-muted-foreground">
+                  {c.name[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* International */}
+          <div>
+            <h4 className="text-sm font-semibold text-foreground mb-3">
+              {lang === "en" ? "International Programs" : "留学生课程"}
+            </h4>
+            <ul className="space-y-2">
+              {intl.map((c) => (
+                <li key={c.id} className="text-sm text-muted-foreground">
+                  {c.name[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function TeamStats({ lang, phd, msc, collaborators }: { lang: "en" | "zh"; phd: number; msc: number; collaborators: number }) {
   const { ref, isVisible } = useScrollAnimation();
   const stats = [
     { value: `${phd}`, label: lang === "en" ? "PhD Students" : "博士研究生", sub: lang === "en" ? "Including 3 international" : "含3名留学生" },
     { value: `${msc}`, label: lang === "en" ? "MSc Students" : "硕士研究生" },
     { value: `${collaborators}`, label: lang === "en" ? "International Collaborators" : "国际合作者" },
+    { value: "3+20", label: lang === "en" ? "Graduated (PhD+MSc)" : "已毕业（博+硕）", sub: lang === "en" ? "43 undergrad mentees" : "指导本科生43人" },
+    { value: "1", label: lang === "en" ? "Presidential Scholarship" : "校长奖学金" },
     { value: "7", label: lang === "en" ? "National Scholarships" : "国家奖学金", sub: lang === "en" ? "Among students" : "学生获得" },
+    { value: "3", label: lang === "en" ? "Shen Guofang Awards" : "沈国舫奖学金" },
+    { value: "3+1", label: lang === "en" ? "Outstanding Dissertations" : "优秀论文", sub: lang === "en" ? "3 PhD + 1 MSc" : "博士3篇 + 硕士1篇" },
   ];
 
   return (
