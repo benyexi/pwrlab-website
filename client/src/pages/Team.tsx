@@ -32,6 +32,39 @@ export default function Team() {
         subtitle={t("team.subtitle")}
       />
 
+      {/* Academic Advisor Section */}
+      <ContentSection bg="white">
+        <div className="container max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-normal tracking-wide text-center mb-10" style={{ color: '#2d3436' }}>
+            {lang === "en" ? "Academic Advisor" : "学术顾问"}
+          </h2>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 p-8 rounded-2xl" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f5ed 100%)' }}>
+            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden flex-shrink-0 shadow-lg ring-4 ring-white">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/jia-liming_ae97f324.png"
+                alt={lang === "en" ? "Prof. Liming Jia" : "贾黎明教授"}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-xl md:text-2xl font-medium mb-2" style={{ color: '#2d3436' }}>
+                {lang === "en" ? "Prof. Liming Jia" : "贾黎明 教授"}
+              </h3>
+              <p className="text-sm opacity-70 mb-4" style={{ color: '#2d3436' }}>
+                {lang === "en" ? "Professor, Beijing Forestry University" : "北京林业大学 教授、博士生导师"}
+              </p>
+              <p className="text-sm leading-relaxed opacity-80 max-w-xl" style={{ color: '#2d3436' }}>
+                {lang === "en"
+                  ? "Expert in plantation silviculture and forest water relations. Research focuses on water-carbon coupling mechanisms in planted forests, site-adapted silviculture, and sustainable plantation management."
+                  : "人工林培育与森林水分关系领域专家。研究方向包括人工林水碳耦合机制、立地适应性培育及人工林可持续经营。"}
+              </p>
+            </div>
+          </div>
+        </div>
+      </ContentSection>
+
+      <WaveDivider fill="#ffffff" />
+
       {/* PI Section */}
       <ContentSection bg="white">
         {pi.map((member) => (

@@ -1745,7 +1745,7 @@ export const facilities: Facility[] = [
       en: "Independently designed thermal dissipation probe (TDP) for measuring tree sap flow. Achieves comparable accuracy to commercial products at 50\u201360% lower cost. Widely adopted by research institutions across China.",
       zh: "\u81ea\u4e3b\u8bbe\u8ba1\u7684\u70ed\u6269\u6563\u6db2\u6d41\u63a2\u9488\uff08TDP\uff09\uff0c\u7cbe\u5ea6\u4e0e\u8fdb\u53e3\u4ea7\u54c1\u76f8\u5f53\uff0c\u6210\u672c\u964d\u4f4e50\u201360%\u3002\u5df2\u88ab\u5168\u56fd\u591a\u5bb6\u7814\u7a76\u673a\u6784\u91c7\u7528\u3002",
     },
-    image: IMAGES.ecohydrology,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/tdp-probe-enhanced_faf28621.png",
     specs: [
       { en: "Thermal dissipation principle (Granier method)", zh: "\u70ed\u6269\u6563\u539f\u7406\uff08Granier\u65b9\u6cd5\uff09" },
       { en: "50\u201360% cost reduction vs imports", zh: "\u6210\u672c\u6bd4\u8fdb\u53e3\u964d\u4f4e50\u201360%" },
@@ -1759,7 +1759,7 @@ export const facilities: Facility[] = [
       en: "Heat field deformation (HFD) sap flow probe for measuring radial sap flow profiles in tree stems. Enables detailed analysis of sap flow distribution across sapwood.",
       zh: "\u70ed\u573a\u53d8\u5f62\uff08HFD\uff09\u6db2\u6d41\u63a2\u9488\uff0c\u7528\u4e8e\u6d4b\u91cf\u6811\u5e72\u5f84\u5411\u6db2\u6d41\u5256\u9762\u3002\u53ef\u8be6\u7ec6\u5206\u6790\u8fb9\u6750\u4e2d\u6db2\u6d41\u5206\u5e03\u3002",
     },
-    image: IMAGES.ecohydrology,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hfd-probe-enhanced_d8d2bf60.png",
     specs: [
       { en: "Heat field deformation principle", zh: "\u70ed\u573a\u53d8\u5f62\u539f\u7406" },
       { en: "Radial sap flow profiling", zh: "\u5f84\u5411\u6db2\u6d41\u5256\u9762\u6d4b\u91cf" },
@@ -1773,7 +1773,7 @@ export const facilities: Facility[] = [
       en: "Heat ratio method (HRM) sap flow probe capable of measuring low and reverse sap flows. Ideal for monitoring nighttime water movement and hydraulic redistribution.",
       zh: "\u70ed\u6bd4\u7387\u6cd5\uff08HRM\uff09\u6db2\u6d41\u63a2\u9488\uff0c\u53ef\u6d4b\u91cf\u4f4e\u6d41\u901f\u548c\u53cd\u5411\u6db2\u6d41\u3002\u9002\u7528\u4e8e\u76d1\u6d4b\u591c\u95f4\u6c34\u5206\u8fd0\u52a8\u548c\u6c34\u529b\u518d\u5206\u914d\u3002",
     },
-    image: IMAGES.ecohydrology,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hrm-probe-enhanced_29bddc82.png",
     specs: [
       { en: "Heat ratio method principle", zh: "\u70ed\u6bd4\u7387\u6cd5\u539f\u7406" },
       { en: "Low & reverse flow measurement", zh: "\u4f4e\u6d41\u901f\u53ca\u53cd\u5411\u6d41\u6d4b\u91cf" },
@@ -1787,7 +1787,7 @@ export const facilities: Facility[] = [
       en: "Innovative dual-mode sap flow probe combining TDP and HRM methods in a single instrument. Provides comprehensive sap flow data across the full range of flow velocities.",
       zh: "\u521b\u65b0\u6027\u53cc\u6a21\u5f0f\u6db2\u6d41\u63a2\u9488\uff0c\u5c06TDP\u548cHRM\u65b9\u6cd5\u96c6\u6210\u4e8e\u4e00\u4f53\u3002\u53ef\u5728\u5168\u6d41\u901f\u8303\u56f4\u5185\u63d0\u4f9b\u5168\u9762\u7684\u6db2\u6d41\u6570\u636e\u3002",
     },
-    image: IMAGES.ecohydrology,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hrm-probe-enhanced_29bddc82.png",
     specs: [
       { en: "Combined TDP + HRM in one probe", zh: "TDP + HRM\u53cc\u6a21\u5f0f\u96c6\u6210" },
       { en: "Full velocity range coverage", zh: "\u5168\u6d41\u901f\u8303\u56f4\u8986\u76d6" },
@@ -1801,7 +1801,7 @@ export const facilities: Facility[] = [
       en: "High-precision electronic tensiometer for continuous soil water potential monitoring. Features automatic data logging and remote data transmission capabilities.",
       zh: "\u9ad8\u7cbe\u5ea6\u7535\u5b50\u5f20\u529b\u8ba1\uff0c\u7528\u4e8e\u8fde\u7eed\u76d1\u6d4b\u571f\u58e4\u6c34\u52bf\u3002\u5177\u5907\u81ea\u52a8\u6570\u636e\u8bb0\u5f55\u548c\u8fdc\u7a0b\u6570\u636e\u4f20\u8f93\u529f\u80fd\u3002",
     },
-    image: IMAGES.facilities,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/tensiometer-enhanced_b10358d7.png",
     specs: [
       { en: "Continuous soil water potential monitoring", zh: "\u8fde\u7eed\u571f\u58e4\u6c34\u52bf\u76d1\u6d4b" },
       { en: "Automatic data logging", zh: "\u81ea\u52a8\u6570\u636e\u8bb0\u5f55" },
@@ -1810,12 +1810,12 @@ export const facilities: Facility[] = [
   },
   {
     id: "soil-moisture",
-    name: { en: "Self-developed Deep Soil Moisture Profile Probe", zh: "\u81ea\u7814\u6df1\u5c42\u571f\u58e4\u6c34\u5206\u5256\u9762\u63a2\u9488" },
+    name: { en: "Self-developed Deep Soil Moisture Profile Sensor", zh: "\u81ea\u7814\u6df1\u5c42\u571f\u58e4\u6c34\u5206\u5256\u9762\u4f20\u611f\u5668" },
     description: {
-      en: "Multi-depth soil moisture monitoring probe for measuring volumetric water content profiles from surface to deep soil layers. Essential for understanding root water uptake patterns.",
-      zh: "\u591a\u6df1\u5ea6\u571f\u58e4\u6c34\u5206\u76d1\u6d4b\u63a2\u9488\uff0c\u7528\u4e8e\u6d4b\u91cf\u4ece\u8868\u5c42\u5230\u6df1\u5c42\u571f\u58e4\u7684\u4f53\u79ef\u542b\u6c34\u91cf\u5256\u9762\u3002\u5bf9\u7406\u89e3\u6839\u7cfb\u5438\u6c34\u6a21\u5f0f\u81f3\u5173\u91cd\u8981\u3002",
+      en: "Multi-depth soil moisture monitoring sensor for measuring volumetric water content profiles from surface to deep soil layers. Essential for understanding root water uptake patterns.",
+      zh: "\u591a\u6df1\u5ea6\u571f\u58e4\u6c34\u5206\u76d1\u6d4b\u4f20\u611f\u5668\uff0c\u7528\u4e8e\u6d4b\u91cf\u4ece\u8868\u5c42\u5230\u6df1\u5c42\u571f\u58e4\u7684\u4f53\u79ef\u542b\u6c34\u91cf\u5256\u9762\u3002\u5bf9\u7406\u89e3\u6839\u7cfb\u5438\u6c34\u6a21\u5f0f\u81f3\u5173\u91cd\u8981\u3002",
     },
-    image: IMAGES.facilities,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/soil-profile-enhanced_60977b47.png",
     specs: [
       { en: "Multi-depth profile measurement", zh: "\u591a\u6df1\u5ea6\u5256\u9762\u6d4b\u91cf" },
       { en: "Surface to deep soil monitoring", zh: "\u8868\u5c42\u81f3\u6df1\u5c42\u571f\u58e4\u76d1\u6d4b" },
@@ -1829,7 +1829,7 @@ export const facilities: Facility[] = [
       en: "High-resolution dendrometer for measuring sub-micrometer stem diameter variations. Captures diurnal stem shrinkage and swelling patterns linked to tree water status.",
       zh: "\u9ad8\u5206\u8fa8\u7387\u6811\u6728\u5f84\u5411\u751f\u957f\u4eea\uff0c\u7528\u4e8e\u6d4b\u91cf\u4e9a\u5fae\u7c73\u7ea7\u830e\u5e72\u76f4\u5f84\u53d8\u5316\u3002\u53ef\u6355\u6349\u4e0e\u6811\u6728\u6c34\u5206\u72b6\u6001\u76f8\u5173\u7684\u65e5\u5468\u671f\u830e\u5e72\u6536\u7f29\u548c\u81a8\u80c0\u6a21\u5f0f\u3002",
     },
-    image: IMAGES.facilities,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/dendrometer-enhanced_45f9e1ee.png",
     specs: [
       { en: "Sub-micrometer resolution", zh: "\u4e9a\u5fae\u7c73\u7ea7\u5206\u8fa8\u7387" },
       { en: "Diurnal shrinkage/swelling tracking", zh: "\u65e5\u5468\u671f\u6536\u7f29/\u81a8\u80c0\u8ffd\u8e2a" },
@@ -1843,25 +1843,11 @@ export const facilities: Facility[] = [
       en: "CI-600 root scanner system for non-destructive monitoring of fine root dynamics, including root production, mortality, and turnover rates at multiple soil depths.",
       zh: "CI-600\u6839\u7cfb\u626b\u63cf\u4eea\u7cfb\u7edf\uff0c\u7528\u4e8e\u975e\u7834\u574f\u6027\u76d1\u6d4b\u7ec6\u6839\u52a8\u6001\uff0c\u5305\u62ec\u4e0d\u540c\u571f\u58e4\u6df1\u5ea6\u7684\u6839\u7cfb\u751f\u4ea7\u3001\u6b7b\u4ea1\u548c\u5468\u8f6c\u901f\u7387\u3002",
     },
-    image: IMAGES.roots,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/minirhizotron-enhanced_31c92e18.png",
     specs: [
       { en: "CI-600 In-Situ Root Imager", zh: "CI-600\u539f\u4f4d\u6839\u7cfb\u6210\u50cf\u4eea" },
       { en: "60+ observation tubes", zh: "60\u4f59\u6839\u89c2\u6d4b\u7ba1" },
       { en: "WinRHIZO Tron analysis software", zh: "WinRHIZO Tron\u5206\u6790\u8f6f\u4ef6" },
-    ],
-  },
-  {
-    id: "eddycovariance",
-    name: { en: "Eddy Covariance System", zh: "\u6da1\u5ea6\u76f8\u5173\u7cfb\u7edf" },
-    description: {
-      en: "Open-path eddy covariance system for measuring ecosystem-level fluxes of water vapor, CO2, and energy above the plantation canopy.",
-      zh: "\u5f00\u8def\u6da1\u5ea6\u76f8\u5173\u7cfb\u7edf\uff0c\u7528\u4e8e\u6d4b\u91cf\u4eba\u5de5\u6797\u51a0\u5c42\u4e0a\u65b9\u751f\u6001\u7cfb\u7edf\u6c34\u5e73\u7684\u6c34\u6c7d\u3001CO2\u548c\u80fd\u91cf\u901a\u91cf\u3002",
-    },
-    image: IMAGES.facilities,
-    specs: [
-      { en: "LI-7500DS open-path analyzer", zh: "LI-7500DS\u5f00\u8def\u5206\u6790\u4eea" },
-      { en: "CSAT3 sonic anemometer", zh: "CSAT3\u8d85\u58f0\u98ce\u901f\u4eea" },
-      { en: "30m flux tower", zh: "30\u7c73\u901a\u91cf\u5854" },
     ],
   },
   {
@@ -1871,7 +1857,7 @@ export const facilities: Facility[] = [
       en: "Comprehensive meteorological monitoring including air temperature, humidity, precipitation, wind speed, solar radiation, and soil temperature/moisture profiles.",
       zh: "\u7efc\u5408\u6c14\u8c61\u76d1\u6d4b\uff0c\u5305\u62ec\u6c14\u6e29\u3001\u6e7f\u5ea6\u3001\u964d\u6c34\u3001\u98ce\u901f\u3001\u592a\u9633\u8f90\u5c04\u548c\u571f\u58e4\u6e29\u6e7f\u5ea6\u5256\u9762\u3002",
     },
-    image: IMAGES.facilities,
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/weather-station-enhanced_a03a1e7a.png",
     specs: [
       { en: "Campbell Scientific CR6 logger", zh: "Campbell Scientific CR6\u91c7\u96c6\u5668" },
       { en: "Soil moisture profile (TDR)", zh: "\u571f\u58e4\u6c34\u5206\u5256\u9762\uff08TDR\uff09" },
