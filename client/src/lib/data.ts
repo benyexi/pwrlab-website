@@ -9,12 +9,23 @@ export interface TeamMember {
   photo: string;
   interests: { en: string; zh: string };
   bio?: { en: string; zh: string };
+  title?: { en: string; zh: string };
+  education?: { en: string; zh: string }[];
+  honors?: { en: string; zh: string }[];
+  positions?: { en: string; zh: string }[];
   email?: string;
   scholar?: string;
   researchgate?: string;
   orcid?: string;
   website?: string;
   year?: string; // graduation year for alumni, enrollment year for students
+}
+
+export interface Award {
+  id: string;
+  title: { en: string; zh: string };
+  year: number;
+  rank?: string;
 }
 
 export interface Project {
@@ -74,6 +85,60 @@ const IMAGES = {
   facilities: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/facilities-station-3Az9RbCHQWVU9fF94Zx7R6.webp",
 };
 
+// ---- Awards ----
+export const awards: Award[] = [
+  {
+    id: "award-2024-liangxi",
+    title: {
+      en: "Liangxi Forestry Science & Technology Award, 2nd Prize — Smart Irrigation for Poplar Plantations",
+      zh: "梁希林业科学技术奖二等奖 — 杨树人工林智慧灌溉",
+    },
+    year: 2024,
+    rank: "#1",
+  },
+  {
+    id: "award-2024-cast",
+    title: {
+      en: "China Association for S&T — Research Instrument Innovation Case Award",
+      zh: "中国科协科研仪器创新案例奖",
+    },
+    year: 2024,
+  },
+  {
+    id: "award-2020-liangxi-paper",
+    title: {
+      en: "8th Liangxi Young Paper Award, 1st Prize",
+      zh: "第八届梁希青年论文奖一等奖",
+    },
+    year: 2020,
+  },
+  {
+    id: "award-2018-moe",
+    title: {
+      en: "Ministry of Education Science & Technology Award, 2nd Prize",
+      zh: "教育部科学技术奖二等奖",
+    },
+    year: 2018,
+  },
+  {
+    id: "award-2016-liangxi",
+    title: {
+      en: "Liangxi Forestry Science & Technology Award, 2nd Prize",
+      zh: "梁希林业科学技术奖二等奖",
+    },
+    year: 2016,
+    rank: "#2",
+  },
+  {
+    id: "award-cast-paper",
+    title: {
+      en: "4th CAST Outstanding Paper Award (sole recipient in forestry)",
+      zh: "第四届中国科协优秀论文奖（林学唯一）",
+    },
+    year: 2017,
+  },
+];
+
 // ---- Team Members ----
 export const teamMembers: TeamMember[] = [
   {
@@ -81,18 +146,37 @@ export const teamMembers: TeamMember[] = [
     name: { en: "Prof. Benye Xi", zh: "席本野 教授" },
     role: "pi",
     photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face",
+    title: {
+      en: "Professor & PhD Supervisor (Exceptionally Promoted), College of Forestry, Beijing Forestry University",
+      zh: "教授、博士生导师（破格晋升），北京林业大学林学院",
+    },
     interests: {
       en: "Plantation ecohydrology, tree water relations, plant physiological ecology",
       zh: "人工林生态水文、林木水分关系、植物生理生态学",
     },
     bio: {
-      en: "Prof. Xi leads the Plantation Water Relation Lab at Beijing Forestry University. His research focuses on understanding water cycling processes in planted forests and developing sustainable management strategies for plantation ecosystems. He has published extensively in leading journals including Agricultural and Forest Meteorology, Tree Physiology, and Forest Ecology and Management.",
-      zh: "席本野教授是北京林业大学人工林水分关系实验室负责人。研究聚焦于人工林水循环过程及可持续经营策略。在Agricultural and Forest Meteorology、Tree Physiology、Forest Ecology and Management等国际主流期刊发表多篇论文。",
+      en: "Prof. Xi (b. 1985, Gongyi, Henan) leads the Plantation Water Relation Lab at Beijing Forestry University. He is a recipient of the National \"Ten Thousand Talents Plan\" Young Top Talent award and National Forestry Bureau Young S&T Innovation Talent. He serves as PI at the National Key Lab of Efficient Forest Production, Director of the Key Lab of Forest Cultivation and Ecosystem in Arid/Semi-arid Areas (National Forestry Bureau), and core member (#2) of the National Poplar Plantation Innovation Team. His lab has developed a series of self-designed sap flow probes and soil sensors deployed across 1,600+ units nationwide.",
+      zh: "席本野（1985年生，河南巩义），北京林业大学人工林水分关系实验室负责人。入选国家\"万人计划\"青年拔尖人才、国家林业局青年科技创新人才。现任林木高效培育全国重点实验室PI、国家林业局干旱半干旱地区森林培育及生态系统研究重点实验室主任、国家杨树人工林创新团队核心成员（排名第2）。团队自主研发的液流探针和土壤传感器已在全国部署1600余套。",
     },
+    education: [
+      { en: "BSc Forestry, Central South University of Forestry & Technology (2003–2007)", zh: "学士，林学，中南林业科技大学（2003–2007）" },
+      { en: "PhD Forest Cultivation, Beijing Forestry University (2007–2013)", zh: "博士，森林培育学，北京林业大学（2007–2013）" },
+      { en: "Visiting Scholar, University of Canterbury, New Zealand (2012–2013, 2015)", zh: "访问学者，新西兰坎特伯雷大学（2012–2013, 2015）" },
+      { en: "Visiting Scholar, Lincoln University & Plant and Food Research, NZ (2017–2018)", zh: "访问学者，新西兰林肯大学 & Plant and Food Research（2017–2018）" },
+    ],
+    honors: [
+      { en: "National \"Ten Thousand Talents Plan\" Young Top Talent", zh: "国家\"万人计划\"青年拔尖人才" },
+      { en: "National Forestry Bureau Young S&T Innovation Talent", zh: "国家林业局青年科技创新人才" },
+    ],
+    positions: [
+      { en: "PI, National Key Lab of Efficient Forest Production", zh: "林木高效培育全国重点实验室PI" },
+      { en: "Director, Key Lab of Forest Cultivation & Ecosystem in Arid/Semi-arid Areas", zh: "干旱半干旱地区森林培育及生态系统研究重点实验室主任" },
+      { en: "Core Member (#2), National Poplar Plantation Innovation Team", zh: "国家杨树人工林创新团队核心成员（排名第2）" },
+    ],
     email: "xibenye@bjfu.edu.cn",
-    scholar: "https://scholar.google.com",
-    researchgate: "https://www.researchgate.net",
-    orcid: "https://orcid.org",
+    scholar: "https://scholar.google.com/citations?user=8L5SxYIAAAAJ",
+    researchgate: "https://www.researchgate.net/profile/Benye-Xi",
+    orcid: "https://orcid.org/0000-0003-4730-6384",
   },
   {
     id: "mark-coleman",
@@ -111,81 +195,281 @@ export const teamMembers: TeamMember[] = [
     website: "https://www.uidaho.edu",
   },
   {
-    id: "student-zhang",
-    name: { en: "Zhang Wei", zh: "张伟" },
+    id: "brent-clothier",
+    name: { en: "Dr. Brent Clothier", zh: "Brent Clothier 博士" },
+    role: "collaborator",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Soil physics, root water uptake, plant-soil interactions",
+      zh: "土壤物理学、根系吸水、植物-土壤相互作用",
+    },
+    bio: {
+      en: "Dr. Clothier is a distinguished scientist at Plant and Food Research, New Zealand. He collaborates with PWRlab on root water uptake and soil hydrology research.",
+      zh: "Clothier博士是新西兰Plant and Food Research杰出科学家。与PWRlab在根系吸水和土壤水文方面开展合作。",
+    },
+    website: "https://www.plantandfood.com",
+  },
+  {
+    id: "nadezhda-nadezhdina",
+    name: { en: "Dr. Nadezhda Nadezhdina", zh: "Nadezhda Nadezhdina 博士" },
+    role: "collaborator",
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Sap flow methodology, tree hydraulics, forest hydrology",
+      zh: "液流方法学、树木水力学、森林水文学",
+    },
+    bio: {
+      en: "Dr. Nadezhdina is a leading expert in sap flow measurement techniques. She collaborates with PWRlab on developing advanced sap flow methodologies.",
+      zh: "Nadezhdina博士是液流测量技术领域的领军专家。与PWRlab在先进液流方法学开发方面合作。",
+    },
+  },
+  {
+    id: "david-tissue",
+    name: { en: "Prof. David Tissue", zh: "David Tissue 教授" },
+    role: "collaborator",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Plant ecophysiology, climate change impacts, carbon-water relations",
+      zh: "植物生态生理学、气候变化影响、碳-水关系",
+    },
+    bio: {
+      en: "Prof. Tissue is a plant ecophysiologist specializing in climate change impacts on vegetation. He collaborates with PWRlab on drought resistance and water use efficiency research.",
+      zh: "Tissue教授是植物生态生理学家，专注于气候变化对植被的影响。与PWRlab在抗旱性和水分利用效率方面合作。",
+    },
+  },
+  {
+    id: "brendan-choat",
+    name: { en: "Prof. Brendan Choat", zh: "Brendan Choat 教授" },
+    role: "collaborator",
+    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Plant hydraulics, xylem embolism, drought-induced tree mortality",
+      zh: "植物水力学、木质部栓塞、干旱导致的树木死亡",
+    },
+    bio: {
+      en: "Prof. Choat is a world-leading expert in plant hydraulics. He collaborates with PWRlab on tree hydraulic vulnerability and drought response research.",
+      zh: "Choat教授是植物水力学领域的世界级专家。与PWRlab在树木水力脆弱性和干旱响应方面合作。",
+    },
+  },
+  {
+    id: "placeholder-phd-1",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Plantation ecohydrology",
+      zh: "人工林生态水文",
+    },
+    year: "2020",
+  },
+  {
+    id: "placeholder-phd-2",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Tree water relations & sap flow",
+      zh: "林木水分关系与液流",
+    },
+    year: "2021",
+  },
+  {
+    id: "placeholder-phd-3",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Root ecology & belowground processes",
+      zh: "根系生态学",
+    },
+    year: "2021",
+  },
+  {
+    id: "placeholder-phd-4",
+    name: { en: "PhD Student", zh: "博士研究生" },
     role: "phd",
     photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     interests: {
-      en: "Sap flow dynamics, stomatal regulation, drought response",
-      zh: "液流动态、气孔调控、干旱响应",
+      en: "Climate-vegetation interactions",
+      zh: "气候-植被相互作用",
     },
     year: "2022",
   },
   {
-    id: "student-li",
-    name: { en: "Li Xiaomei", zh: "李晓梅" },
+    id: "placeholder-phd-5",
+    name: { en: "PhD Student", zh: "博士研究生" },
     role: "phd",
-    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-    interests: {
-      en: "Root water uptake, stable isotopes, soil-plant-atmosphere continuum",
-      zh: "根系吸水、稳定同位素、土壤-植物-大气连续体",
-    },
-    year: "2023",
-  },
-  {
-    id: "student-uwimana",
-    name: { en: "Uwimana Jean", zh: "Uwimana Jean" },
-    role: "phd",
-    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
-    interests: {
-      en: "Tropical plantation hydrology, climate change impacts, water use efficiency",
-      zh: "热带人工林水文、气候变化影响、水分利用效率",
-    },
-    year: "2023",
-  },
-  {
-    id: "student-wang",
-    name: { en: "Wang Yufei", zh: "王宇飞" },
-    role: "msc",
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
     interests: {
-      en: "Eddy covariance, evapotranspiration partitioning",
-      zh: "涡度相关、蒸散发分割",
+      en: "Sap flow dynamics & drought response",
+      zh: "液流动态与干旱响应",
+    },
+    year: "2022",
+  },
+  {
+    id: "placeholder-phd-6",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "AI-assisted forest monitoring",
+      zh: "AI辅助森林监测",
+    },
+    year: "2023",
+  },
+  {
+    id: "placeholder-phd-7",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Soil water dynamics",
+      zh: "土壤水分动态",
+    },
+    year: "2023",
+  },
+  {
+    id: "placeholder-phd-8",
+    name: { en: "PhD Student", zh: "博士研究生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Evapotranspiration partitioning",
+      zh: "蒸散发分割",
     },
     year: "2024",
   },
   {
-    id: "student-chen",
-    name: { en: "Chen Yutong", zh: "陈雨桐" },
+    id: "placeholder-phd-intl-1",
+    name: { en: "International PhD Student", zh: "留学博士生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Tropical plantation hydrology",
+      zh: "热带人工林水文",
+    },
+    year: "2022",
+  },
+  {
+    id: "placeholder-phd-intl-2",
+    name: { en: "International PhD Student", zh: "留学博士生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Agroforestry water balance",
+      zh: "农林复合系统水量平衡",
+    },
+    year: "2023",
+  },
+  {
+    id: "placeholder-phd-intl-3",
+    name: { en: "International PhD Student", zh: "留学博士生" },
+    role: "phd",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Forest ecosystem water cycling",
+      zh: "森林生态系统水循环",
+    },
+    year: "2024",
+  },
+  {
+    id: "placeholder-msc-1",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Sap flow measurement & modeling",
+      zh: "液流测量与模拟",
+    },
+    year: "2023",
+  },
+  {
+    id: "placeholder-msc-2",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Remote sensing of forest water stress",
+      zh: "森林水分胁迫遥感",
+    },
+    year: "2023",
+  },
+  {
+    id: "placeholder-msc-3",
+    name: { en: "MSc Student", zh: "硕士研究生" },
     role: "msc",
     photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
     interests: {
-      en: "Machine learning for forest monitoring, remote sensing",
-      zh: "森林监测机器学习、遥感",
+      en: "Root water uptake patterns",
+      zh: "根系吸水模式",
+    },
+    year: "2024",
+  },
+  {
+    id: "placeholder-msc-4",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Soil moisture monitoring",
+      zh: "土壤水分监测",
+    },
+    year: "2024",
+  },
+  {
+    id: "placeholder-msc-5",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Plantation water use efficiency",
+      zh: "人工林水分利用效率",
+    },
+    year: "2024",
+  },
+  {
+    id: "placeholder-msc-6",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Machine learning for forest monitoring",
+      zh: "森林监测机器学习",
     },
     year: "2025",
   },
   {
-    id: "student-niyonzima",
-    name: { en: "Niyonzima Eric", zh: "Niyonzima Eric" },
+    id: "placeholder-msc-7",
+    name: { en: "MSc Student", zh: "硕士研究生" },
     role: "msc",
-    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face",
-    interests: {
-      en: "Agroforestry water balance, tropical ecosystems",
-      zh: "农林复合系统水量平衡、热带生态系统",
-    },
-    year: "2024",
-  },
-  {
-    id: "alumni-liu",
-    name: { en: "Dr. Liu Hao", zh: "刘浩 博士" },
-    role: "alumni",
     photo: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&crop=face",
     interests: {
-      en: "Now at Chinese Academy of Forestry — Plantation water balance modeling",
-      zh: "现就职于中国林业科学研究院 — 人工林水量平衡模拟",
+      en: "Stem diameter variation & tree growth",
+      zh: "茎干直径变化与树木生长",
     },
-    year: "2024",
+    year: "2025",
+  },
+  {
+    id: "placeholder-msc-8",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Poplar plantation irrigation management",
+      zh: "杨树人工林灌溉管理",
+    },
+    year: "2025",
+  },
+  {
+    id: "placeholder-msc-9",
+    name: { en: "MSc Student", zh: "硕士研究生" },
+    role: "msc",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+    interests: {
+      en: "Sensor development & calibration",
+      zh: "传感器研发与标定",
+    },
+    year: "2025",
   },
 ];
 
@@ -993,74 +1277,156 @@ export const newsItems: NewsItem[] = [
 ];
 
 // ---- Facilities ----
+// Self-developed instruments: 50-60% cost reduction vs foreign products, 1600+ units deployed
+// Selected as "Agricultural High-tech Innovation Achievement" by Ministry of S&T
+export const selfDevelopedInstruments = {
+  summary: {
+    en: "Our lab independently designs and manufactures a series of forest monitoring instruments, achieving 50\u201360% cost reduction compared to foreign products. Over 1,600 units have been deployed across institutions including CAS, CAF, Wuhan University, and more. Selected as \"Agricultural High-tech Innovation Achievement\" by the Ministry of Science & Technology.",
+    zh: "\u5b9e\u9a8c\u5ba4\u81ea\u4e3b\u7814\u53d1\u4e86\u7cfb\u5217\u68ee\u6797\u76d1\u6d4b\u4eea\u5668\uff0c\u6210\u672c\u6bd4\u8fdb\u53e3\u4ea7\u54c1\u964d\u4f4e50\u201360%\u3002\u5df2\u5728\u4e2d\u56fd\u79d1\u5b66\u9662\u3001\u4e2d\u56fd\u6797\u79d1\u9662\u3001\u6b66\u6c49\u5927\u5b66\u7b49\u5355\u4f4d\u90e8\u7f721600\u4f59\u5957\u3002\u5165\u9009\u79d1\u6280\u90e8\u201c\u519c\u4e1a\u9ad8\u65b0\u6280\u672f\u521b\u65b0\u6210\u679c\u201d\u3002",
+  },
+  totalDeployed: "1,600+",
+  costReduction: "50\u201360%",
+};
+
 export const facilities: Facility[] = [
   {
-    id: "sapflow",
-    name: { en: "Sap Flow Measurement System", zh: "液流测量系统" },
+    id: "tdp-probe",
+    name: { en: "Self-developed TDP Sap Flow Probe", zh: "\u81ea\u7814TDP\u6db2\u6d41\u63a2\u9488" },
     description: {
-      en: "Thermal dissipation probe (TDP) and heat ratio method (HRM) systems for continuous monitoring of tree water use. Our lab operates 50+ sensors across multiple plantation sites.",
-      zh: "热扩散探针（TDP）和热比率法（HRM）系统，用于连续监测林木水分利用。实验室在多个人工林样地运行50余个传感器。",
+      en: "Independently designed thermal dissipation probe (TDP) for measuring tree sap flow. Achieves comparable accuracy to commercial products at 50\u201360% lower cost. Widely adopted by research institutions across China.",
+      zh: "\u81ea\u4e3b\u8bbe\u8ba1\u7684\u70ed\u6269\u6563\u6db2\u6d41\u63a2\u9488\uff08TDP\uff09\uff0c\u7cbe\u5ea6\u4e0e\u8fdb\u53e3\u4ea7\u54c1\u76f8\u5f53\uff0c\u6210\u672c\u964d\u4f4e50\u201360%\u3002\u5df2\u88ab\u5168\u56fd\u591a\u5bb6\u7814\u7a76\u673a\u6784\u91c7\u7528\u3002",
     },
     image: IMAGES.ecohydrology,
     specs: [
-      { en: "Granier-type TDP sensors", zh: "Granier型TDP传感器" },
-      { en: "ICT HRM sensors", zh: "ICT HRM传感器" },
-      { en: "CR1000X dataloggers", zh: "CR1000X数据采集器" },
+      { en: "Thermal dissipation principle (Granier method)", zh: "\u70ed\u6269\u6563\u539f\u7406\uff08Granier\u65b9\u6cd5\uff09" },
+      { en: "50\u201360% cost reduction vs imports", zh: "\u6210\u672c\u6bd4\u8fdb\u53e3\u964d\u4f4e50\u201360%" },
+      { en: "Deployed at CAS, CAF, Wuhan Univ. & more", zh: "\u5df2\u5728\u4e2d\u79d1\u9662\u3001\u4e2d\u56fd\u6797\u79d1\u9662\u3001\u6b66\u6c49\u5927\u5b66\u7b49\u90e8\u7f72" },
+    ],
+  },
+  {
+    id: "hfd-probe",
+    name: { en: "Self-developed HFD Sap Flow Probe", zh: "\u81ea\u7814HFD\u6db2\u6d41\u63a2\u9488" },
+    description: {
+      en: "Heat field deformation (HFD) sap flow probe for measuring radial sap flow profiles in tree stems. Enables detailed analysis of sap flow distribution across sapwood.",
+      zh: "\u70ed\u573a\u53d8\u5f62\uff08HFD\uff09\u6db2\u6d41\u63a2\u9488\uff0c\u7528\u4e8e\u6d4b\u91cf\u6811\u5e72\u5f84\u5411\u6db2\u6d41\u5256\u9762\u3002\u53ef\u8be6\u7ec6\u5206\u6790\u8fb9\u6750\u4e2d\u6db2\u6d41\u5206\u5e03\u3002",
+    },
+    image: IMAGES.ecohydrology,
+    specs: [
+      { en: "Heat field deformation principle", zh: "\u70ed\u573a\u53d8\u5f62\u539f\u7406" },
+      { en: "Radial sap flow profiling", zh: "\u5f84\u5411\u6db2\u6d41\u5256\u9762\u6d4b\u91cf" },
+      { en: "Multi-point temperature sensing", zh: "\u591a\u70b9\u6e29\u5ea6\u4f20\u611f" },
+    ],
+  },
+  {
+    id: "hrm-probe",
+    name: { en: "Self-developed HRM Sap Flow Probe", zh: "\u81ea\u7814HRM\u6db2\u6d41\u63a2\u9488" },
+    description: {
+      en: "Heat ratio method (HRM) sap flow probe capable of measuring low and reverse sap flows. Ideal for monitoring nighttime water movement and hydraulic redistribution.",
+      zh: "\u70ed\u6bd4\u7387\u6cd5\uff08HRM\uff09\u6db2\u6d41\u63a2\u9488\uff0c\u53ef\u6d4b\u91cf\u4f4e\u6d41\u901f\u548c\u53cd\u5411\u6db2\u6d41\u3002\u9002\u7528\u4e8e\u76d1\u6d4b\u591c\u95f4\u6c34\u5206\u8fd0\u52a8\u548c\u6c34\u529b\u518d\u5206\u914d\u3002",
+    },
+    image: IMAGES.ecohydrology,
+    specs: [
+      { en: "Heat ratio method principle", zh: "\u70ed\u6bd4\u7387\u6cd5\u539f\u7406" },
+      { en: "Low & reverse flow measurement", zh: "\u4f4e\u6d41\u901f\u53ca\u53cd\u5411\u6d41\u6d4b\u91cf" },
+      { en: "Nighttime hydraulic redistribution", zh: "\u591c\u95f4\u6c34\u529b\u518d\u5206\u914d\u76d1\u6d4b" },
+    ],
+  },
+  {
+    id: "dual-mode-probe",
+    name: { en: "Self-developed Dual-mode Sap Flow Probe", zh: "\u81ea\u7814\u53cc\u6a21\u5f0f\u6db2\u6d41\u63a2\u9488" },
+    description: {
+      en: "Innovative dual-mode sap flow probe combining TDP and HRM methods in a single instrument. Provides comprehensive sap flow data across the full range of flow velocities.",
+      zh: "\u521b\u65b0\u6027\u53cc\u6a21\u5f0f\u6db2\u6d41\u63a2\u9488\uff0c\u5c06TDP\u548cHRM\u65b9\u6cd5\u96c6\u6210\u4e8e\u4e00\u4f53\u3002\u53ef\u5728\u5168\u6d41\u901f\u8303\u56f4\u5185\u63d0\u4f9b\u5168\u9762\u7684\u6db2\u6d41\u6570\u636e\u3002",
+    },
+    image: IMAGES.ecohydrology,
+    specs: [
+      { en: "Combined TDP + HRM in one probe", zh: "TDP + HRM\u53cc\u6a21\u5f0f\u96c6\u6210" },
+      { en: "Full velocity range coverage", zh: "\u5168\u6d41\u901f\u8303\u56f4\u8986\u76d6" },
+      { en: "Automatic mode switching", zh: "\u81ea\u52a8\u6a21\u5f0f\u5207\u6362" },
+    ],
+  },
+  {
+    id: "tensiometer",
+    name: { en: "Self-developed Electronic Tensiometer", zh: "\u81ea\u7814\u7535\u5b50\u5f20\u529b\u8ba1" },
+    description: {
+      en: "High-precision electronic tensiometer for continuous soil water potential monitoring. Features automatic data logging and remote data transmission capabilities.",
+      zh: "\u9ad8\u7cbe\u5ea6\u7535\u5b50\u5f20\u529b\u8ba1\uff0c\u7528\u4e8e\u8fde\u7eed\u76d1\u6d4b\u571f\u58e4\u6c34\u52bf\u3002\u5177\u5907\u81ea\u52a8\u6570\u636e\u8bb0\u5f55\u548c\u8fdc\u7a0b\u6570\u636e\u4f20\u8f93\u529f\u80fd\u3002",
+    },
+    image: IMAGES.facilities,
+    specs: [
+      { en: "Continuous soil water potential monitoring", zh: "\u8fde\u7eed\u571f\u58e4\u6c34\u52bf\u76d1\u6d4b" },
+      { en: "Automatic data logging", zh: "\u81ea\u52a8\u6570\u636e\u8bb0\u5f55" },
+      { en: "Remote data transmission", zh: "\u8fdc\u7a0b\u6570\u636e\u4f20\u8f93" },
+    ],
+  },
+  {
+    id: "soil-moisture",
+    name: { en: "Self-developed Deep Soil Moisture Profile Probe", zh: "\u81ea\u7814\u6df1\u5c42\u571f\u58e4\u6c34\u5206\u5256\u9762\u63a2\u9488" },
+    description: {
+      en: "Multi-depth soil moisture monitoring probe for measuring volumetric water content profiles from surface to deep soil layers. Essential for understanding root water uptake patterns.",
+      zh: "\u591a\u6df1\u5ea6\u571f\u58e4\u6c34\u5206\u76d1\u6d4b\u63a2\u9488\uff0c\u7528\u4e8e\u6d4b\u91cf\u4ece\u8868\u5c42\u5230\u6df1\u5c42\u571f\u58e4\u7684\u4f53\u79ef\u542b\u6c34\u91cf\u5256\u9762\u3002\u5bf9\u7406\u89e3\u6839\u7cfb\u5438\u6c34\u6a21\u5f0f\u81f3\u5173\u91cd\u8981\u3002",
+    },
+    image: IMAGES.facilities,
+    specs: [
+      { en: "Multi-depth profile measurement", zh: "\u591a\u6df1\u5ea6\u5256\u9762\u6d4b\u91cf" },
+      { en: "Surface to deep soil monitoring", zh: "\u8868\u5c42\u81f3\u6df1\u5c42\u571f\u58e4\u76d1\u6d4b" },
+      { en: "Compatible with CR1000X loggers", zh: "\u517c\u5bb9CR1000X\u91c7\u96c6\u5668" },
+    ],
+  },
+  {
+    id: "dendrometer",
+    name: { en: "Self-developed Stem Diameter Micro-variation Sensor", zh: "\u81ea\u7814\u830e\u5e72\u76f4\u5f84\u5fae\u53d8\u5316\u4f20\u611f\u5668" },
+    description: {
+      en: "High-resolution dendrometer for measuring sub-micrometer stem diameter variations. Captures diurnal stem shrinkage and swelling patterns linked to tree water status.",
+      zh: "\u9ad8\u5206\u8fa8\u7387\u6811\u6728\u5f84\u5411\u751f\u957f\u4eea\uff0c\u7528\u4e8e\u6d4b\u91cf\u4e9a\u5fae\u7c73\u7ea7\u830e\u5e72\u76f4\u5f84\u53d8\u5316\u3002\u53ef\u6355\u6349\u4e0e\u6811\u6728\u6c34\u5206\u72b6\u6001\u76f8\u5173\u7684\u65e5\u5468\u671f\u830e\u5e72\u6536\u7f29\u548c\u81a8\u80c0\u6a21\u5f0f\u3002",
+    },
+    image: IMAGES.facilities,
+    specs: [
+      { en: "Sub-micrometer resolution", zh: "\u4e9a\u5fae\u7c73\u7ea7\u5206\u8fa8\u7387" },
+      { en: "Diurnal shrinkage/swelling tracking", zh: "\u65e5\u5468\u671f\u6536\u7f29/\u81a8\u80c0\u8ffd\u8e2a" },
+      { en: "Tree water status indicator", zh: "\u6811\u6728\u6c34\u5206\u72b6\u6001\u6307\u793a" },
     ],
   },
   {
     id: "minirhizotron",
-    name: { en: "Minirhizotron System", zh: "微根管系统" },
+    name: { en: "Minirhizotron System", zh: "\u5fae\u6839\u7ba1\u7cfb\u7edf" },
     description: {
       en: "CI-600 root scanner system for non-destructive monitoring of fine root dynamics, including root production, mortality, and turnover rates at multiple soil depths.",
-      zh: "CI-600根系扫描仪系统，用于非破坏性监测细根动态，包括不同土壤深度的根系生产、死亡和周转速率。",
+      zh: "CI-600\u6839\u7cfb\u626b\u63cf\u4eea\u7cfb\u7edf\uff0c\u7528\u4e8e\u975e\u7834\u574f\u6027\u76d1\u6d4b\u7ec6\u6839\u52a8\u6001\uff0c\u5305\u62ec\u4e0d\u540c\u571f\u58e4\u6df1\u5ea6\u7684\u6839\u7cfb\u751f\u4ea7\u3001\u6b7b\u4ea1\u548c\u5468\u8f6c\u901f\u7387\u3002",
     },
     image: IMAGES.roots,
     specs: [
-      { en: "CI-600 In-Situ Root Imager", zh: "CI-600原位根系成像仪" },
-      { en: "60+ observation tubes", zh: "60余根观测管" },
-      { en: "WinRHIZO Tron analysis software", zh: "WinRHIZO Tron分析软件" },
+      { en: "CI-600 In-Situ Root Imager", zh: "CI-600\u539f\u4f4d\u6839\u7cfb\u6210\u50cf\u4eea" },
+      { en: "60+ observation tubes", zh: "60\u4f59\u6839\u89c2\u6d4b\u7ba1" },
+      { en: "WinRHIZO Tron analysis software", zh: "WinRHIZO Tron\u5206\u6790\u8f6f\u4ef6" },
     ],
   },
   {
     id: "eddycovariance",
-    name: { en: "Eddy Covariance System", zh: "涡度相关系统" },
+    name: { en: "Eddy Covariance System", zh: "\u6da1\u5ea6\u76f8\u5173\u7cfb\u7edf" },
     description: {
       en: "Open-path eddy covariance system for measuring ecosystem-level fluxes of water vapor, CO2, and energy above the plantation canopy.",
-      zh: "开路涡度相关系统，用于测量人工林冠层上方生态系统水平的水汽、CO2和能量通量。",
+      zh: "\u5f00\u8def\u6da1\u5ea6\u76f8\u5173\u7cfb\u7edf\uff0c\u7528\u4e8e\u6d4b\u91cf\u4eba\u5de5\u6797\u51a0\u5c42\u4e0a\u65b9\u751f\u6001\u7cfb\u7edf\u6c34\u5e73\u7684\u6c34\u6c7d\u3001CO2\u548c\u80fd\u91cf\u901a\u91cf\u3002",
     },
     image: IMAGES.facilities,
     specs: [
-      { en: "LI-7500DS open-path analyzer", zh: "LI-7500DS开路分析仪" },
-      { en: "CSAT3 sonic anemometer", zh: "CSAT3超声风速仪" },
-      { en: "30m flux tower", zh: "30米通量塔" },
+      { en: "LI-7500DS open-path analyzer", zh: "LI-7500DS\u5f00\u8def\u5206\u6790\u4eea" },
+      { en: "CSAT3 sonic anemometer", zh: "CSAT3\u8d85\u58f0\u98ce\u901f\u4eea" },
+      { en: "30m flux tower", zh: "30\u7c73\u901a\u91cf\u5854" },
     ],
   },
   {
     id: "weather",
-    name: { en: "Automatic Weather Station", zh: "自动气象站" },
+    name: { en: "Automatic Weather Station", zh: "\u81ea\u52a8\u6c14\u8c61\u7ad9" },
     description: {
       en: "Comprehensive meteorological monitoring including air temperature, humidity, precipitation, wind speed, solar radiation, and soil temperature/moisture profiles.",
-      zh: "综合气象监测，包括气温、湿度、降水、风速、太阳辐射和土壤温湿度剖面。",
+      zh: "\u7efc\u5408\u6c14\u8c61\u76d1\u6d4b\uff0c\u5305\u62ec\u6c14\u6e29\u3001\u6e7f\u5ea6\u3001\u964d\u6c34\u3001\u98ce\u901f\u3001\u592a\u9633\u8f90\u5c04\u548c\u571f\u58e4\u6e29\u6e7f\u5ea6\u5256\u9762\u3002",
     },
     image: IMAGES.facilities,
     specs: [
-      { en: "Campbell Scientific CR6 logger", zh: "Campbell Scientific CR6采集器" },
-      { en: "Soil moisture profile (TDR)", zh: "土壤水分剖面（TDR）" },
-      { en: "Tipping bucket rain gauge", zh: "翻斗式雨量计" },
-    ],
-  },
-  {
-    id: "isotope",
-    name: { en: "Stable Isotope Analysis", zh: "稳定同位素分析" },
-    description: {
-      en: "Access to Picarro L2130-i cavity ring-down spectrometer for water stable isotope analysis (δ18O, δ2H), enabling root water uptake source identification.",
-      zh: "配备Picarro L2130-i腔衰荡光谱仪进行水稳定同位素分析（δ18O、δ2H），用于根系吸水来源识别。",
-    },
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
-    specs: [
-      { en: "Picarro L2130-i CRDS", zh: "Picarro L2130-i CRDS" },
-      { en: "Cryogenic vacuum distillation line", zh: "低温真空蒸馏系统" },
+      { en: "Campbell Scientific CR6 logger", zh: "Campbell Scientific CR6\u91c7\u96c6\u5668" },
+      { en: "Soil moisture profile (TDR)", zh: "\u571f\u58e4\u6c34\u5206\u5256\u9762\uff08TDR\uff09" },
+      { en: "Tipping bucket rain gauge", zh: "\u7ffb\u6597\u5f0f\u96e8\u91cf\u8ba1" },
     ],
   },
 ];

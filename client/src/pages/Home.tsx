@@ -85,9 +85,9 @@ function StatsBar() {
   const { t } = useLanguage();
   const stats = [
     { icon: BookOpen, value: "60+", label: t("home.stats.publications") },
-    { icon: FlaskConical, value: "4", label: t("home.stats.projects") },
-    { icon: Users, value: "12", label: t("home.stats.members") },
-    { icon: Globe, value: "5+", label: t("home.stats.collaborators") },
+    { icon: FlaskConical, value: "1,600+", label: t("home.stats.instruments") },
+    { icon: Users, value: "21", label: t("home.stats.members") },
+    { icon: Globe, value: "6+", label: t("home.stats.collaborators") },
   ];
 
   return (

@@ -33,7 +33,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.title": "Latest News",
     "home.news.viewAll": "View All News",
     "home.stats.publications": "Publications",
-    "home.stats.projects": "Active Projects",
+    "home.stats.instruments": "Instruments Deployed",
     "home.stats.members": "Team Members",
     "home.stats.collaborators": "Global Partners",
 
@@ -150,7 +150,7 @@ const translations: Record<Language, Record<string, string>> = {
     "home.news.title": "最新动态",
     "home.news.viewAll": "查看全部",
     "home.stats.publications": "发表论文",
-    "home.stats.projects": "在研项目",
+    "home.stats.instruments": "仪器部署",
     "home.stats.members": "团队成员",
     "home.stats.collaborators": "国际合作",
 

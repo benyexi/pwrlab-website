@@ -1,12 +1,12 @@
 /*
  * PWRlab Facilities Page — Botanical Modernism
- * Equipment and field station showcase
+ * Self-developed instruments highlight + equipment showcase
  */
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { facilities, type Facility } from "@/lib/data";
-import { CheckCircle } from "lucide-react";
+import { facilities, selfDevelopedInstruments, type Facility } from "@/lib/data";
+import { CheckCircle, Award, Cpu, TrendingDown } from "lucide-react";
 
 export default function Facilities() {
   const { lang, t } = useLanguage();
@@ -20,6 +20,51 @@ export default function Facilities() {
           subtitle={t("facilities.subtitle")}
         />
 
+        {/* Self-developed Instruments Highlight */}
+        <div className="mb-16 bg-gradient-to-br from-forest/5 to-forest/10 dark:from-forest/10 dark:to-forest/20 rounded-2xl border border-forest/20 p-8 lg:p-12">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full bg-forest/20 dark:bg-forest-light/20 flex items-center justify-center">
+              <Cpu className="w-5 h-5 text-forest dark:text-forest-light" />
+            </div>
+            <h2 className="font-display text-2xl lg:text-3xl font-bold text-foreground">
+              {lang === "en" ? "Self-developed Instruments" : "自主研发仪器"}
+            </h2>
+          </div>
+          <p className="text-muted-foreground leading-relaxed mb-8 max-w-4xl">
+            {selfDevelopedInstruments.summary[lang]}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-background/60 dark:bg-background/30 rounded-xl p-6 text-center border border-border/50">
+              <Cpu className="w-8 h-8 text-forest dark:text-forest-light mx-auto mb-3" />
+              <div className="font-display text-3xl font-bold text-forest dark:text-forest-light mb-1">
+                {selfDevelopedInstruments.totalDeployed}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {lang === "en" ? "Units Deployed Nationwide" : "全国部署套数"}
+              </div>
+            </div>
+            <div className="bg-background/60 dark:bg-background/30 rounded-xl p-6 text-center border border-border/50">
+              <TrendingDown className="w-8 h-8 text-forest dark:text-forest-light mx-auto mb-3" />
+              <div className="font-display text-3xl font-bold text-forest dark:text-forest-light mb-1">
+                {selfDevelopedInstruments.costReduction}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {lang === "en" ? "Cost Reduction vs Imports" : "成本降低（对比进口）"}
+              </div>
+            </div>
+            <div className="bg-background/60 dark:bg-background/30 rounded-xl p-6 text-center border border-border/50">
+              <Award className="w-8 h-8 text-forest dark:text-forest-light mx-auto mb-3" />
+              <div className="font-display text-lg font-bold text-forest dark:text-forest-light mb-1">
+                {lang === "en" ? "Ministry of S&T" : "科技部认定"}
+              </div>
+              <div className="text-sm text-muted-foreground">
+                {lang === "en" ? "Agricultural High-tech Innovation Achievement" : "农业高新技术创新成果"}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Equipment List */}
         <div className="space-y-8">
           {facilities.map((facility, i) => (
             <FacilityCard key={facility.id} facility={facility} lang={lang} index={i} />
