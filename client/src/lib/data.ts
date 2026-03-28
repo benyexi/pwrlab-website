@@ -1685,12 +1685,12 @@ We welcome researchers and professionals interested in collaborative research or
     id: "news-2024-nz-workshop",
     title: {
       en: "PWRlab Members Attend NZ-China Water Research Centre Workshop at Lincoln University",
-      zh: "PWRlab团队成员赴新西兰林肯大学参加"新西兰-中国水研究中心"面对面研讨会",
+      zh: "PWRlab团队成员赴新西兰林肯大学参加「新西兰-中国水研究中心」面对面研讨会",
     },
     date: "2024-11-21",
     summary: {
       en: "Prof. Benye Xi and PhD students Xiaoning Zhao and Wenhan Yang attended the NZ-China Water Research Centre face-to-face workshop at Lincoln University, New Zealand, and delivered research presentations.",
-      zh: "席本野教授与博士生赵小宁、杨文涵赴新西兰林肯大学参加"新西兰-中国水研究中心"面对面研讨会并作学术报告。",
+      zh: "席本野教授与博士生赵小宁、杨文涵赴新西兰林肯大学参加「新西兰-中国水研究中心」面对面研讨会并作学术报告。",
     },
     content: {
       en: `On November 20-21, 2025, Prof. Benye Xi, along with PhD students Xiaoning Zhao and Wenhan Yang, attended the "NZ-China Water Research Centre Face-to-Face Workshop" held at Lincoln University, New Zealand, and delivered research presentations.
