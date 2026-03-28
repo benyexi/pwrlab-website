@@ -1987,6 +1987,10 @@ export const galleryImages: GalleryImage[] = [
   { id: "lab-07", src: "/pwrlab-website/images/gallery/laboratory/lab-07.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
   { id: "lab-08", src: "/pwrlab-website/images/gallery/laboratory/lab-08.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
   { id: "lab-09", src: "/pwrlab-website/images/gallery/laboratory/lab-09.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-10", src: "/pwrlab-website/images/gallery/laboratory/lab-10.png", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "team-01", src: "/pwrlab-website/images/gallery/team-life/team-01.jpg", caption: { en: "Team life", zh: "团队生活" }, category: "team" },
+  { id: "team-02", src: "/pwrlab-website/images/gallery/team-life/team-02.jpg", caption: { en: "Team life", zh: "团队生活" }, category: "team" },
+  { id: "team-03", src: "/pwrlab-website/images/gallery/team-life/team-03.jpg", caption: { en: "Team life", zh: "团队生活" }, category: "team" },
 ];
 
 export { IMAGES };
