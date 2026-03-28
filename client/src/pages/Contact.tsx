@@ -131,16 +131,16 @@ export default function Contact() {
                   ? "Real-time visitor locations from around the world"
                   : "来自世界各地的实时访客位置"}
               </p>
-              {/* Visitor counter via ClustrMaps widget (embedded in globe above) */}
-              <a
-                href="https://clustrmaps.com/site/1c6qe"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-xs text-forest dark:text-forest-light hover:underline"
-              >
-                <Eye className="w-3.5 h-3.5" />
-                {lang === "en" ? "View detailed visitor statistics" : "查看详细访客统计"}
-              </a>
+              {/* ClustrMaps flat counter widget - shows total visit count */}
+              <div className="mt-4 flex justify-center">
+                <a href="https://clustrmaps.com/site/1c6qe" title="Visit tracker">
+                  <img
+                    src="//clustrmaps.com/map_v2.png?d=eqEp0shaXfCRmJu8qZzAmcqzGTm2eQWfpQ25qgHKkTI&cl=ffffff&w=300"
+                    alt="Visitor statistics"
+                    className="rounded-lg"
+                  />
+                </a>
+              </div>
             </div>
             {/* Visitor Stats */}
             <div className="space-y-4">
