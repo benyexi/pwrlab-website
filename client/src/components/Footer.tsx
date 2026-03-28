@@ -64,8 +64,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-white/60">
                 <Mail className="w-4 h-4 shrink-0" />
-                <a href="mailto:xibenye@bjfu.edu.cn" className="hover:text-white transition-colors">
-                  xibenye@bjfu.edu.cn
+                <a href="mailto:benyexi@bjfu.edu.cn" className="hover:text-white transition-colors">
+                  benyexi@bjfu.edu.cn
                 </a>
               </div>
             </div>

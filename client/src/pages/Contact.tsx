@@ -43,10 +43,10 @@ export default function Contact() {
               <div>
                 <h3 className="font-display text-base font-medium text-foreground mb-1">{t("contact.email.title")}</h3>
                 <a
-                  href="mailto:xibenye@bjfu.edu.cn"
+                  href="mailto:benyexi@bjfu.edu.cn"
                   className="text-sm text-forest dark:text-forest-light hover:underline"
                 >
-                  xibenye@bjfu.edu.cn
+                  benyexi@bjfu.edu.cn
                 </a>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function Contact() {
                 {t("contact.join.text")}
               </p>
               <a
-                href="mailto:xibenye@bjfu.edu.cn"
+                href="mailto:benyexi@bjfu.edu.cn"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-forest text-white dark:bg-forest-light dark:text-[oklch(0.16_0.015_260)] text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
               >
                 <Mail className="w-4 h-4" />

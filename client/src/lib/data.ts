@@ -155,7 +155,7 @@ export const teamMembers: TeamMember[] = [
       { en: "PI, National Key Lab of Efficient Forest Production", zh: "林木高效培育全国重点实验室PI" },
       { en: "Core Member (#2), National Poplar Plantation Innovation Team", zh: "国家杨树人工林创新团队核心成员（排名第2）" },
     ],
-    email: "xibenye@bjfu.edu.cn",
+    email: "benyexi@bjfu.edu.cn",
     scholar: "https://scholar.google.com/citations?user=8L5SxYIAAAAJ",
     researchgate: "https://www.researchgate.net/profile/Benye-Xi",
     orcid: "https://orcid.org/0000-0003-4730-6384",
@@ -1627,7 +1627,7 @@ export const newsItems: NewsItem[] = [
       en: "PWRlab Completes Monitoring Site Setup in Washington State, USA",
       zh: "PWRlab美国华盛顿州站点布设完成",
     },
-    date: "2025-03-28",
+    date: "2026-03-28",
     summary: {
       en: "PWRlab has completed the setup of its first overseas monitoring site at a poplar plantation in Kalama, Washington State, USA, co-established with Prof. Mark Coleman from the University of Idaho.",
       zh: "PWRlab完成美国华盛顿州站点布设，这是PWRlab CP-GPE net在国外建立的第1个站点，由PWRlab与美国爱达荷州立大学Mark Coleman教授共建。",
@@ -1682,12 +1682,12 @@ We welcome researchers and professionals interested in collaborative research or
     image: "/pwrlab-website/images/news/2025-washington/washington-station.jpg",
   },
   {
-    id: "news-2024-nz-workshop",
+    id: "news-2025-nz-workshop",
     title: {
       en: "PWRlab Members Attend NZ-China Water Research Centre Workshop at Lincoln University",
       zh: "PWRlab团队成员赴新西兰林肯大学参加「新西兰-中国水研究中心」面对面研讨会",
     },
-    date: "2024-11-21",
+    date: "2025-11-21",
     summary: {
       en: "Prof. Benye Xi and PhD students Xiaoning Zhao and Wenhan Yang attended the NZ-China Water Research Centre face-to-face workshop at Lincoln University, New Zealand, and delivered research presentations.",
       zh: "席本野教授与博士生赵小宁、杨文涵赴新西兰林肯大学参加「新西兰-中国水研究中心」面对面研讨会并作学术报告。",
