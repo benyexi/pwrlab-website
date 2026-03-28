@@ -7,6 +7,24 @@ import ContentSection from "@/components/ContentSection";
 import { Calendar, ArrowLeft } from "lucide-react";
 import { Link, useParams } from "wouter";
 
+function renderInline(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+  return parts.map((seg, i) => {
+    if (seg.startsWith("**") && seg.endsWith("**")) {
+      return <strong key={i}>{seg.slice(2, -2)}</strong>;
+    }
+    if (seg.startsWith("*") && seg.endsWith("*")) {
+      return <em key={i}>{seg.slice(1, -1)}</em>;
+    }
+    if (seg.includes("\n")) {
+      return seg.split("\n").map((line, k) => (
+        <span key={`${i}-${k}`}>{line}{k < seg.split("\n").length - 1 && <br />}</span>
+      ));
+    }
+    return seg;
+  });
+}
+
 function renderContent(content: string) {
   const parts = content.split(/(\!\[.*?\]\(.*?\))/g);
   return parts.map((part, i) => {
@@ -30,9 +48,17 @@ function renderContent(content: string) {
     if (!part.trim()) return null;
     return part.split("\n\n").map((paragraph, j) => {
       if (!paragraph.trim()) return null;
+      const trimmed = paragraph.trim();
+      if (trimmed.startsWith("- ")) {
+        const items = trimmed.split("\n- ").map((item, k) => {
+          const text = item.replace(/^- /, "");
+          return <li key={k} className="mb-2">{renderInline(text)}</li>;
+        });
+        return <ul key={`${i}-${j}`} className="list-disc pl-6 mb-4 text-base text-foreground/85 leading-relaxed">{items}</ul>;
+      }
       return (
         <p key={`${i}-${j}`} className="text-base text-foreground/85 leading-relaxed mb-4">
-          {paragraph.trim()}
+          {renderInline(trimmed)}
         </p>
       );
     });

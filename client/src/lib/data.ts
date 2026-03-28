@@ -1695,45 +1695,55 @@ We welcome researchers and professionals interested in collaborative research or
     content: {
       en: `On November 20-21, 2025, Prof. Benye Xi, along with PhD students Xiaoning Zhao and Wenhan Yang, attended the "NZ-China Water Research Centre Face-to-Face Workshop" held at Lincoln University, New Zealand, and delivered research presentations.
 
-![NZ-China Water Research Centre Workshop](/pwrlab-website/images/news/2024-new-zealand/nz-presentation.png)
+![Prof. Benye Xi delivering a presentation](/pwrlab-website/images/news/2024-new-zealand/nz-xi-presentation.png)
 
 **Presentation topics:**
 
-- **Prof. Benye Xi:** *Evaporation-driven hydraulic redistribution of root systems: mechanisms, modeling, and significance*
-- **Xiaoning Zhao:** *Accurate measurement and estimation methods of water consumption in poplar plantations*
-- **Wenhan Yang:** *Stand feedback to deep soil desiccation in poplar plantations on the North China Plain: nonlinear dynamics and threshold responses*
+- **Prof. Benye Xi:**
+*Evaporation-driven hydraulic redistribution of root systems: mechanisms, modeling, and significance*
 
-![Workshop presentation](/pwrlab-website/images/news/2024-new-zealand/nz-conference.jpg)
+- **Xiaoning Zhao:**
+*Accurate measurement and estimation methods of water consumption in poplar plantations*
+
+- **Wenhan Yang:**
+*Stand feedback to deep soil desiccation in poplar plantations on the North China Plain: nonlinear dynamics and threshold responses*
+
+![Xiaoning Zhao delivering a presentation](/pwrlab-website/images/news/2024-new-zealand/nz-zhao-presentation.jpg)
+
+![Workshop venue](/pwrlab-website/images/news/2024-new-zealand/nz-venue.jpg)
+
+![Wenhan Yang delivering a presentation](/pwrlab-website/images/news/2024-new-zealand/nz-yang-presentation.jpg)
 
 During the visit, the team gained in-depth understanding of New Zealand's cutting-edge advances in precision plantation management, soil moisture monitoring, and bioeconomy transformation. Several substantive collaborative outcomes were achieved, including a long-term cooperation plan on plantation water relations research with the NZ-China Water Research Centre, a collaboration agreement with the University of Canterbury on efficient cultivation of poplar and radiata pine plantations, and a shared intention with Scion (New Zealand Forest Research Institute) to establish a joint poplar ecophysiological monitoring station in New Zealand.
 
-![Academic exchange](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-1.jpg)
-
-![Field visit](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-2.jpg)
-
-![Group photo](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-3.jpg)`,
+![Group photo](/pwrlab-website/images/news/2024-new-zealand/nz-group-photo.jpg)`,
       zh: `2025年11月20-21日，席本野教授与博士生赵小宁、杨文涵赴新西兰林肯大学参加了"新西兰-中国水研究中心"面对面研讨会，并做了学术报告。
 
-![新西兰-中国水研究中心面对面研讨会](/pwrlab-website/images/news/2024-new-zealand/nz-presentation.png)
+![席本野教授作报告](/pwrlab-website/images/news/2024-new-zealand/nz-xi-presentation.png)
 
 **报告题目：**
 
-- **席本野教授：** *Evaporation-driven hydraulic redistribution of root systems: mechanisms, modeling, and significance*
-- **赵小宁：** *Accurate measurement and estimation methods of water consumption in poplar plantations*
-- **杨文涵：** *Stand feedback to deep soil desiccation in poplar plantations on the North China Plain: nonlinear dynamics and threshold responses*
+- **席本野教授：**
+*Evaporation-driven hydraulic redistribution of root systems: mechanisms, modeling, and significance*
 
-![研讨会报告](/pwrlab-website/images/news/2024-new-zealand/nz-conference.jpg)
+- **赵小宁：**
+*Accurate measurement and estimation methods of water consumption in poplar plantations*
+
+- **杨文涵：**
+*Stand feedback to deep soil desiccation in poplar plantations on the North China Plain: nonlinear dynamics and threshold responses*
+
+![赵小宁作报告](/pwrlab-website/images/news/2024-new-zealand/nz-zhao-presentation.jpg)
+
+![会议现场](/pwrlab-website/images/news/2024-new-zealand/nz-venue.jpg)
+
+![杨文涵作报告](/pwrlab-website/images/news/2024-new-zealand/nz-yang-presentation.jpg)
 
 访问期间，团队深入了解了新西兰在人工林精准管理、土壤水分监测及生物经济转型等方面的前沿进展。此次出访取得了多项实质性合作成果：与中新水问题研究中心就人工林水分关系研究达成了长期合作计划；与新西兰坎特伯雷大学就杨树和辐射松人工林的高效培育达成合作意向，并针对森林培育学的联合教学方式达成了初步共识；与新西兰生物经济科学研究院（Scion）明确了共同建立新西兰杨树生理生态生长监测站点的合作意向，旨在通过跨国监测网络实现数据互通与科研共建。
 
-![学术交流](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-1.jpg)
-
-![实地参观](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-2.jpg)
-
-![合影](/pwrlab-website/images/news/2024-new-zealand/nz-workshop-3.jpg)`,
+![合影](/pwrlab-website/images/news/2024-new-zealand/nz-group-photo.jpg)`,
     },
     tag: "conference",
-    image: "/pwrlab-website/images/news/2024-new-zealand/nz-conference.jpg",
+    image: "/pwrlab-website/images/news/2024-new-zealand/nz-xi-presentation.png",
   },
   {
     id: "news-2025-03",
