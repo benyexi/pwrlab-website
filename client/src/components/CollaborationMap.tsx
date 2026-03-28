@@ -32,18 +32,6 @@ const collaborators: Collaborator[] = [
     lat: -40.3523, lng: 175.6082, country: "New Zealand",
   },
   {
-    name: "David Tissue",
-    institution: { en: "Western Sydney University", zh: "西悉尼大学" },
-    area: { en: "Plant ecophysiology, climate change", zh: "植物生理生态、气候变化" },
-    lat: -33.7564, lng: 150.7389, country: "Australia",
-  },
-  {
-    name: "Brendan Choat",
-    institution: { en: "Western Sydney University", zh: "西悉尼大学" },
-    area: { en: "Plant hydraulics, drought mortality", zh: "植物水力学、干旱致死" },
-    lat: -33.7564, lng: 150.7489, country: "Australia",
-  },
-  {
     name: "Nadezhda Nadezhdina",
     institution: { en: "Mendel University", zh: "门德尔大学" },
     area: { en: "Sap flow methodology, tree water relations", zh: "液流方法学、树木水分关系" },
@@ -60,12 +48,6 @@ const collaborators: Collaborator[] = [
     institution: { en: "Plant and Food Research", zh: "新西兰植物与食品研究所" },
     area: { en: "Soil physics, water resource management", zh: "土壤物理学、水资源管理" },
     lat: -43.5321, lng: 172.6362, country: "New Zealand",
-  },
-  {
-    name: "Jose-Enrique Fernandez",
-    institution: { en: "CSIC-IRNAS, Seville", zh: "西班牙国家研究委员会" },
-    area: { en: "Irrigation science, olive tree water relations", zh: "灌溉科学、橄榄树水分关系" },
-    lat: 37.3886, lng: -5.9823, country: "Spain",
   },
 ];
 
