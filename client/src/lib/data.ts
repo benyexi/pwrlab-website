@@ -1746,6 +1746,84 @@ During the visit, the team gained in-depth understanding of New Zealand's cuttin
     image: "/pwrlab-website/images/news/2024-new-zealand/nz-xi-presentation.png",
   },
   {
+    id: "news-2024-heatwave",
+    title: {
+      en: "PWRlab Makes Important Progress in Plantation Responses to Extreme Climate",
+      zh: "PWRlab在人工林对极端气候响应研究上取得重要进展",
+    },
+    date: "2024-08-01",
+    summary: {
+      en: "A new paper published in Agricultural and Forest Meteorology (Q1 Top, IF=5.6) reveals that trees in cooler regions are more vulnerable to heatwave-induced thermal stress, based on observations from poplar plantations during the 2022 heatwaves in Northern China.",
+      zh: "团队在Agricultural and Forest Meteorology（一区Top，IF=5.6）发表论文，揭示较寒冷地区的杨树更容易受到热浪影响，为极端气候条件下人工林可持续管理提供重要见解。",
+    },
+    content: {
+      en: `Recently, PWRlab published a research paper titled *"Trees in cooler regions are more vulnerable to thermal stress: evidence from temperate poplar plantations in Northern China during the 2022 heatwaves"* in **Agricultural and Forest Meteorology** (Q1 Top, IF=5.6).
+
+![Graphical Abstract](/pwrlab-website/images/news/2024-heatwave/heatwave-graphical-abstract.png)
+
+The paper was completed by Prof. Benye Xi (Beijing Forestry University), Dr. Changjun Ding (Chinese Academy of Forestry), Associate Prof. Nan Di (Inner Mongolia University), Associate Prof. Ximeng Li (Minzu University of China), and graduate students from Beijing Forestry University. Graduate students Xin Kong, Shusen Zhang, and Aoyu Wang are co-first authors. Prof. Benye Xi and Dr. Changjun Ding are co-corresponding authors.
+
+**Research Background**
+
+Climate change has increased the frequency and intensity of heatwaves, which severely threatens the structure and function of forest ecosystems. However, due to a lack of in-situ observation data, little is known about how plantations respond to heatwaves and whether growing environments and management practices can mitigate these impacts.
+
+**Methods**
+
+The team utilized the 2022 summer heatwave events to study poplar plantations growing in two thermal environments in Northern China. Using thermal dissipation sap flow probes and stem diameter micro-variation instruments, they continuously monitored sap flow rates, growth, and water deficit of trees at Beijing Tongzhou (cooler region, 3-day heatwave) and Shandong Gaotang (warmer region, 10-day heatwave). The Tongzhou site included 4 clones, while the Gaotang site had two irrigation treatments (control and full irrigation).
+
+**Key Findings**
+
+- **Question 1: How do heatwaves affect short-term growth of poplar plantations in different thermal environments?**
+Compared to warmer regions, poplars growing in cooler regions are more vulnerable to heatwave impacts. This was manifested as stagnation of stem diameter micro-variations, reduced daily growth increments, and increased water deficit during heatwaves. Trees in cooler regions also exhibited lower resistance and resilience.
+
+- **Question 2: What are the physiological mechanisms of poplar plantation responses to heatwaves?**
+Poplars exhibited strong physiological plasticity in response to heatwaves. Specifically, heatwaves increased leaf transpiration rates, consuming large amounts of water stored in stems, subsequently leading to severe water deficit. The ability of trees to regulate internal water balance determined the impact of heatwaves on growth, and this regulation capacity may be influenced by root water supply capacity.
+
+- **Question 3: Can irrigation mitigate the impact of heatwaves on poplar plantation growth?**
+Although irrigation was beneficial in some aspects (e.g., improving canopy water supply, extending growth duration), it did not fundamentally change the response of poplar growth and physiological traits to heatwaves, mainly related to root structure and xylem water transport efficiency.
+
+**Significance**
+
+This study enhances understanding of heatwave impacts on plantations and provides valuable insights for sustainable forest management under extreme climate conditions. While genetic factors influence heat tolerance, the thermal conditions of the growing environment play a critical role in determining heatwave impacts on tree growth. This finding has important implications for selecting poplar clones better suited to future extreme climates.
+
+This is the first paper published using data from PWRlab's CP-GPE net. All instruments used in this study, including thermal dissipation sap flow probes, stem diameter micro-variation sensors, and soil moisture sensors, were jointly developed by PWRlab and Beijing Shiyutong Technology Co., Ltd.`,
+      zh: `近日，PWRlab团队在**Agricultural and Forest Meteorology**（一区Top，IF=5.6）发表题为*"Trees in cooler regions are more vulnerable to thermal stress: evidence from temperate poplar plantations in Northern China during the 2022 heatwaves"*的研究论文。
+
+![图文摘要](/pwrlab-website/images/news/2024-heatwave/heatwave-graphical-abstract.png)
+
+论文由北京林业大学席本野教授、中国林业科学研究院丁昌俊研究员、内蒙古大学邸楠副教授、中央民族大学李熙萌副教授及北京林业大学研究生共同完成。北京林业大学研究生孔鑫、张树森和王傲宇为论文的共同第一作者，席本野教授、丁昌俊研究员共为论文的通讯作者。
+
+本研究得到了国家重点研发计划、科研创新团队项目、国家自然科学基金、重点实验室开放基金、内蒙古自治区重点研发和成果转化计划等项目的支持。
+
+**研究背景**
+
+气候变化导致热浪发生的频率和强度增加，严重威胁森林生态系统的结构和功能。然而，由于缺乏原位观测数据，关于人工林对热浪的响应以及生长环境和管理措施能否减轻这些影响仍然知之甚少。
+
+**研究方法**
+
+PWRlab团队充分利用2022年夏季发生的热浪事件，以生长在中国北方两种热环境下的杨树人工林为研究对象，借助热扩散液流探针和树干直径微生长变化观测仪器，对北京通州（较冷地区，热浪持续3天）与山东高唐（较暖地区，热浪持续10天）树木的液流速率、生长和水分亏缺进行连续监测。其中，通州地区包含4种无性系，高唐地区设置两种灌溉处理（对照CK和充分灌溉FI）。此外，还测定了不同灌溉处理下叶片的气体交换速率和水势。
+
+**主要发现**
+
+- **问题一：热浪如何影响不同热环境下杨树人工林的短期生长？**
+与较温暖地区相比，生长在较寒冷地区的杨树更容易受到热浪的影响。具体表现为：热浪期间树木茎干直径微变化停滞，生长日增量降低、水分亏缺程度增加。同时，较寒冷地区的杨树具有更低的抵抗力和韧性。
+
+- **问题二：杨树人工林对热浪响应的生理机制是什么？**
+杨树对热浪表现出较强的生理可塑性。热浪增加了叶片蒸腾速率，消耗储存在茎干中的大量水分，随后导致树木水分亏缺严重。树木调节内部水分平衡的能力决定了热浪对杨树生长的影响，而这种调节能力可能受到根系供水能力的影响。PWRlab团队之前的研究发现：杨树在热浪前和热浪期能够通过蒸发驱动的内部水力再分配（EDHR）向根系补充水分，维持浅根的吸水和运输功能。
+
+- **问题三：灌溉处理能否减缓热浪对杨树人工林生长的影响？**
+虽然灌溉在某些方面对杨树的功能有利（如改善冠层水分供应、延长生长时间），但整体上并没有改变杨树生长和生理性状对热浪的响应，这主要与其根系结构和木质部水分运输效率有关。
+
+**研究意义**
+
+本研究增强了热浪对人工林影响的认知，并为极端气候条件下森林的可持续管理提供了有价值的见解。虽然遗传因素对耐热性有影响，但生长环境的热条件在决定热浪对树木生长方面发挥关键作用。这一发现对筛选更适合未来极端气候下的杨树无性系、有效促进育种计划和森林管理实践具有重要意义。
+
+本研究是首次利用PWRlab CP-GPE net发表的第一篇论文，所采用的热扩散液流探针和树干直径微生长变化观测仪器、土壤水分传感器等均为PWRlab与北京时域通科技有限公司联合研制。`,
+    },
+    tag: "paper",
+    image: "/pwrlab-website/images/news/2024-heatwave/heatwave-graphical-abstract.png",
+  },
+  {
     id: "news-2025-03",
     title: {
       en: "New paper published in Agricultural and Forest Meteorology",
