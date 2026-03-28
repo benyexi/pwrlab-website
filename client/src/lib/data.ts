@@ -1635,51 +1635,51 @@ export const newsItems: NewsItem[] = [
     content: {
       en: `PWRlab has completed the setup of a new monitoring site at a poplar plantation in Kalama, King County, Washington State, USA.
 
-![Site location](/pwrlab-website/images/news/washington-map.jpg)
+![Site location](/pwrlab-website/images/news/2025-washington/washington-map.jpg)
 
-![Aerial view of the plantation](/pwrlab-website/images/news/washington-aerial.png)
+![Aerial view of the plantation](/pwrlab-website/images/news/2025-washington/washington-aerial.png)
 
 The site is located in a poplar plantation (Populus deltoides × maximowiczii) planted in 2018 with 4.3m × 4.3m spacing. It was co-established with Prof. Mark Coleman from the Department of Forest, Rangeland and Fire Sciences at the University of Idaho. This is the first overseas site in PWRlab's CP-GPE net, dedicated to fundamental research and technology development for sustainable management of poplar plantations under climate change.
 
-![Poplar plantation at the site](/pwrlab-website/images/news/washington-plantation.jpg)
+![Poplar plantation at the site](/pwrlab-website/images/news/2025-washington/washington-plantation.jpg)
 
 The instrumentation deployed at the site includes: 1 compact automatic weather station, 6 thermal dissipation sap flow probes (TDP), 4 stem diameter variation sensors, 2 soil moisture profile probes, and 1 groundwater level sensor.
 
-![Thermal dissipation (TDP) sap flow probes](/pwrlab-website/images/news/washington-tdp.jpg)
+![Thermal dissipation (TDP) sap flow probes](/pwrlab-website/images/news/2025-washington/washington-tdp.jpg)
 
-![Stem diameter variation sensors and data logger](/pwrlab-website/images/news/washington-sensors.jpg)
+![Stem diameter variation sensors and data logger](/pwrlab-website/images/news/2025-washington/washington-sensors.jpg)
 
-![Compact automatic weather station](/pwrlab-website/images/news/washington-station.jpg)
+![Compact automatic weather station](/pwrlab-website/images/news/2025-washington/washington-station.jpg)
 
 All instruments and equipment were jointly developed by PWRlab and Beijing Shiyutong Technology Co., Ltd., and entirely designed and manufactured by Beijing Shiyutong Technology Co., Ltd. in China. We thank Prof. Mark Coleman and Beijing Shiyutong Technology Co., Ltd. for their support and assistance during the deployment process.
 
 We welcome researchers and professionals interested in collaborative research or related equipment to contact PWRlab for cooperation!`,
       zh: `PWRlab完成美国华盛顿州站点布设，该监测点位于美国华盛顿州金县卡拉马港杨树种植园。
 
-![站点位置](/pwrlab-website/images/news/washington-map.jpg)
+![站点位置](/pwrlab-website/images/news/2025-washington/washington-map.jpg)
 
-![种植园卫星图](/pwrlab-website/images/news/washington-aerial.png)
+![种植园卫星图](/pwrlab-website/images/news/2025-washington/washington-aerial.png)
 
 该监测点由PWRlab与美国爱达荷州立大学森林、牧场和火灾科学系的Mark Coleman教授共建，是PWRlab CP-GPE net在国外建立的第1个站点，将用于气候变化下杨树人工林可持续经营管理的基础理论与相关技术研究。
 
 试验林为2018年栽植的白杨树林（Populus deltoides × maximowiczii），组行距4.3m × 4.3m。
 
-![试验林](/pwrlab-website/images/news/washington-plantation.jpg)
+![试验林](/pwrlab-website/images/news/2025-washington/washington-plantation.jpg)
 
 站点布设的仪器设备包括：1套小型自动气象站、6套热扩散液流探针、4套茎干直径微变化传感器、2套土壤剖面水分探头和1套地下水位传感器。
 
-![热扩散（TDP）液流探针](/pwrlab-website/images/news/washington-tdp.jpg)
+![热扩散（TDP）液流探针](/pwrlab-website/images/news/2025-washington/washington-tdp.jpg)
 
-![茎干直径微变化传感器和数据采集器](/pwrlab-website/images/news/washington-sensors.jpg)
+![茎干直径微变化传感器和数据采集器](/pwrlab-website/images/news/2025-washington/washington-sensors.jpg)
 
-![小型自动气象站](/pwrlab-website/images/news/washington-station.jpg)
+![小型自动气象站](/pwrlab-website/images/news/2025-washington/washington-station.jpg)
 
 相关仪器设备由PWRlab和北京时域通科技有限公司联合研发，全部由中国北京时域通科技有限公司完成设计与制造。感谢Mark Coleman教授及北京时域通科技有限公司在设备部署过程中给予的支持与协助。
 
 欢迎各界对本团队有合作研究兴趣或有相关设备需求人员与PWRlab联系并开展合作研究！`,
     },
     tag: "fieldwork",
-    image: "/pwrlab-website/images/news/washington-station.jpg",
+    image: "/pwrlab-website/images/news/2025-washington/washington-station.jpg",
   },
   {
     id: "news-2025-03",

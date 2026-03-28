@@ -163,10 +163,17 @@ function NewsCard({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
     general: "bg-gray-50 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
   };
 
-  return (
+  const wrapper = (children: React.ReactNode) =>
+    item.content ? (
+      <Link href={`/news/${item.id}`} className="block">{children}</Link>
+    ) : (
+      <>{children}</>
+    );
+
+  return wrapper(
     <div
       ref={ref}
-      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-lg border border-border p-6 hover:shadow-md transition-shadow duration-300`}
+      className={`fade-in-up ${isVisible ? "visible" : ""} bg-card rounded-lg border border-border p-6 hover:shadow-md transition-shadow duration-300 ${item.content ? "cursor-pointer" : ""}`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="flex items-center gap-3 mb-3">
