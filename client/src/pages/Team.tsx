@@ -9,9 +9,10 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
 import { teamMembers, awards, editorialRoles, courses, IMAGES, type TeamMember } from "@/lib/data";
 import PageHero from "@/components/PageHero";
-import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users, PenTool, BookMarked } from "lucide-react";
+import { Mail, ExternalLink, GraduationCap, Award, BookOpen, Briefcase, Trophy, Users, PenTool, BookMarked, X } from "lucide-react";
 import ContentSection from "@/components/ContentSection";
 import WaveDivider from "@/components/WaveDivider";
+import { useState } from "react";
 
 export default function Team() {
   const { lang, t } = useLanguage();
@@ -440,59 +441,108 @@ function TeamSection({ title, members, lang }: { title: string; members: TeamMem
 
 function MemberCard({ member, lang }: { member: TeamMember; lang: "en" | "zh" }) {
   const { t } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const hasBio = member.bio && member.bio[lang];
 
   return (
-    <div className="team-card bg-card border border-border p-5 text-center">
-      <img
-        src={member.photo}
-        alt={member.name[lang]}
-        className="w-24 h-24 rounded-full object-cover mx-auto mb-3 border-2 border-forest/10 dark:border-forest-light/10"
-      />
-      <h4 className="font-display text-base font-medium text-foreground mb-1">
-        {member.name[lang]}
-      </h4>
-      {member.title && (member.role === "faculty" || member.role === "engineer") && (
-        <p className="text-xs font-medium text-forest dark:text-forest-light mb-1">
-          {member.title[lang]}
-        </p>
-      )}
-      {member.currentPosition && (member.role === "faculty" || member.role === "engineer") && (
-        <p className="text-xs text-muted-foreground mb-2">
-          {member.currentPosition[lang]}
-        </p>
-      )}
-      {member.year && (
-        <p className="text-xs text-muted-foreground mb-2">
-          {member.role === "alumni_phd" || member.role === "alumni_msc"
-            ? `${t("team.classOf")} ${member.year}`
-            : member.role === "faculty" || member.role === "engineer" ? "" : `${t("team.since")} ${member.year}`}
-        </p>
-      )}
-      {!(member.role === "faculty" || member.role === "engineer") && member.currentPosition && member.currentPosition[lang] ? (
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          {member.currentPosition[lang]}
-        </p>
-      ) : !(member.role === "faculty" || member.role === "engineer") ? (
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          {member.interests[lang]}
-        </p>
-      ) : (
-        <p className="text-xs text-muted-foreground leading-relaxed">
-          {member.interests[lang]}
-        </p>
-      )}
-      <div className="flex justify-center gap-2 mt-3">
-        {member.email && (
-          <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
-            <Mail className="w-3.5 h-3.5" />
-          </a>
+    <>
+      <div
+        className={`team-card bg-card border border-border p-5 text-center ${hasBio ? "cursor-pointer hover:shadow-lg transition-shadow" : ""}`}
+        onClick={() => hasBio && setOpen(true)}
+      >
+        <img
+          src={member.photo}
+          alt={member.name[lang]}
+          className="w-24 h-24 rounded-full object-cover mx-auto mb-3 border-2 border-forest/10 dark:border-forest-light/10"
+        />
+        <h4 className="font-display text-base font-medium text-foreground mb-1">
+          {member.name[lang]}
+        </h4>
+        {member.title && (member.role === "faculty" || member.role === "engineer") && (
+          <p className="text-xs font-medium text-forest dark:text-forest-light mb-1">
+            {member.title[lang]}
+          </p>
         )}
-        {member.website && (
-          <a href={member.website} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+        {member.currentPosition && (member.role === "faculty" || member.role === "engineer") && (
+          <p className="text-xs text-muted-foreground mb-2">
+            {member.currentPosition[lang]}
+          </p>
         )}
+        {member.year && (
+          <p className="text-xs text-muted-foreground mb-2">
+            {member.role === "alumni_phd" || member.role === "alumni_msc"
+              ? `${t("team.classOf")} ${member.year}`
+              : member.role === "faculty" || member.role === "engineer" ? "" : `${t("team.since")} ${member.year}`}
+          </p>
+        )}
+        {!(member.role === "faculty" || member.role === "engineer") && member.currentPosition && member.currentPosition[lang] ? (
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {member.currentPosition[lang]}
+          </p>
+        ) : !(member.role === "faculty" || member.role === "engineer") ? (
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {member.interests[lang]}
+          </p>
+        ) : (
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {member.interests[lang]}
+          </p>
+        )}
+        <div className="flex justify-center gap-2 mt-3">
+          {member.email && (
+            <a href={`mailto:${member.email}`} onClick={(e) => e.stopPropagation()} className="text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
+              <Mail className="w-3.5 h-3.5" />
+            </a>
+          )}
+          {member.website && (
+            <a href={member.website} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-muted-foreground hover:text-forest dark:hover:text-forest-light transition-colors">
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
       </div>
-    </div>
+
+      {/* Member Detail Modal */}
+      {open && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setOpen(false)}>
+          <div className="absolute inset-0 bg-black/50" />
+          <div
+            className="relative bg-card rounded-xl border border-border shadow-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-4 mb-5">
+              {member.photo && (
+                <img src={member.photo} alt={member.name[lang]} className="w-20 h-20 rounded-full object-cover border-2 border-forest/10" />
+              )}
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground">{member.name[lang]}</h3>
+                {member.title && <p className="text-sm text-forest dark:text-forest-light">{member.title[lang]}</p>}
+                {member.currentPosition && <p className="text-xs text-muted-foreground">{member.currentPosition[lang]}</p>}
+              </div>
+            </div>
+
+            {member.interests && (
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-foreground mb-1">{lang === "en" ? "Research Interests" : "研究方向"}</h4>
+                <p className="text-sm text-muted-foreground">{member.interests[lang]}</p>
+              </div>
+            )}
+
+            {member.bio && member.bio[lang] && (
+              <div className="text-sm text-foreground/85 leading-relaxed whitespace-pre-line">
+                {member.bio[lang]}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
