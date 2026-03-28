@@ -137,8 +137,8 @@ export const teamMembers: TeamMember[] = [
       zh: "人工林生态水文、林木水分关系、植物生理生态学",
     },
     bio: {
-      en: "Prof. Xi (b. 1985, Gongyi, Henan) leads the Plantation Water Relation Lab at Beijing Forestry University. He is a recipient of the National 'Ten Thousand Talents Plan' Young Top Talent award, National Forestry Bureau Young S&T Innovation Talent, and BJFU Distinguished Young Talent. He serves as PI at the National Key Lab of Efficient Forest Production and core member (#2) of the National Poplar Plantation Innovation Team. His lab has developed a series of self-designed sap flow probes and soil sensors deployed across 1,600+ units nationwide.",
-      zh: "席本野（1985年生，河南巩义），北京林业大学人工林水分关系实验室负责人。入选国家「万人计划」青年拔尖人才、国家林业局青年科技创新人才、\"北林学者\"杰出青年人才。现任林木高效培育全国重点实验室PI、国家杨树人工林创新团队核心成员（排名第2）。团队自主研发的液流探针和土壤传感器已在全国部署1600余套。",
+      en: "Prof. Xi (b. 1985, Gongyi, Henan) leads the Plantation Water Relation Lab at Beijing Forestry University. He is a recipient of the National 'Ten Thousand Talents Plan' Young Top Talent award, National Forestry Bureau Young S&T Innovation Talent, and BJFU Distinguished Young Talent. He serves as PI at the National Key Lab of Efficient Forest Production and core member (#2) of the National Poplar Plantation Innovation Team. His lab has developed a series of self-designed sap flow probes, stem diameter micro-variation sensors, and soil sensors deployed across 1,600+ units nationwide.",
+      zh: "席本野（1985年生，河南巩义），北京林业大学人工林水分关系实验室负责人。入选国家「万人计划」青年拔尖人才、国家林业局青年科技创新人才、\"北林学者\"杰出青年人才。现任林木高效培育全国重点实验室PI、国家杨树人工林创新团队核心成员（排名第2）。团队自主研发的液流探针、茎干直径微变化传感器和土壤传感器已在全国部署1600余套。",
     },
     education: [
       { en: "BSc Forestry, Central South University of Forestry & Technology (2003-2007)", zh: "学士，林学，中南林业科技大学（2003-2007）" },
@@ -414,8 +414,6 @@ export const courses: Course[] = [
   { id: "silviculture", name: { en: "Silviculture", zh: "森林培育学" }, level: "undergraduate", distinction: { en: "National First-class Undergraduate Course (Rank #4); National Course Ideological-Political Demonstration Project (Rank #4)", zh: "国家一流本科课程（排名第4）；国家课程思政示范项目（排名第4）" } },
   { id: "vegetation-restoration", name: { en: "Vegetation Restoration Engineering", zh: "植被恢复工程学" }, level: "undergraduate" },
   { id: "forestry-exp-design", name: { en: "Forestry Experimental Design", zh: "林业试验设计" }, level: "undergraduate" },
-  { id: "silviculture-practice", name: { en: "Silviculture Field Practice", zh: "森林培育学实习" }, level: "undergraduate" },
-  { id: "intro-forestry", name: { en: "Introduction to Forestry", zh: "林学概论" }, level: "undergraduate" },
   { id: "research-methods", name: { en: "Research Methods in Silviculture", zh: "森林培育研究法" }, level: "graduate" },
   { id: "advanced-silviculture", name: { en: "Advanced Silviculture Topics", zh: "高级森林培育专题" }, level: "graduate" },
   { id: "frontier-forestry", name: { en: "The Frontier of Forestry Technology", zh: "林业技术前沿" }, level: "international" },
@@ -1809,20 +1807,6 @@ export const facilities: Facility[] = [
       { en: "Heat ratio method principle", zh: "\u70ed\u6bd4\u7387\u6cd5\u539f\u7406" },
       { en: "Low & reverse flow measurement", zh: "\u4f4e\u6d41\u901f\u53ca\u53cd\u5411\u6d41\u6d4b\u91cf" },
       { en: "Nighttime hydraulic redistribution", zh: "\u591c\u95f4\u6c34\u529b\u518d\u5206\u914d\u76d1\u6d4b" },
-    ],
-  },
-  {
-    id: "dual-mode-probe",
-    name: { en: "Self-developed Dual-mode Sap Flow Probe", zh: "\u81ea\u7814\u53cc\u6a21\u5f0f\u6db2\u6d41\u63a2\u9488" },
-    description: {
-      en: "Innovative dual-mode sap flow probe combining TDP and HRM methods in a single instrument. Provides comprehensive sap flow data across the full range of flow velocities.",
-      zh: "\u521b\u65b0\u6027\u53cc\u6a21\u5f0f\u6db2\u6d41\u63a2\u9488\uff0c\u5c06TDP\u548cHRM\u65b9\u6cd5\u96c6\u6210\u4e8e\u4e00\u4f53\u3002\u53ef\u5728\u5168\u6d41\u901f\u8303\u56f4\u5185\u63d0\u4f9b\u5168\u9762\u7684\u6db2\u6d41\u6570\u636e\u3002",
-    },
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hrm-probe-enhanced_78b836a2.jpg",
-    specs: [
-      { en: "Combined TDP + HRM in one probe", zh: "TDP + HRM\u53cc\u6a21\u5f0f\u96c6\u6210" },
-      { en: "Full velocity range coverage", zh: "\u5168\u6d41\u901f\u8303\u56f4\u8986\u76d6" },
-      { en: "Automatic mode switching", zh: "\u81ea\u52a8\u6a21\u5f0f\u5207\u6362" },
     ],
   },
   {

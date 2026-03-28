@@ -165,8 +165,8 @@ export default function Contact() {
                 </p>
                 <p className="text-xs text-muted-foreground leading-relaxed">
                   {lang === "en"
-                    ? "Agricultural Water Management & Journal of Hydrology"
-                    : "Agricultural Water Management 和 Journal of Hydrology"}
+                    ? "Agricultural Water Management"
+                    : "Agricultural Water Management"}
                 </p>
               </div>
             </div>

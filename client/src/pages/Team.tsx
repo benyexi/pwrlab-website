@@ -81,8 +81,8 @@ export default function Team() {
               </p>
               <p className="text-sm leading-relaxed opacity-80 max-w-xl" style={{ color: '#2d3436' }}>
                 {lang === "en"
-                  ? "Expert in plantation silviculture and forest water relations. Research focuses on water-carbon coupling mechanisms in planted forests, site-adapted silviculture, and sustainable plantation management."
-                  : "人工林培育与森林水分关系领域专家。研究方向包括人工林水碳耦合机制、立地适应性培育及人工林可持续经营。"}
+                  ? "Senior expert in silviculture. Research focuses on theories and technologies for timber plantation and energy plantation cultivation."
+                  : "森林培育领域资深专家。研究方向：用材林与能源林培育理论与技术。"}
               </p>
             </div>
           </div>
