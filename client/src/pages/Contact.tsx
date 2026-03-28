@@ -8,7 +8,6 @@ import PageHero from "@/components/PageHero";
 import ContentSection from "@/components/ContentSection";
 import WaveDivider from "@/components/WaveDivider";
 import { MapPin, Mail, Users, ExternalLink, Globe, Eye } from "lucide-react";
-import { useState, useEffect } from "react";
 
 export default function Contact() {
   const { lang, t } = useLanguage();
@@ -170,43 +169,17 @@ export default function Contact() {
 }
 
 function VisitorCounter({ lang }: { lang: "en" | "zh" }) {
-  const [count, setCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    const KEY = "pwrlab-website-visits";
-    const STORAGE_KEY = "pwrlab-visited";
-
-    async function fetchCount() {
-      try {
-        // Check if already counted in this session
-        const visited = sessionStorage.getItem(STORAGE_KEY);
-        const endpoint = visited
-          ? `https://api.countapi.xyz/get/benyexi.github.io/${KEY}`
-          : `https://api.countapi.xyz/hit/benyexi.github.io/${KEY}`;
-
-        const res = await fetch(endpoint);
-        const data = await res.json();
-        if (data.value != null) {
-          setCount(data.value);
-          if (!visited) sessionStorage.setItem(STORAGE_KEY, "1");
-        }
-      } catch {
-        // Silently fail
-      }
-    }
-
-    fetchCount();
-  }, []);
-
   return (
-    <div className="mt-4 flex items-center justify-center gap-2 text-muted-foreground">
-      <Eye className="w-4 h-4" />
-      <span className="text-sm">
-        {lang === "en" ? "Total Visits: " : "总访问量："}
-        <span className="font-semibold text-forest dark:text-forest-light">
-          {count != null ? count.toLocaleString() : "..."}
-        </span>
-      </span>
+    <div className="mt-4 flex flex-col items-center gap-2 text-muted-foreground">
+      <div className="flex items-center gap-2">
+        <Eye className="w-4 h-4" />
+        <span className="text-sm">{lang === "en" ? "Total Visits" : "总访问量"}</span>
+      </div>
+      <img
+        src="https://profile-counter.glitch.me/benyexi-pwrlab-website/count.svg"
+        alt="Visitor Count"
+        className="h-7"
+      />
     </div>
   );
 }
