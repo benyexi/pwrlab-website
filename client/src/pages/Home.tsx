@@ -137,8 +137,8 @@ function AboutSection() {
             <div className="lg:col-span-5">
               <div className="relative">
                 <img
-                  src={IMAGES.fieldwork}
-                  alt="PWRlab fieldwork"
+                  src="/pwrlab-website/images/hero/team-photo.jpg"
+                  alt="PWRlab team"
                   className="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
                 />
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-gold/30 dark:border-gold-light/30 rounded-lg" />
