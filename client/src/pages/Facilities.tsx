@@ -33,7 +33,11 @@ export default function Facilities() {
             </h2>
           </div>
           <p className="text-muted-foreground leading-relaxed mb-8 max-w-4xl">
-            {selfDevelopedInstruments.summary[lang]}
+            {selfDevelopedInstruments.summary[lang].split("sinton-tech.com").map((part, i, arr) =>
+              i < arr.length - 1 ? (
+                <span key={i}>{part}<a href="http://www.sinton-tech.com" target="_blank" rel="noopener noreferrer" className="text-forest dark:text-forest-light hover:underline">sinton-tech.com</a></span>
+              ) : part
+            )}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-background/60 dark:bg-background/30 rounded-xl p-6 text-center border border-border/50">
