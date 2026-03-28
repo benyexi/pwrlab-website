@@ -13,6 +13,7 @@ import Publications from "./pages/Publications";
 import Team from "./pages/Team";
 import Facilities from "./pages/Facilities";
 import News from "./pages/News";
+import NewsDetail from "./pages/NewsDetail";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 
@@ -30,6 +31,7 @@ function Router() {
           <Route path="/team" component={Team} />
           <Route path="/facilities" component={Facilities} />
           <Route path="/news" component={News} />
+          <Route path="/news/:id" component={NewsDetail} />
           <Route path="/gallery" component={Gallery} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />

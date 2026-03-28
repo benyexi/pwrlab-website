@@ -8,6 +8,7 @@ import { newsItems, IMAGES } from "@/lib/data";
 import PageHero from "@/components/PageHero";
 import ContentSection from "@/components/ContentSection";
 import { Calendar } from "lucide-react";
+import { Link } from "wouter";
 
 export default function News() {
   const { lang, t } = useLanguage();
@@ -49,7 +50,8 @@ function NewsItem({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
       ref={ref}
       className={`fade-in-up ${isVisible ? "visible" : ""}`}
     >
-      <div className="mag-card bg-card border border-border">
+      <Link href={item.content ? `/news/${item.id}` : "#"} className={`block ${item.content ? "cursor-pointer" : ""}`}>
+      <div className={`mag-card bg-card border border-border ${item.content ? "hover:shadow-lg transition-shadow" : ""}`}>
         <div className={`${item.image ? "grid grid-cols-1 md:grid-cols-12" : ""}`}>
           {item.image && (
             <div className="md:col-span-4">
@@ -79,6 +81,7 @@ function NewsItem({ item, lang, index }: { item: typeof newsItems[0]; lang: "en"
           </div>
         </div>
       </div>
+      </Link>
     </div>
   );
 }
