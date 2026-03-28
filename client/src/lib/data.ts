@@ -1622,6 +1622,20 @@ export const publications: Publication[] = [
 // ---- News ----
 export const newsItems: NewsItem[] = [
   {
+    id: "news-2025-washington",
+    title: {
+      en: "PWRlab Completes Monitoring Site Setup in Washington State, USA",
+      zh: "PWRlab美国华盛顿州站点布设完成",
+    },
+    date: "2025-03-28",
+    summary: {
+      en: "PWRlab has completed the setup of a new monitoring site at a poplar plantation (Populus deltoides × maximowiczii, planted 2018, 4.3m × 4.3m spacing) in Kalama, King County, Washington State, USA. Co-established with Prof. Mark Coleman from the University of Idaho, this is the first overseas site in PWRlab's CP-GPE net, dedicated to research on sustainable management of poplar plantations under climate change. The instrumentation includes a compact automatic weather station, 6 thermal dissipation sap flow probes (TDP), 4 stem diameter variation sensors, 2 soil moisture profile probes, and 1 groundwater level sensor — all jointly developed by PWRlab and Beijing Shiyutong Technology Co., Ltd., and manufactured in China.",
+      zh: "PWRlab完成美国华盛顿州站点布设。该监测点位于美国华盛顿州金县卡拉马港杨树种植园（2018年栽植的白杨树林Populus deltoides × maximowiczii，组行距4.3m × 4.3m），由PWRlab与美国爱达荷州立大学森林、牧场和火灾科学系的Mark Coleman教授共建，是PWRlab CP-GPE net在国外建立的第1个站点，将用于气候变化下杨树人工林可持续经营管理的基础理论与相关技术研究。站点布设的仪器设备包括：1套小型自动气象站、6套热扩散液流探针、4套茎干直径微变化传感器、2套土壤剖面水分探头和1套地下水位传感器。相关仪器设备由PWRlab和北京时域通科技有限公司联合研发，全部由中国北京时域通科技有限公司完成设计与制造。",
+    },
+    tag: "fieldwork",
+    image: IMAGES.fieldwork,
+  },
+  {
     id: "news-2025-03",
     title: {
       en: "New paper published in Agricultural and Forest Meteorology",
