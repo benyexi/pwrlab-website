@@ -1978,6 +1978,15 @@ export const galleryImages: GalleryImage[] = [
   { id: "g79", src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/IMG_7497_468354f7.jpeg", caption: { en: "Lab social event", zh: "实验室社交活动" }, category: "team" },
   { id: "g80", src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/IMG_7748_ec1ed68f.jpeg", caption: { en: "Team photo", zh: "团队合影" }, category: "team" },
   { id: "g81", src: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/IMG_1106_f8f04d90.JPG", caption: { en: "Group outing", zh: "集体出游" }, category: "team" },
+  { id: "lab-01", src: "/pwrlab-website/images/gallery/laboratory/lab-01.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-02", src: "/pwrlab-website/images/gallery/laboratory/lab-02.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-03", src: "/pwrlab-website/images/gallery/laboratory/lab-03.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-04", src: "/pwrlab-website/images/gallery/laboratory/lab-04.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-05", src: "/pwrlab-website/images/gallery/laboratory/lab-05.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-06", src: "/pwrlab-website/images/gallery/laboratory/lab-06.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-07", src: "/pwrlab-website/images/gallery/laboratory/lab-07.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-08", src: "/pwrlab-website/images/gallery/laboratory/lab-08.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
+  { id: "lab-09", src: "/pwrlab-website/images/gallery/laboratory/lab-09.jpg", caption: { en: "Laboratory work", zh: "实验室工作" }, category: "lab" },
 ];
 
 export { IMAGES };
