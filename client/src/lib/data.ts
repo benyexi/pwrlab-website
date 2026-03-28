@@ -1531,8 +1531,6 @@ export const publications: Publication[] = [
   },
 ];
 
-];
-
 // ---- News ----
 export const newsItems: NewsItem[] = [
   {
