@@ -87,7 +87,7 @@ function StatsBar() {
     { icon: BookOpen, value: "129", label: t("home.stats.publications") },
     { icon: FlaskConical, value: "1,600+", label: t("home.stats.instruments") },
     { icon: Users, value: "21", label: t("home.stats.members") },
-    { icon: Globe, value: "6+", label: t("home.stats.collaborators") },
+    { icon: Globe, value: "5", label: t("home.stats.collaborators") },
   ];
 
   return (
