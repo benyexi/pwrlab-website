@@ -80,7 +80,7 @@ export interface GalleryImage {
 
 // ---- Image URLs ----
 const IMAGES = {
-  hero: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/hero-banner-new-67k4NNb8kABikxgGFzF3wo.webp",
+  hero: "/pwrlab-website/images/hero/team-photo.jpg",
   ecohydrology: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/research-ecohydrology-NFG5gBx7C5oVgi83EgRfts.webp",
   roots: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/research-roots-NEvJ8CWtdh6mpadopTyfhL.webp",
   fieldwork: "https://d2xsxph8kpxj0f.cloudfront.net/310519663359140716/HKjtrcrKW7RvWqhovUWaqg/fieldwork-gallery-DsZofphhPD4phhhzS82WPP.webp",

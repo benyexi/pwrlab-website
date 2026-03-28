@@ -26,10 +26,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home
     "home.hero.title": "Plantation Water Relation Lab",
-    "home.hero.subtitle": "Understanding water dynamics in planted forests to sustain ecosystem services under global change",
+    "home.hero.subtitle": "Investigating plantation water relations to advance efficient cultivation theories and technologies",
     "home.hero.cta": "Explore Our Research",
     "home.about.title": "About PWRlab",
-    "home.about.text": "PWRlab (Plantation Water Relation Lab) at Beijing Forestry University investigates the ecohydrological processes of planted forests across multiple scales. Our interdisciplinary team combines field measurements, remote sensing, and modeling approaches to understand how trees regulate water use and how plantation management affects watershed hydrology.",
+    "home.about.text": "PWRlab (Plantation Water Relation Lab) at Beijing Forestry University focuses on plantation water relations research, aiming to develop theories and technologies for efficient plantation cultivation. Our interdisciplinary team combines field measurements, self-developed instruments, and modeling approaches to understand how trees regulate water use, and translates these insights into practical strategies for sustainable forest management.",
     "home.news.title": "Latest News",
     "home.news.viewAll": "View All News",
     "home.stats.publications": "Publications",
@@ -143,10 +143,10 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home
     "home.hero.title": "人工林水分关系实验室",
-    "home.hero.subtitle": "探索人工林水分动态机制，维护全球变化下的生态系统服务功能",
+    "home.hero.subtitle": "研究人工林水分关系，构建人工林高效培育理论与技术体系",
     "home.hero.cta": "了解我们的研究",
     "home.about.title": "关于 PWRlab",
-    "home.about.text": "PWRlab（人工林水分关系实验室）隶属于北京林业大学，致力于研究人工林多尺度生态水文过程。我们的跨学科团队结合野外观测、遥感技术和模型模拟方法，深入理解林木水分利用调控机制以及人工林经营对流域水文的影响。",
+    "home.about.text": "PWRlab（人工林水分关系实验室）隶属于北京林业大学，以人工林水分关系为核心研究方向，致力于构建人工林高效培育的理论与技术体系。团队结合野外观测、自主研发仪器和模型模拟等手段，深入揭示林木水分利用调控机制，并将研究成果转化为可持续森林经营的实践策略。",
     "home.news.title": "最新动态",
     "home.news.viewAll": "查看全部",
     "home.stats.publications": "发表论文",
