@@ -7,7 +7,7 @@ import { Link } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import SectionHeader from "@/components/SectionHeader";
-import { IMAGES, newsItems } from "@/lib/data";
+import { IMAGES, newsItems, publications, teamMembers } from "@/lib/data";
 import { ArrowRight, BookOpen, FlaskConical, Users, Globe } from "lucide-react";
 
 export default function Home() {
@@ -83,11 +83,13 @@ export default function Home() {
 
 function StatsBar() {
   const { t } = useLanguage();
+  const currentMembers = teamMembers.filter(m => ["phd", "msc"].includes(m.role)).length;
+  const collaborators = teamMembers.filter(m => m.role === "collaborator").length;
   const stats = [
-    { icon: BookOpen, value: "129", label: t("home.stats.publications") },
+    { icon: BookOpen, value: String(publications.length), label: t("home.stats.publications") },
     { icon: FlaskConical, value: "1,600+", label: t("home.stats.instruments") },
-    { icon: Users, value: "21", label: t("home.stats.members") },
-    { icon: Globe, value: "5", label: t("home.stats.collaborators") },
+    { icon: Users, value: String(currentMembers), label: t("home.stats.members") },
+    { icon: Globe, value: String(collaborators), label: t("home.stats.collaborators") },
   ];
 
   return (

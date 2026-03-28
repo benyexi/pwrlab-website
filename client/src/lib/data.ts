@@ -421,7 +421,7 @@ export const courses: Course[] = [
 
 // ---- Publications ----
 // Complete publication list from Prof. Xi Benye's CV (updated 2026.3)
-// 129 published papers + 11 under review = 140 total
+// 129 published papers
 export const publications: Publication[] = [
   {
     id: "pub-2026-1",
@@ -1529,94 +1529,8 @@ export const publications: Publication[] = [
     journal: "中华纸业",
     year: 2009
   },
-  {
-    id: "pub-2026-2",
-    title: "Spatial variation of sap flow in Populus tomentosa: water-regulated radial mechanisms and azimuthal pattern estimation errors",
-    authors: "Zhao X, Wang K, Li X, Li X, Clothier B*, Xi B*",
-    journal: "Agricultural and Forest Meteorology",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-3",
-    title: "Long-term water supplementation alters organ-level nutrient allocation and stoichiometric balance in a fast-growing plantation forest",
-    authors: "Wang K, Wang Y, Coleman M, Zhao D, Ji Z, Ding C, Wang Y, Xi B*, Li X*",
-    journal: "Agricultural Water Management",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-4",
-    title: "Dual compensatory mechanisms improve root water uptake modeling and reveal deep water utilization in forest trees",
-    authors: "Liu Y, Xi B*",
-    journal: "Plant, Cell & Environment",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-5",
-    title: "Definition of maximum temperature difference in sap flow measurements with continuous linear heating: Part I",
-    authors: "Nadezhdina N, Xi B*",
-    journal: "Agricultural and Forest Meteorology",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-6",
-    title: "Definition of maximum temperature difference in sap flow measurements with continuous linear heating: Part II",
-    authors: "Nadezhdina N, Liu Y, Xi B*",
-    journal: "Agricultural and Forest Meteorology",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-7",
-    title: "Limited effects of physiological adjustments in facilitating drought and heat resistance under reduced precipitation across improved poplar varieties",
-    authors: "Sun J, Yan J, Miao T, Huang R, Kong X, Yang W, Di N, Yang J, Xi B*, Li X, Tissue D",
-    journal: "Tree Physiology",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-8",
-    title: "Physiological tolerance to heat and drought are decoupled across common woody urban greening species in north China",
-    authors: "Sun J, Huang R, Zhang Z, Yang Y, Luo R, Yang J, Xi B, Li X, Tissue D",
-    journal: "Physiologia Plantarum",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-9",
-    title: "Effect of Initial Spacing and Thinning Practices on Timber Quality of Broadleaf and Coniferous Species: A Weighted Meta-Analysis",
-    authors: "Hagumubuzima F, Clothier B, Coleman M, Xu C, Hussain S, Xi B*",
-    journal: "Forest Ecosystems",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-10",
-    title: "Deep soil desiccation and poplar plantation responses on the North China Plain: nonlinear dynamics and thresholds",
-    authors: "Yang W, Yu W, Wang K, Fan Y, Deepagoda C, Hu W, Clothier B, Xi B*",
-    journal: "New Phytologist",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-11",
-    title: "Divergent growth and water-use strategies of mature poplar plantations in response to repeated heatwaves across North China",
-    authors: "Kong X, Wang A, Duan J, Hao G, Xi B*, Li X*",
-    journal: "Agricultural and Forest Meteorology",
-    year: 2026,
-    tags: ["Under Review"]
-  },
-  {
-    id: "pub-2026-12",
-    title: "Impact of Planting Density and Pruning on Water Acquisition in Poplar-Wheat Agroforestry",
-    authors: "Liu Z, Zhang Y, Liu Z, Wang X, Liu Y, Wu C, Li X, Xi B, Duan J",
-    journal: "Agricultural Water Management",
-    year: 2026,
-    tags: ["Under Review"]
-  },
+];
+
 ];
 
 // ---- News ----
