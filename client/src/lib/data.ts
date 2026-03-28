@@ -137,8 +137,8 @@ export const teamMembers: TeamMember[] = [
       zh: "人工林生态水文、林木水分关系、植物生理生态学",
     },
     bio: {
-      en: "Prof. Xi (b. 1985, Gongyi, Henan) leads the Plantation Water Relation Lab at Beijing Forestry University. He is a recipient of the National 'Ten Thousand Talents Plan' Young Top Talent award and National Forestry Bureau Young S&T Innovation Talent. He serves as PI at the National Key Lab of Efficient Forest Production, Director of the Key Lab of Forest Cultivation and Ecosystem in Arid/Semi-arid Areas (National Forestry Bureau), and core member (#2) of the National Poplar Plantation Innovation Team. His lab has developed a series of self-designed sap flow probes and soil sensors deployed across 1,600+ units nationwide.",
-      zh: "席本野（1985年生，河南巩义），北京林业大学人工林水分关系实验室负责人。入选国家「万人计划」青年拔尖人才、国家林业局青年科技创新人才。现任林木高效培育全国重点实验室PI、国家林业局干旱半干旱地区森林培育及生态系统研究重点实验室主任、国家杨树人工林创新团队核心成员（排名第2）。团队自主研发的液流探针和土壤传感器已在全国部署1600余套。",
+      en: "Prof. Xi (b. 1985, Gongyi, Henan) leads the Plantation Water Relation Lab at Beijing Forestry University. He is a recipient of the National 'Ten Thousand Talents Plan' Young Top Talent award, National Forestry Bureau Young S&T Innovation Talent, and BJFU Distinguished Young Talent. He serves as PI at the National Key Lab of Efficient Forest Production and core member (#2) of the National Poplar Plantation Innovation Team. His lab has developed a series of self-designed sap flow probes and soil sensors deployed across 1,600+ units nationwide.",
+      zh: "席本野（1985年生，河南巩义），北京林业大学人工林水分关系实验室负责人。入选国家「万人计划」青年拔尖人才、国家林业局青年科技创新人才、\"北林学者\"杰出青年人才。现任林木高效培育全国重点实验室PI、国家杨树人工林创新团队核心成员（排名第2）。团队自主研发的液流探针和土壤传感器已在全国部署1600余套。",
     },
     education: [
       { en: "BSc Forestry, Central South University of Forestry & Technology (2003-2007)", zh: "学士，林学，中南林业科技大学（2003-2007）" },
@@ -149,11 +149,14 @@ export const teamMembers: TeamMember[] = [
     honors: [
       { en: "National 'Ten Thousand Talents Plan' Young Top Talent", zh: "国家「万人计划」青年拔尖人才" },
       { en: "National Forestry Bureau Young S&T Innovation Talent", zh: "国家林业局青年科技创新人才" },
-      { en: "BJFU Distinguished Young Talent", zh: "\"北林学者\"杰出青年人才" },
+      { en: "National Ideological and Political Education Master Teacher", zh: "国家级课程思政教学名师" },
     ],
     positions: [
       { en: "PI, National Key Lab of Efficient Forest Production", zh: "林木高效培育全国重点实验室PI" },
       { en: "Core Member (#2), National Poplar Plantation Innovation Team", zh: "国家杨树人工林创新团队核心成员（排名第2）" },
+      { en: "Youth Council Member, Silviculture Branch, Chinese Society of Forestry", zh: "中国林学会森林培育分会青年理事" },
+      { en: "Council Member, Forestry Meteorology Committee, Chinese Society of Forestry", zh: "中国林学会林业气象专业委员会理事" },
+      { en: "Council Member, NZ-China Science, Technology and Education Association", zh: "新西兰-中国科技教育协会理事" },
     ],
     email: "benyexi@bjfu.edu.cn",
     scholar: "https://scholar.google.com/citations?user=8L5SxYIAAAAJ",
