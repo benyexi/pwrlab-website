@@ -131,7 +131,16 @@ export default function Contact() {
                   ? "Real-time visitor locations from around the world"
                   : "来自世界各地的实时访客位置"}
               </p>
-              <VisitorCounter lang={lang} />
+              {/* Visitor counter via ClustrMaps widget (embedded in globe above) */}
+              <a
+                href="https://clustrmaps.com/site/1c6qe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-xs text-forest dark:text-forest-light hover:underline"
+              >
+                <Eye className="w-3.5 h-3.5" />
+                {lang === "en" ? "View detailed visitor statistics" : "查看详细访客统计"}
+              </a>
             </div>
             {/* Visitor Stats */}
             <div className="space-y-4">
@@ -168,18 +177,3 @@ export default function Contact() {
   );
 }
 
-function VisitorCounter({ lang }: { lang: "en" | "zh" }) {
-  return (
-    <div className="mt-4 flex flex-col items-center gap-2 text-muted-foreground">
-      <div className="flex items-center gap-2">
-        <Eye className="w-4 h-4" />
-        <span className="text-sm">{lang === "en" ? "Total Visits" : "总访问量"}</span>
-      </div>
-      <img
-        src="https://profile-counter.glitch.me/benyexi-pwrlab-website/count.svg"
-        alt="Visitor Count"
-        className="h-7"
-      />
-    </div>
-  );
-}
