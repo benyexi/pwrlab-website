@@ -155,9 +155,33 @@ export default function Contact() {
                   {lang === "en" ? "WeChat Public Account" : "微信公众号"}
                 </p>
                 <p className="font-display text-2xl font-bold text-forest dark:text-forest-light">PWRlab</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {lang === "en" ? "8,389 followers · 440,000+ reads" : "8,389 关注 · 44万+ 阅读"}
-                </p>
+                <div className="mt-3 space-y-1.5">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Running" : "已运行"}</span>
+                    <span className="text-sm font-semibold text-foreground">{lang === "en" ? "7 yrs 174 days (2,733 days)" : "7年174天（2733天）"}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Followers" : "总关注"}</span>
+                    <span className="text-sm font-semibold text-foreground">8,451</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Total reads" : "总阅读量"}</span>
+                    <span className="text-sm font-semibold text-foreground">661,890</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Total posts" : "推送总篇数"}</span>
+                    <span className="text-sm font-semibold text-foreground">1,454</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Avg. reads/post" : "单篇平均阅读"}</span>
+                    <span className="text-sm font-semibold text-foreground">455</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-muted-foreground">{lang === "en" ? "Peak reads" : "单篇最高阅读"}</span>
+                    <span className="text-sm font-semibold text-foreground">4,238</span>
+                  </div>
+                </div>
+                <p className="text-[10px] text-muted-foreground mt-2 text-right">{lang === "en" ? "As of 2026.3.30" : "统计截止 2026.3.30"}</p>
               </div>
               <div className="mag-card bg-card border border-border p-6">
                 <p className="text-sm text-muted-foreground mb-2">
