@@ -54,11 +54,14 @@ export default function Home() {
       {/* About Section */}
       <AboutSection />
 
+      {/* 3D Experimental Site Viewer */}
+      <ExperimentalSiteSection />
+
       {/* Latest News */}
       <section className="py-20 lg:py-24 bg-muted/50">
         <div className="container">
           <SectionHeader
-            number="03"
+            number="04"
             title={t("home.news.title")}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
@@ -147,6 +150,42 @@ function AboutSection() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ExperimentalSiteSection() {
+  const { lang } = useLanguage();
+  const { ref, isVisible } = useScrollAnimation();
+
+  return (
+    <section className="py-20 lg:py-24 bg-muted/50">
+      <div className="container">
+        <div ref={ref} className={`fade-in-up ${isVisible ? "visible" : ""}`}>
+          <span className="font-mono text-sm tracking-widest text-muted-foreground mb-2 block">02</span>
+          <h2 className="section-title text-3xl md:text-4xl text-foreground mb-6">
+            {lang === "en" ? "Experimental Site" : "试验基地"}
+          </h2>
+          <div className="flex items-center gap-2 mb-6">
+            <div className="h-px w-8 bg-forest/30 dark:bg-forest-light/30" />
+            <div className="w-2 h-2 rounded-full border border-forest/40 dark:border-forest-light/40" />
+            <div className="w-3 h-3 rounded-full border-2 border-gold dark:border-gold-light" />
+            <div className="w-2 h-2 rounded-full border border-forest/40 dark:border-forest-light/40" />
+            <div className="h-px w-8 bg-forest/30 dark:bg-forest-light/30" />
+          </div>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-8">
+            {lang === "en"
+              ? "Explore our Populus tomentosa plantation field site in 3D. Use mouse or touch to navigate freely through the canopy and between rows."
+              : "以3D视角探索我们的毛白杨人工林试验基地。使用鼠标或触摸屏自由穿梭于林冠与行间。"}
+          </p>
+          <iframe
+            className="w-full rounded-xl shadow-lg border border-border"
+            style={{ aspectRatio: "16 / 9" }}
+            src="https://marble.worldlabs.ai/viewer.html?splatUrl=https%3A%2F%2Fcdn.marble.worldlabs.ai%2F8c9d8196-6c69-4ae6-a951-9cebdc5dbfeb%2F6fa56cf1-e95c-42dd-b248-2e2ec56e95c2_ceramic.spz&mobileUrl=https%3A%2F%2Fcdn.marble.worldlabs.ai%2F8c9d8196-6c69-4ae6-a951-9cebdc5dbfeb%2F382f4981-f785-4e4f-9aa5-48e5aa3e47b2_ceramic_500k.spz&marbleWorldId=8c9d8196-6c69-4ae6-a951-9cebdc5dbfeb"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>
