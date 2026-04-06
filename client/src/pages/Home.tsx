@@ -61,7 +61,7 @@ export default function Home() {
       <section className="py-20 lg:py-24 bg-muted/50">
         <div className="container">
           <SectionHeader
-            number="04"
+            number="03"
             title={t("home.news.title")}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
