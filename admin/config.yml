@@ -1,0 +1,159 @@
+backend:
+  name: github
+  repo: benyexi/pwrlab-website
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# When using GitHub Pages without Netlify, users need to set up
+# their own OAuth app. See: https://decapcms.org/docs/github-backend/
+# Alternative: use the git-gateway backend with Netlify Identity
+
+media_folder: "client/public/uploads"
+public_folder: "/uploads"
+
+# Site URL for preview
+site_url: https://benyexi.github.io/pwrlab-website
+display_url: https://benyexi.github.io/pwrlab-website
+
+locale: "en"
+i18n:
+  structure: single_file
+  locales: [en, zh]
+  default_locale: en
+
+collections:
+  # ── News Posts ──
+  - name: "news"
+    label: "News / 新闻动态"
+    label_singular: "News Post"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Title (EN)", name: "title_en", widget: "string" }
+      - { label: "Title (中文)", name: "title_zh", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Publication", value: "publication" }
+          - { label: "Award", value: "award" }
+          - { label: "Conference", value: "conference" }
+          - { label: "Graduation", value: "graduation" }
+          - { label: "Fieldwork", value: "fieldwork" }
+          - { label: "General", value: "general" }
+      - { label: "Summary (EN)", name: "summary_en", widget: "text" }
+      - { label: "Summary (中文)", name: "summary_zh", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+
+  # ── Team Members ──
+  - name: "team"
+    label: "Team / 团队成员"
+    label_singular: "Team Member"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Name (EN)", name: "name_en", widget: "string" }
+      - { label: "Name (中文)", name: "name_zh", widget: "string" }
+      - label: "Role"
+        name: "role"
+        widget: "select"
+        options:
+          - { label: "PI", value: "pi" }
+          - { label: "Faculty", value: "faculty" }
+          - { label: "Engineer", value: "engineer" }
+          - { label: "PhD Student", value: "phd" }
+          - { label: "MSc Student", value: "msc" }
+          - { label: "Alumni (PhD)", value: "alumni_phd" }
+          - { label: "Alumni (MSc)", value: "alumni_msc" }
+          - { label: "Collaborator", value: "collaborator" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Research Interest (EN)", name: "interest_en", widget: "string", required: false }
+      - { label: "Research Interest (中文)", name: "interest_zh", widget: "string", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Google Scholar URL", name: "scholar", widget: "string", required: false }
+      - { label: "ORCID", name: "orcid", widget: "string", required: false }
+      - { label: "Year Joined", name: "year", widget: "string", required: false }
+      - { label: "Affiliation", name: "affiliation", widget: "string", required: false }
+
+  # ── Publications ──
+  - name: "publications"
+    label: "Publications / 论文"
+    label_singular: "Publication"
+    folder: "content/publications"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "string" }
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - { label: "DOI", name: "doi", widget: "string", required: false }
+      - { label: "Volume", name: "volume", widget: "string", required: false }
+      - { label: "Pages", name: "pages", widget: "string", required: false }
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["SCI", "EI", "CSCD", "Top Journal", "ESI", "Cover Paper", "Forthcoming"]
+      - { label: "Highlight", name: "highlight", widget: "boolean", default: false }
+
+  # ── Gallery Photos ──
+  - name: "gallery"
+    label: "Gallery / 照片"
+    label_singular: "Photo"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Caption (EN)", name: "caption_en", widget: "string" }
+      - { label: "Caption (中文)", name: "caption_zh", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Fieldwork", value: "fieldwork" }
+          - { label: "Laboratory", value: "lab" }
+          - { label: "Team", value: "team" }
+          - { label: "Conference", value: "conference" }
+          - { label: "Campus", value: "campus" }
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+
+  # ── Projects ──
+  - name: "projects"
+    label: "Projects / 科研项目"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Title (EN)", name: "title_en", widget: "string" }
+      - { label: "Title (中文)", name: "title_zh", widget: "string" }
+      - { label: "Description (EN)", name: "desc_en", widget: "text" }
+      - { label: "Description (中文)", name: "desc_zh", widget: "text" }
+      - { label: "Funding Source (EN)", name: "funding_en", widget: "string" }
+      - { label: "Funding Source (中文)", name: "funding_zh", widget: "string" }
+      - { label: "Period", name: "period", widget: "string" }
+      - { label: "Amount", name: "amount", widget: "string", required: false }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Current", value: "current" }
+          - { label: "Completed", value: "completed" }
+      - { label: "Image", name: "image", widget: "image", required: false }
